@@ -1,8 +1,7 @@
 require "test_helper"
 
-class ActivityTest < ActiveSupport::TestCase
+class GuestsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
-
 end

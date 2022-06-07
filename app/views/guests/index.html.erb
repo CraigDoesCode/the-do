@@ -1,0 +1,8 @@
+<h1>Who</h1>
+<% @guests.each do |guest| %>
+  <p><%= guest.name %></p>
+  <p><%= guest.email %></p>
+  <p><%= guest.phone_number %></p>
+  <p><%= guest.attending %></p>
+  <p><%= guest.paid %></p>
+<% end %>
