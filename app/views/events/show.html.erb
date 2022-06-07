@@ -1,15 +1,34 @@
-<h1>THE DO<%=@event.name%></h1>
-<p><%= @event.start_date %></p>
-<p><%= @event.location %></p>
-<%= link_to "Who", # %>
-<%= link_to "Play", # %>
-<%= link_to "Eat", # %>
-<%= link_to "Stay" %>
-<%= link_to "Go", # %>
-<%= link_to "Plan", # %>
+<div class="container">
+  <h1><%=@event.name%>'s DO</h1>
+  <p><i class="fa-solid fa-calendar"></i> <%= @event.start_date %></p>
+  <p><i class="fa-solid fa-location-pin"></i> <%= @event.location %></p>
+</div>
 
-<%= link_to "Edit Do", edit_event_path %>
-<%= link_to "Delete",
-  event_path(@event),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
+<div class ="cards">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'who.jpg' %>)">
+    Who
+  </div>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'play.jpg' %>)">
+    Play
+  </div>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'food.jpg' %>)">
+    Eat
+  </div>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'stay.jpg' %>)">
+    Stay
+  </div>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'TAXI.jpg' %>)">
+    Go
+  </div>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'plan.jpg' %>)">
+    Plan
+  </div>
+</div>
+
+<div class="d-flex flex-row justify-content-center">
+  <%= link_to "Edit Do", edit_event_path, class: "btn btn-flat"%>
+  <%= link_to "Delete Do",
+    event_path(@event),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-flat"
+  %>
+</div>
