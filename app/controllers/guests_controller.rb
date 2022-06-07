@@ -14,7 +14,7 @@ class GuestsController < ApplicationController
     @guest = Guest.new(guest_params)
     @guest.event_id = @event.id
     if @guest.save
-      redirect_to guests_path
+      redirect_to event_guests_path
     else
       render :new, status: :unprocessable_entity
     end
