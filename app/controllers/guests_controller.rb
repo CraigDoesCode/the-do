@@ -1,5 +1,5 @@
 class GuestsController < ApplicationController
-  before_action :set_event, only: [:new, :create]
+  before_action :set_event, only: [:new, :create, :edit]
   before_action :set_guest, only: [:edit, :update, :destroy]
 
   def index
@@ -24,13 +24,18 @@ class GuestsController < ApplicationController
   end
 
   def update
-    @guest.update(guest_params)
-    redirect_to guests_path
+    if @guest.update(guest_params)
+      flash[:notice] = "Guest details updated successfully"
+      redirect_to event_guests_path
+    else
+      flash.now[:alert] = "Guest details update failed"
+      render :edit
+    end
   end
 
   def destroy
     @guest.destroy
-    redirect_to guests_path, status: :see_other
+    redirect_to event_guests_path, status: :see_other
   end
 
   private
