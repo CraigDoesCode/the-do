@@ -9,4 +9,9 @@
 
 // Your CSS partials
 @import "components/index";
+@import "components/banner";
 @import "pages/index";
+
+body {
+  background-color: white;
+}
