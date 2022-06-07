@@ -1,8 +1,10 @@
+<br>
 <div class="form-body overlay">
   <div class="form-container">
     <div class="container container-form">
     <h2 class="form-heading" style= "color: white;">Add Guest</h2>
-      <%= simple_form_for [@guest] do |f| %>
+    <br>
+      <%= simple_form_for [@event, @guest] do |f| %>
         <%= f.input :name %>
         <%= f.input :email %>
         <%= f.input :phone_number %>
