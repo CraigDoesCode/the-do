@@ -2,7 +2,16 @@
 // Run that command whenever you add a new controller or create them with
 // ./bin/rails generate stimulus controllerName
 
-import { application } from "./application"
+import { application } from "./application";
 
-import HelloController from "./hello_controller"
-application.register("hello", HelloController)
+// import CarouselController from "./carousel_controller.js"
+// application.register("carousel", CarouselController)
+
+import HelloController from "./hello_controller.js";
+application.register("hello", HelloController);
+
+import { Application } from "@hotwired/stimulus";
+import Carousel from "stimulus-carousel";
+
+const application = Application.start();
+application.register("carousel", Carousel);
