@@ -3,7 +3,7 @@ class GuestsController < ApplicationController
   before_action :set_guest, only: [:edit, :update, :destroy]
 
   def index
-    @guests = Guest.all
+    @guests = Guest.where(event_id: params[:event_id])
   end
 
   def new
@@ -34,8 +34,9 @@ class GuestsController < ApplicationController
   end
 
   def destroy
+    @event_id = @guest.event_id
     @guest.destroy
-    redirect_to event_guests_path, status: :see_other
+    redirect_to event_guests_path(@event_id), status: :see_other
   end
 
   private
