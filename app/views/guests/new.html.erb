@@ -1,0 +1,17 @@
+<div class="form-body overlay">
+  <div class="form-container">
+    <div class="container container-form">
+    <h2 class="form-heading" style= "color: white;">Add Guest</h2>
+      <%= simple_form_for [@guest] do |f| %>
+        <%= f.input :name %>
+        <%= f.input :email %>
+        <%= f.input :phone_number %>
+        <%= f.input :attending %>
+        <%= f.input :paid %>
+        <div class = "pt-2" style="text-align:center">
+          <%= f.button :submit, class: "btn btn-gradient btn-lg"%>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
