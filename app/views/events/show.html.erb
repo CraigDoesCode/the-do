@@ -1,3 +1,9 @@
 <h1>THE DO<%=@event.name%></h1>
 <p><%= @event.start_date %></p>
 <p><%= @event.location %></p>
+
+<%= link_to "Edit Do", edit_event_path %>
+<%= link_to "Delete",
+  event_path(@event),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
