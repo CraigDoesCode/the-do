@@ -1,15 +1,16 @@
 class GuestsController < ApplicationController
+  before_action :set_event, only: [:new, :create]
+  before_action :set_guest, only: [:edit, :update, :destroy]
+
   def index
     @guests = Guest.all
   end
 
   def new
-    @event = Event.find(params[:event_id])
     @guest = Guest.new
   end
 
   def create
-    @event = Event.find(params[:event_id])
     @guest = Guest.new(guest_params)
     @guest.event_id = @event.id
     if @guest.save
@@ -28,7 +29,7 @@ class GuestsController < ApplicationController
   end
 
   def destroy
-    Guest.destroy(params[:id])
+    @guest.destroy
     redirect_to guests_path, status: :see_other
   end
 
@@ -36,5 +37,13 @@ class GuestsController < ApplicationController
 
   def guest_params
     params.require(:guest).permit(:name, :email, :phone_number, :attending, :paid)
+  end
+
+  def set_event
+    @event = Event.find(params[:event_id])
+  end
+
+  def set_guest
+    @guest = Guest.find(params[:id])
   end
 end
