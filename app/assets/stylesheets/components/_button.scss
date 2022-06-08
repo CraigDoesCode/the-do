@@ -7,6 +7,15 @@
   transition: background 0.3s ease;
 }
 
+.btn-flat-gold {
+  color: white !important;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: $gold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
 .btn-flat:hover {
   background: $fadedred;
   color: $red;
