@@ -1,14 +1,77 @@
-<br>
-<h1 class="text-center">Who</h1>
+<body style="font-family: 'K2D', sans-serif;">
+  <h1 class="text-center">Who</h1>
 <% if @guests.empty? == true %>
-  <p>No Guests</p>
+  <br>
+  <br>
+  <p class="text-center">No Guests</p>
+  <%# <div class="container text-center">
+    <%= link_to "Add Guest", event_guests_path(current_user.event), class: "btn btn-dark" %>
+  <%# </div> %>
+</body>
 <% else %>
-  <% @guests.each do |guest| %>
-    <p><%= guest.name %></p>
-    <p><%= guest.email %></p>
-    <p><%= guest.phone_number %></p>
-    <p><%= guest.attending %></p>
-    <p><%= guest.paid %></p>
-    <%= link_to "Delete", guest_path(guest), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-  <% end %>
+  <table class="table-sm table-borderless m-4" style="font-size: 12px">
+  <thead>
+    <tr class="text-center">
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col">Attending</th>
+      <th scope="col">Paid</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody >
+    <% @guests.each do |guest| %>
+      <tr class="border-bottom" style="text-align: center; vertical-align: center;">
+        <th scope="row">
+          <div class="d-flex">
+            <div class="rounded-circle border d-flex justify-content-center align-items-center mt-1" style="width:40px;height:40px" alt="Avatar">
+              <i class="fas fa-user-alt fa-2x text-info"></i>
+            </div>
+            <div class="p-3">
+              <%= guest.name %>
+            </div>
+          </div>
+        </th>
+        <td class="text-center p-2">
+          <%= link_to edit_event_guest_path(guest.event_id, guest.id), :style=>'color: black;' do %>
+            <i class="fa-solid fa-pen-to-square"></i>
+          <% end %>
+        </td>
+        <td>
+          <div style="color: #D39401; font-size: 18px;">
+            <% if guest.attending == true %>
+            <i class="fa-solid fa-check"></i>
+          <% end %>
+          </div>
+        </td>
+         <td>
+          <div style="color: #D39401; font-size: 18px;">
+            <% if guest.paid == true %>
+              <i class="fa-solid fa-check"></i>
+            <% end %>
+          </div>
+        </td>
+         <td class="text-center p-3">
+          <%= link_to guest_path(guest), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :style=>'color: black;' do %>
+            <i class="fa-solid fa-trash-can"></i>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<div class="container text-center">
+    <%= link_to "Add Guest", event_guests_path(@guests.first.event_id), class: "btn btn-dark" %>
+  </div>
+</body>
+<br>
+<div class="container d-flex p-2">
+  <div class="container">
+    <%= link_to "RSVP Reminder", event_guests_path(@guests.first.event_id), class: "btn btn-danger" %>
+  </div>
+  <div class="container">
+    <%= link_to "Payment Reminder", event_guests_path(@guests.first.event_id), class: "btn btn-danger" %>
+  </div>
+</div>
 <% end %>
