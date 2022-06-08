@@ -1,20 +1,39 @@
-<h2>Log in</h2>
-
+<div class="sign-in">
+<br>
+<br>
+<br>
+<br>
+<%= image_tag("logo.png")%>
+<br>
+<br>
+<br>
+<br>
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
-  <div class="form-inputs">
+  <div class="form-inputs" id="form">
     <%= f.input :email,
+                label: false,
                 required: false,
                 autofocus: true,
-                input_html: { autocomplete: "email" } %>
+                input_html: { autocomplete: "email" },
+                placeholder: "Email address",
+                class: 'bg-white' %>
     <%= f.input :password,
+                label: false,
                 required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                input_html: { autocomplete: "current-password" },
+                placeholder: "Password" %>
   </div>
 
-  <div class="form-actions">
+  <div class="form-actions btn btn-danger">
     <%= f.button :submit, "Log in" %>
   </div>
 <% end %>
-
+<br>
+<div>
 <%= render "devise/shared/links" %>
+</div>
+</div>
+
+<div class="d-flex justify-content-center">
+<%= image_tag("couple.jpg", height: '300') %>
+</div>
