@@ -4,14 +4,5 @@
 
 import { application } from "./application";
 
-// import CarouselController from "./carousel_controller.js"
-// application.register("carousel", CarouselController)
-
 import HelloController from "./hello_controller.js";
 application.register("hello", HelloController);
-
-import { Application } from "@hotwired/stimulus";
-import Carousel from "stimulus-carousel";
-
-const application = Application.start();
-application.register("carousel", Carousel);
