@@ -2,4 +2,21 @@
 .navbar {
   justify-content: end;
   padding-right: 5px;
+
+.title {
+  font-size: 4rem;
+}
+.sub-h {
+  font-size: 1.5rem;
+}
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 4px;
+  margin-top: 4px;
+}
+
+.feature {
+  background-color: $red;
+  color: white;
 }
