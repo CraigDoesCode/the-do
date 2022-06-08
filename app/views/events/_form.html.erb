@@ -1,6 +1,6 @@
-<%= simple_form_for(event) do |f| %>
-  <%= f.string :location %>
-  <%= f.date :start_date %>
-  <%= f.date :end_date %>
-  <%= f.submit %>
+<%= simple_form_for [@event] do |f| %>
+  <%= f.input :location %>
+  <%= f.input :start_date, as: :date, html5: true%>
+  <%= f.input :end_date, as: :date, html5: true %>
+  <%= f.submit class: "btn-flat"%>
 <% end %>
