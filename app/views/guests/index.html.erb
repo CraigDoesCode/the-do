@@ -1,12 +1,12 @@
 <body style="font-family: 'K2D', sans-serif;">
-  <h1 class="text-center">Who</h1>
+<h1 class="text-center">Who</h1>
 <% if @guests.empty? == true %>
   <br>
   <br>
   <p class="text-center">No Guests</p>
-  <%# <div class="container text-center">
+  <div class="container text-center">
     <%= link_to "Add Guest", event_guests_path(current_user.event), class: "btn btn-dark" %>
-  <%# </div> %>
+  </div>
 </body>
 <% else %>
   <table class="table-sm table-borderless m-4" style="font-size: 12px">
