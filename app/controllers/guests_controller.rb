@@ -1,9 +1,9 @@
 class GuestsController < ApplicationController
-  before_action :set_event, only: [:new, :create]
+  before_action :set_event, only: [:new, :create, :edit]
   before_action :set_guest, only: [:edit, :update, :destroy]
 
   def index
-    @guests = Guest.all
+    @guests = Guest.where(event_id: params[:event_id])
   end
 
   def new
@@ -14,7 +14,7 @@ class GuestsController < ApplicationController
     @guest = Guest.new(guest_params)
     @guest.event_id = @event.id
     if @guest.save
-      redirect_to guests_path
+      redirect_to event_guests_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -24,13 +24,19 @@ class GuestsController < ApplicationController
   end
 
   def update
-    @guest.update(guest_params)
-    redirect_to guests_path
+    if @guest.update(guest_params)
+      flash[:notice] = "Guest details updated successfully"
+      redirect_to event_guests_path
+    else
+      flash.now[:alert] = "Guest details update failed"
+      render :edit
+    end
   end
 
   def destroy
+    @event_id = @guest.event_id
     @guest.destroy
-    redirect_to guests_path, status: :see_other
+    redirect_to event_guests_path(@event_id), status: :see_other
   end
 
   private

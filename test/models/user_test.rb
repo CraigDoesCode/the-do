@@ -19,4 +19,6 @@ class UserTest < ActiveSupport::TestCase
     assert_not_nil @user.errors[:first_name], 'no validation error for first_name not present'
   end
 
+
+
 end
