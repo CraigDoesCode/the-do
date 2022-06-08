@@ -5,7 +5,7 @@
   <br>
   <p class="text-center">No Guests</p>
   <div class="container text-center">
-    <%= link_to "Add Guest", event_guests_path(current_user.event), class: "btn btn-dark" %>
+    <%= link_to "Add Guest", new_event_guest_path(Event.find(1)), class: "btn btn-dark" %>
   </div>
 </body>
 <% else %>
@@ -62,7 +62,7 @@
 </table>
 <br>
 <div class="container text-center">
-    <%= link_to "Add Guest", event_guests_path(@guests.first.event_id), class: "btn btn-dark" %>
+    <%= link_to "Add Guest", new_event_guest_path(@guests.first.event_id), class: "btn btn-dark" %>
   </div>
 </body>
 <br>
