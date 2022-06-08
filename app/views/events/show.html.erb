@@ -7,22 +7,39 @@
 </div>
 
 <div class ="cards m-3">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'who.jpg' %>)">
+  <%= link_to event_guest_path(@event) do %>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'who.jpg'%>)">
     Who
   </div>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'play.jpg' %>)">
+  <% end %>
+
+  <%= link_to play_event_activities_path(@event) do %>
+  <div class="card-category image-text" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'play.jpg'%>)">
     Play
   </div>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'food.jpg' %>)">
+  <% end %>
+
+  <%= link_to eat_event_activities_path(@event) do %>
+  <div class="card-category image-text" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'food.jpg' %>)">
     Eat
   </div>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'stay.jpg' %>)">
+  <% end %>
+
+  <%= link_to stay_event_activities_path(@event) do %>
+  <div class="card-category image-text" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'stay.jpg'%>)">
     Stay
   </div>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'TAXI.jpg' %>)">
+  <% end %>
+
+  <%= link_to go_event_activities_path(@event) do %>
+  <div class="card-category image-text" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'TAXI.jpg'%>)">
     Go
   </div>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'plan.jpg' %>)">
+  <% end %>
+
+  <%= link_to "#" do %>
+  <div class="card-category image-text" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'plan.jpg'%>)">
     Plan
   </div>
+  <% end %>
 </div>
