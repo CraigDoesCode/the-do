@@ -112,6 +112,10 @@
   </div>
 </body>
 <br>
+<div class="container text-center">
+  <%= link_to "Back", event_path(current_user.event_id), class: "btn btn-dark" %>
+</div>
+<br>
 <div class="container d-flex p-2">
   <div class="container">
     <%= link_to "RSVP Reminder", event_guests_path(@guests.first.event_id), class: "btn btn-danger" %>
