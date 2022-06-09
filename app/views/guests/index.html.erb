@@ -1,5 +1,5 @@
 <body style="font-family: 'K2D', sans-serif;">
-<h1 class="text-center">Who</h1>
+<h1 class="text-center" style="color: #C9A420">Who</h1>
 <% if @guests.empty? == true %>
   <table class="table table-borderless my-3 mx-5" style="font-size: 12px">
     <thead>
@@ -42,10 +42,10 @@
     </tr>
   </thead>
   <tbody >
-    <tr style="text-align: center; vertical-align: center;">
+    <tr class="border-bottom" style="text-align: center; vertical-align: center;">
       <th scope="row">
         <div class="d-flex">
-          <div class="rounded-circle border d-flex justify-content-center align-items-center mt-1" style="width:40px;height:40px" alt="Avatar">
+          <div class="rounded-circle d-flex justify-content-center align-items-center mt-1" style="width:40px;height:40px" alt="Avatar">
             <%= image_tag "emily.png", :class=>'avatar' %>
           </div>
           <div class="p-3">
@@ -66,9 +66,9 @@
       <tr class="border-bottom" style="text-align: center; vertical-align: center;">
         <th scope="row">
           <div class="d-flex">
-            <div class="rounded-circle border d-flex justify-content-center align-items-center mt-1" style="width:40px;height:40px" alt="Avatar">
+            <div class="rounded-circle d-flex justify-content-center align-items-center mt-1" style="width:40px;height:40px" alt="Avatar">
               <% if guest.photo.attached? %>
-                <%= cl_image_tag guest.photo.key, class: "avatar" %>
+                <%= cl_image_tag guest.photo.key, class: "avatar", style:"object-fit: cover" %>
               <% else %>
                 <i class="fas fa-user-alt fa-2x text-info"></i>
               <% end %>
