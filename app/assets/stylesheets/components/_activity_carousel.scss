@@ -1,0 +1,74 @@
+.top-activities {
+  margin: 3%;
+  position: relative;
+}
+
+.book-now {
+  position: absolute;
+  top: 17px;
+  left: 17px;
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: $red;
+  transition: background 0.3s ease;
+}
+
+
+#activity-star {
+  position: absolute;
+  top: 17px;
+  right: 17px;
+  font-size: 24px;
+  color: white;
+}
+
+
+#activity-name {
+  text-shadow: 4px 4px 8px black;
+}
+
+.saved-favourites-items {
+  display: flex;
+}
+
+.recommended-activity-title {
+  text-align: center;
+}
+
+#find-activity-title {
+  text-align: center;
+}
+
+#search-activity-form {
+  text-align: center;
+  width: 300px;
+  margin: auto;
+}
+
+.saved-fave-card {
+  width: 50px;
+  box-shadow: 2px 2px lightgray;
+  font-size: 5px;
+}
+
+.browse-activities-card {
+  // margin-left: 8px;
+  // margin-right: 8px;
+  box-shadow: 2px 2px lightgray;
+  align-content: center;
+  position: relative;
+  border: black 2px;
+}
+
+
+
+
+// -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+
+// .restaurant-name {
+//   position: absolute;
+//   bottom: 20px;
+//   left: 10px;
+//   color: white;
+// }

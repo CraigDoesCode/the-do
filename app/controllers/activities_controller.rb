@@ -13,6 +13,7 @@ class ActivitiesController < ApplicationController
   end
 
   def eat
+    @event = Event.find(params[:event_id])
     @activities = Activity.where(type: "eat")
   end
 
