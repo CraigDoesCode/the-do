@@ -1,9 +1,30 @@
 <body style="font-family: 'K2D', sans-serif;">
 <h1 class="text-center">Who</h1>
 <% if @guests.empty? == true %>
-  <br>
-  <br>
-  <p class="text-center">No Guests</p>
+  <table class="table table-borderless my-3 mx-5" style="font-size: 12px">
+    <thead>
+      <tr class="text-center">
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody >
+    <tr style="text-align: center; vertical-align: center;">
+      <th scope="row">
+        <div class="d-flex">
+          <div class="rounded-circle border d-flex justify-content-center align-items-center mt-1" style="width:40px;height:40px" alt="Avatar">
+            <%= image_tag "emily.png", :class=>'avatar' %>
+          </div>
+          <div class="p-3">
+            <%= current_user.first_name %> <%= current_user.last_name %>
+          </div>
+        </div>
+      </th>
+    </tr>
+  </tbody>
+</table>
   <br>
   <div class="container text-center">
     <%= link_to "Add Guest", new_event_guest_path(current_user.event_id), class: "btn btn-dark" %>
@@ -21,6 +42,26 @@
     </tr>
   </thead>
   <tbody >
+    <tr style="text-align: center; vertical-align: center;">
+      <th scope="row">
+        <div class="d-flex">
+          <div class="rounded-circle border d-flex justify-content-center align-items-center mt-1" style="width:40px;height:40px" alt="Avatar">
+            <%= image_tag "emily.png", :class=>'avatar' %>
+          </div>
+          <div class="p-3">
+            <%= current_user.first_name %> <%= current_user.last_name %>
+          </div>
+        </div>
+      </th>
+      <td>
+      </td>
+      <td>
+      </td>
+      <td>
+      </td>
+      <td>
+      </td>
+    </tr>
     <% @guests.each do |guest| %>
       <tr class="border-bottom" style="text-align: center; vertical-align: center;">
         <th scope="row">
