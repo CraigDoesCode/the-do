@@ -23,6 +23,7 @@ class ActivitiesController < ApplicationController
   end
 
   def stay
+    @event = Event.find(params[:event_id])
     @activities = Activity.where(type: "stay")
   end
 
