@@ -54,10 +54,13 @@
 
 .browse-activities-card {
   width: 100%;
-  box-shadow: 2px 2px lightgray;
+  box-shadow: 2px 2px 2px 2px lightgray;
   align-content: center;
   position: relative;
   border: black 2px;
+  border-radius: 8px;
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 
 .checked {
@@ -79,21 +82,21 @@
   border-radius: 50%;
   background: $gold;
   text-decoration: none;
-  // width: ;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
 }
 
 
 .browse-activity-card-bottom {
   position: relative;
-  margin-top: -48px;
-  padding-right: 8px;
-  padding-left: 8px;
+  margin-top: -60px;
 }
 
 #browse-activity-info-detail-box {
-  width: 90%;
+  width: 100%;
   background-color: white;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 .browse-activity-card-title-box {
@@ -101,10 +104,11 @@
   background-color: transparent;
   display: flex;
   justify-content: space-between;
-
-  h6 {
+  margin-bottom: 8px;
+  padding-right: 8px;
+  padding-left: 8px;
+  h4 {
     color: white;
-
   }
 }
 
@@ -117,6 +121,11 @@
 .saved-fave-notes {
   font-size: 10px;
   padding-left: 12px;
+}
+
+.browse-activity-review-box {
+  padding-right: 8px;
+  padding-left: 8px;
 }
  // -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 
