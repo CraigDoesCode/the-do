@@ -15,7 +15,11 @@
       <th scope="row">
         <div class="d-flex">
           <div class="rounded-circle border d-flex justify-content-center align-items-center mt-1" style="width:40px;height:40px" alt="Avatar">
-            <%= image_tag "emily.png", :class=>'avatar' %>
+            <% if current_user.photo.attached? %>
+              <%= cl_image_tag current_user.photo.key, class: "avatar", style:"object-fit: cover" %>
+            <% else %>
+              <i class="fas fa-user-alt fa-2x text-info"></i>
+            <% end %>
           </div>
           <div class="p-3">
             <%= current_user.first_name %> <%= current_user.last_name %>
@@ -46,7 +50,11 @@
       <th scope="row">
         <div class="d-flex">
           <div class="rounded-circle d-flex justify-content-center align-items-center mt-1" style="width:40px;height:40px" alt="Avatar">
-            <%= image_tag "emily.png", :class=>'avatar' %>
+            <% if current_user.photo.attached? %>
+                <%= cl_image_tag current_user.photo.key, class: "avatar", style:"object-fit: cover" %>
+              <% else %>
+                <i class="fas fa-user-alt fa-2x text-info"></i>
+              <% end %>
           </div>
           <div class="p-3">
             <%= current_user.first_name %> <%= current_user.last_name %>
