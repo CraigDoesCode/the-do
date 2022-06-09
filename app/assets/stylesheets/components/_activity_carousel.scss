@@ -53,8 +53,7 @@
 }
 
 .browse-activities-card {
-  // margin-left: 8px;
-  // margin-right: 8px;
+  width: 100%;
   box-shadow: 2px 2px lightgray;
   align-content: center;
   position: relative;
@@ -75,6 +74,39 @@
   margin-left: 8px;
 }
 
+.rating-button {
+  color: white !important;
+  border-radius: 50%;
+  background: $gold;
+  text-decoration: none;
+  // width: ;
+}
+
+
+.browse-activity-card-bottom {
+  position: relative;
+  margin-top: -48px;
+  padding-right: 8px;
+  padding-left: 8px;
+}
+
+#browse-activity-info-detail-box {
+  width: 90%;
+  background-color: white;
+  border-radius: 2px;
+}
+
+.browse-activity-card-title-box {
+  height: 24px;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+
+  h6 {
+    color: white;
+
+  }
+}
 // -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 
 // .restaurant-name {
