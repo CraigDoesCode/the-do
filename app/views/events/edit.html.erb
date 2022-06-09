@@ -1,4 +1,10 @@
-<h1><%= @event.name %>'s DO</h1>
-<%= render "form", event: @event %>
 
-<%= link_to "Back to DO", event_path(@event)%>
+<div class="page-container text-center">
+  <h1> Edit <span style="color: #C8A323"><%= @event.name %>'s</span> DO</h1>
+  <div class="form-container m-3" style="padding-bottom: 40px"><%= render "form" %></div>
+  <div class="container text-center">
+    <%= link_to "Back", event_path(current_user.event_id), class: "btn-flat-gold" %>
+  </div>
+  <div class="content-container"><%= yield %></div>
+  <div class="image-container"><img height="300" width="380" style="padding-top: 60px" src="/assets/party3.jpg"></div>
+</div>

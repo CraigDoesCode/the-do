@@ -23,6 +23,8 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+                <% @event = Event.create() %>
+    <%=f.hidden_field :event_id, value: "#{@event.id}" %>
   </div>
   <%= f.button :submit, "Sign up", class: "btn-flat mb-3" %>
 <% end %>
