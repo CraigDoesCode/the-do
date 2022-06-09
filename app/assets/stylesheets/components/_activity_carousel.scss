@@ -47,24 +47,88 @@
 }
 
 .saved-fave-card {
-  width: 50px;
-  box-shadow: 2px 2px lightgray;
+  width: 75px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   font-size: 5px;
 }
 
 .browse-activities-card {
-  // margin-left: 8px;
-  // margin-right: 8px;
-  box-shadow: 2px 2px lightgray;
+  width: 100%;
+  box-shadow: 2px 2px 2px 2px lightgray;
   align-content: center;
   position: relative;
   border: black 2px;
+  border-radius: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.checked {
+  color: orange;
+}
+
+.review-each {
+  display: flex;
+  justify-content: space-around;
+}
+
+.star-review {
+  width: 50%;
+  margin-left: 8px;
+}
+
+.rating-button {
+  color: white !important;
+  border-radius: 50%;
+  background: $gold;
+  text-decoration: none;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
 }
 
 
+.browse-activity-card-bottom {
+  position: relative;
+  margin-top: -60px;
+}
 
+#browse-activity-info-detail-box {
+  width: 100%;
+  background-color: white;
+  border-radius: 4px;
+  padding-left: 8px;
+}
 
-// -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+.browse-activity-card-title-box {
+  height: 24px;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding-right: 8px;
+  padding-left: 8px;
+  h4 {
+    color: white;
+  }
+}
+
+#saved-fave-name {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 2px
+}
+
+.saved-fave-notes {
+  font-size: 10px;
+  padding-left: 12px;
+}
+
+.browse-activity-review-box {
+  padding-right: 8px;
+  padding-left: 8px;
+}
+ // -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 
 // .restaurant-name {
 //   position: absolute;

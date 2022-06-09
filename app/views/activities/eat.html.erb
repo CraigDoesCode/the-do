@@ -68,28 +68,21 @@
       <div class="carousel-item active">
         <div class="saved-favourites-items">
           <div class="saved-fave-card mx-1">
-            <%= image_tag("restaurant 1.jpg", style: "width: 100", class: 'd-block', style: 'width:25px; height:50px') %>
-            <p>Restaurant 1</p>
+            <%= image_tag("restaurant 1.jpg", style: "width: 100", class: 'd-block', style: 'width:100%; height:50px') %>
+            <p id="saved-fave-name">Restaurant</p>
+            <ul class="saved-fave-notes">
+              <li>Close</li>
+              <li>Expensive</li>
+            </ul>
+          </div>
+          <div class="saved-fave-card mx-1">
+            <%= image_tag("restaurant 1.jpg", style: "width: 100", class: 'd-block', style: 'width:100%; height:50px') %>
+            <p id="saved-fave-name">Restaurant</p>
             <p>Close to hotel</p>
           </div>
           <div class="saved-fave-card mx-1">
-            <%= image_tag("restaurant 1.jpg", style: "width: 100", class: 'd-block', style: 'width:50px; height:50px') %>
-            <p>Restaurant 1</p>
-            <p>Close to hotel</p>
-          </div>
-          <div class="saved-fave-card mx-1">
-            <%= image_tag("restaurant 1.jpg", style: "width: 100", class: 'd-block', style: 'width:50px; height:50px') %>
-            <p>Restaurant 1</p>
-            <p>Close to hotel</p>
-          </div>
-          <div class="saved-fave-card mx-1">
-            <%= image_tag("restaurant 1.jpg", style: "width: 100", class: 'd-block', style: 'width:50px; height:50px') %>
-            <p>Restaurant 1</p>
-            <p>Close to hotel</p>
-          </div>
-          <div class="saved-fave-card mx-1">
-            <%= image_tag("restaurant 1.jpg", style: "width: 100", class: 'd-block', style: 'width:50px; height:50px') %>
-            <p>Restaurant 1</p>
+            <%= image_tag("restaurant 1.jpg", style: "width: 100", class: 'd-block', style: 'width:100%; height:50px') %>
+            <p id="saved-fave-name">Restaurant</p>
             <p>Close to hotel</p>
           </div>
       </div>
@@ -122,89 +115,280 @@
 <br>
 <br>
 <%# <h4 class="mx-2"></h4> %>
-<div class="wrapper center-block">
-  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-  <div class="panel panel-default">
-    <div class="panel-heading active" role="tab" id="headingOne">
-      <h4 class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Browse all Restaurants
-        </a>
-      </h4>
-    </div>
-    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-      <div class="panel-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+  <h4>
+    Browse all Restaurants
+  </h4>
+
+
+<div class="browse-container container">
+  <div class="browse-activities-card">
+    <p class="book-now">Book Now</p>
+    <i class="fa-regular fa-star" id="activity-star"></i>
+    <%= image_tag("restaurant 3.jpg", style: "width: 100%; border-radius: 8px") %>
+    <div class="browse-activity-card-bottom">
+      <div class="browse-activity-card-title-box">
+        <div>
+          <h4><strong>Restaurant</strong></h4>
+        </div>
+        <div>
+          <p class="rating-button">4.5</p>
+        </div>
+      </div>
+      <div id="browse-activity-info-detail-box">
+        <p>Some info about the restaurant - yum !!</p>
+      </div>
+      <div class="browse-activity-review-box">
+        <p><strong>Reviews:</strong></p>
+        <div class="review-each">
+          <div>
+            <p>Great for large groups! Really good service!!</p>
+          </div>
+          <div class="star-review">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+          </div>
+        </div>
+        <div class="review-each">
+          <div>
+            <p>Food came a bit cold. Nice outside area.</p>
+          </div>
+          <div class="star-review">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-
-
-<div class="browse-container">
-  <div class="browse-activities-card">
+    <div class="browse-activities-card">
     <p class="book-now">Book Now</p>
     <i class="fa-regular fa-star" id="activity-star"></i>
-    <%= image_tag("restaurant 2.jpg", style: "width: 100; border-radius: 10px") %>
-    <p>Restaurant</p>
-    <p><strong>Location:</strong> London</p>
+    <%= image_tag("restaurant 2.jpg", style: "width: 100%; border-radius: 8px") %>
+    <div class="browse-activity-card-bottom">
+      <div class="browse-activity-card-title-box">
+        <div>
+          <h4><strong>Restaurant</strong></h4>
+        </div>
+        <div>
+          <p class="rating-button">4.5</p>
+        </div>
+      </div>
+      <div id="browse-activity-info-detail-box">
+        <p>Some info about the restaurant - yum !!</p>
+      </div>
+      <div class="browse-activity-review-box">
+        <p><strong>Reviews:</strong></p>
+        <div class="review-each">
+          <div>
+            <p>Great for large groups! Really good service!!</p>
+          </div>
+          <div class="star-review">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+          </div>
+        </div>
+        <div class="review-each">
+          <div>
+            <p>Food came a bit cold. Nice outside area.</p>
+          </div>
+          <div class="star-review">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="browse-activities-card">
+    <div class="browse-activities-card">
     <p class="book-now">Book Now</p>
     <i class="fa-regular fa-star" id="activity-star"></i>
-    <%= image_tag("restaurant 2.jpg", style: "width: 100") %>
-    <p>Restaurant</p>
-    <p><strong>Location:</strong> London</p>
+    <%= image_tag("restaurant 3.jpg", style: "width: 100%; border-radius: 8px") %>
+    <div class="browse-activity-card-bottom">
+      <div class="browse-activity-card-title-box">
+        <div>
+          <h4><strong>Restaurant</strong></h4>
+        </div>
+        <div>
+          <p class="rating-button">4.5</p>
+        </div>
+      </div>
+      <div id="browse-activity-info-detail-box">
+        <p>Some info about the restaurant - yum !!</p>
+      </div>
+      <div class="browse-activity-review-box">
+        <p><strong>Reviews:</strong></p>
+        <div class="review-each">
+          <div>
+            <p>Great for large groups! Really good service!!</p>
+          </div>
+          <div class="star-review">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+          </div>
+        </div>
+        <div class="review-each">
+          <div>
+            <p>Food came a bit cold. Nice outside area.</p>
+          </div>
+          <div class="star-review">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="browse-activities-card">
+    <div class="browse-activities-card">
     <p class="book-now">Book Now</p>
     <i class="fa-regular fa-star" id="activity-star"></i>
-    <%= image_tag("restaurant 2.jpg", style: "width: 100") %>
-    <p>Restaurant</p>
-    <p><strong>Location:</strong> London</p>
+    <%= image_tag("restaurant 2.jpg", style: "width: 100%; border-radius: 8px") %>
+    <div class="browse-activity-card-bottom">
+      <div class="browse-activity-card-title-box">
+        <div>
+          <h4><strong>Restaurant</strong></h4>
+        </div>
+        <div>
+          <p class="rating-button">4.5</p>
+        </div>
+      </div>
+      <div id="browse-activity-info-detail-box">
+        <p>Some info about the restaurant - yum !!</p>
+      </div>
+      <div class="browse-activity-review-box">
+        <p><strong>Reviews:</strong></p>
+        <div class="review-each">
+          <div>
+            <p>Great for large groups! Really good service!!</p>
+          </div>
+          <div class="star-review">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+          </div>
+        </div>
+        <div class="review-each">
+          <div>
+            <p>Food came a bit cold. Nice outside area.</p>
+          </div>
+          <div class="star-review">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="browse-activities-card">
-    <%= image_tag("restaurant 3.jpg", style: "width: 100") %>
-    <p>Restaurant</p>
-    <p><strong>Location:</strong> London</p>
+      <div class="browse-activities-card">
+    <p class="book-now">Book Now</p>
+    <i class="fa-regular fa-star" id="activity-star"></i>
+    <%= image_tag("restaurant 3.jpg", style: "width: 100%; border-radius: 8px") %>
+    <div class="browse-activity-card-bottom">
+      <div class="browse-activity-card-title-box">
+        <div>
+          <h4><strong>Restaurant</strong></h4>
+        </div>
+        <div>
+          <p class="rating-button">4.5</p>
+        </div>
+      </div>
+      <div id="browse-activity-info-detail-box">
+        <p>Some info about the restaurant - yum !!</p>
+      </div>
+      <div class="browse-activity-review-box">
+        <p><strong>Reviews:</strong></p>
+        <div class="review-each">
+          <div>
+            <p>Great for large groups! Really good service!!</p>
+          </div>
+          <div class="star-review">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+          </div>
+        </div>
+        <div class="review-each">
+          <div>
+            <p>Food came a bit cold. Nice outside area.</p>
+          </div>
+          <div class="star-review">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="browse-activities-card">
-    <%= image_tag("restaurant 2.jpg", style: "width: 100") %>
-    <p>Restaurant</p>
-    <p><strong>Location:</strong> London</p>
-  </div>
-  <div class="browse-activities-card">
-    <%= image_tag("restaurant 2.jpg", style: "width: 100") %>
-    <p>Restaurant</p>
-    <p><strong>Location:</strong> London</p>
-  </div>
-  <div class="browse-activities-card">
-    <%= image_tag("restaurant 2.jpg", style: "width: 100") %>
-    <p>Restaurant</p>
-    <p><strong>Location:</strong> London</p>
-  </div>
-  <div class="browse-activities-card">
-    <%= image_tag("restaurant 3.jpg", style: "width: 100") %>
-    <p>Restaurant</p>
-    <p><strong>Location:</strong> London</p>
-  </div>
-  <div class="browse-activities-card">
-    <%= image_tag("restaurant 2.jpg", style: "width: 100") %>
-    <p>Restaurant</p>
-    <p><strong>Location:</strong> London</p>
-  </div>
-  <div class="browse-activities-card">
-    <%= image_tag("restaurant 2.jpg", style: "width: 100") %>
-    <p>Restaurant</p>
-    <p><strong>Location:</strong> London</p>
-  </div>
-  <div class="browse-activities-card">
-    <%= image_tag("restaurant 2.jpg", style: "width: 100") %>
-    <p>Restaurant</p>
-    <p><strong>Location:</strong> London</p>
-  </div>
-  <div class="browse-activities-card">
-    <%= image_tag("restaurant 3.jpg", style: "width: 100") %>
-    <p>Restaurant</p>
-    <p><strong>Location:</strong> London</p>
+    <div class="browse-activities-card">
+    <p class="book-now">Book Now</p>
+    <i class="fa-regular fa-star" id="activity-star"></i>
+    <%= image_tag("restaurant 2.jpg", style: "width: 100%; border-radius: 8px") %>
+    <div class="browse-activity-card-bottom">
+      <div class="browse-activity-card-title-box">
+        <div>
+          <h4><strong>Restaurant</strong></h4>
+        </div>
+        <div>
+          <p class="rating-button">4.5</p>
+        </div>
+      </div>
+      <div id="browse-activity-info-detail-box">
+        <p>Some info about the restaurant - yum !!</p>
+      </div>
+      <div class="browse-activity-review-box">
+        <p><strong>Reviews:</strong></p>
+        <div class="review-each">
+          <div>
+            <p>Great for large groups! Really good service!!</p>
+          </div>
+          <div class="star-review">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+          </div>
+        </div>
+        <div class="review-each">
+          <div>
+            <p>Food came a bit cold. Nice outside area.</p>
+          </div>
+          <div class="star-review">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
