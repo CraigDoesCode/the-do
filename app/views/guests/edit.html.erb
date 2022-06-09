@@ -1,8 +1,10 @@
 <br>
+<div class="text-center">
+ <h1>Edit Guest Details</h1>
+ </div>
 <div class="form-body overlay">
   <div class="form-container">
     <div class="container container-form">
-    <h2 class="form-heading" style= "color: white;">Edit Guest Info</h2>
     <br>
       <%= simple_form_for [@event, @guest] do |f| %>
         <%= f.input :name %>
@@ -11,9 +13,14 @@
         <%= f.input :attending %>
         <%= f.input :paid %>
         <div class = "pt-2" style="text-align:center">
-          <%= f.button :submit, class: "btn btn-gradient btn-lg"%>
+          <%= f.button :submit, class: "btn btn-dark btn-lg"%>
         </div>
       <% end %>
     </div>
   </div>
+</div>
+<br>
+<br>
+<div class="text-center">
+<%= link_to "Back to Guests", event_guests_path(current_user.event_id), class: "btn btn-dark" %>
 </div>

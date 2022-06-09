@@ -5,7 +5,6 @@
 <div class="form-body overlay">
   <div class="form-container">
     <div class="container container-form">
-    <h2 class="form-heading" style= "color: white;">Add Guest</h2>
     <br>
       <%= simple_form_for [@event, @guest] do |f| %>
         <%= f.input :name %>
@@ -20,4 +19,9 @@
       <% end %>
     </div>
   </div>
+</div>
+<br>
+<br>
+<div class="text-center">
+<%= link_to "Back to Guests", event_guests_path(current_user.event_id), class: "btn btn-dark" %>
 </div>
