@@ -1,5 +1,5 @@
 <body style="font-family: 'K2D', sans-serif;">
-<h1 class="text-center" style="color: #C9A420">Who</h1>
+<h1 class="text-center">Who</h1>
 <% if @guests.empty? == true %>
   <table class="table table-borderless my-3 mx-5" style="font-size: 12px">
     <thead>
@@ -87,26 +87,26 @@
           </div>
         </th>
         <td class="text-center p-2">
-          <%= link_to edit_event_guest_path(guest.event_id, guest.id), :style=>'color: black;' do %>
+          <%= link_to edit_event_guest_path(guest.event_id, guest.id), :style=>'color: black; font-size: 17px' do %>
             <i class="fa-solid fa-pen-to-square"></i>
           <% end %>
         </td>
         <td>
-          <div style="color: #D39401; font-size: 18px;">
+          <div style="color: #FFD602; font-size: 18px;">
             <% if guest.attending == true %>
             <i class="fa-solid fa-check"></i>
           <% end %>
           </div>
         </td>
          <td>
-          <div style="color: #D39401; font-size: 18px;">
+          <div style="color: #FFD602; font-size: 18px;">
             <% if guest.paid == true %>
               <i class="fa-solid fa-check"></i>
             <% end %>
           </div>
         </td>
          <td class="text-center p-3">
-          <%= link_to guest_path(guest), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :style=>'color: black;' do %>
+          <%= link_to guest_path(guest), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :style=>'color: black; font-size: 17px' do %>
             <i class="fa-solid fa-trash-can"></i>
           <% end %>
         </td>
@@ -133,3 +133,6 @@
   </div>
 </div>
 <% end %>
+<br>
+<%# <div class="image-container"><img height="300" src="/assets/party.jpg"></div> %>
+<%= render "shared/footer" %>
