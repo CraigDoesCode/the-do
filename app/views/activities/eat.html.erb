@@ -1,0 +1,210 @@
+<br>
+
+<h1 class="d-flex justify-content-center"><strong>Eat</strong> </h1>
+<br>
+<h3 class="recommended-activity-title">Top 5 Recommended Restaurants in <strong><%= "#{@event.location}"%></strong></h3></div>
+
+
+<div class="recommended-activities">
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="top-activities">
+        <p class="book-now">Book Now</p>
+            <%# <i class="fa-solid fa-star" id="restaurant-star-saved"></i> - for when item is saved (solid star) %>
+          <i class="fa-regular fa-star" id="activity-star"></i>
+            <%= image_tag("restaurant 1.jpg", style: "width: 100", class: 'd-block w-100 h-75') %>
+              <div class="carousel-caption d-block" id="activity-name">
+                <h5>Restaurant 1</h5>
+              </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+        <div class="top-activities">
+          <p class="book-now">Book Now</p>
+              <%# <i class="fa-solid fa-star" id="restaurant-star-saved"></i> - for when item is saved (solid star) %>
+            <i class="fa-regular fa-star" id="activity-star"></i>
+                <%= image_tag("restaurant 2.jpg", style: "width: 100", class: 'd-block w-100 h-75') %>
+                  <div class="carousel-caption d-block" id="activity-name">
+                    <h5>Restaurant 2</h5>
+                  </div>
+        </div>
+    </div>
+    <div class="carousel-item">
+        <div class="top-activities">
+          <p class="book-now">Book Now</p>
+              <%# <i class="fa-solid fa-star" id="activity-star-saved"></i> - for when item is saved (solid star) %>
+            <i class="fa-regular fa-star" id="activity-star"></i>
+              <%= image_tag("restaurant 3.jpg", style: "width: 100", class: 'd-block w-100 h-75') %>
+                <div class="carousel-caption d-block" id="activity-name">
+                  <h5>Restaurant 3</h5>
+                </div>
+        </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
+<br>
+<br>
+
+<h2 class="mx-2">Saved Favourites</h2>
+
+<div class="saved-favourites mx-2">
+  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="saved-favourites-items">
+          <div class="saved-fave-card mx-1">
+            <%= image_tag("restaurant 1.jpg", style: "width: 100", class: 'd-block', style: 'width:25px; height:50px') %>
+            <p>Restaurant 1</p>
+            <p>Close to hotel</p>
+          </div>
+          <div class="saved-fave-card mx-1">
+            <%= image_tag("restaurant 1.jpg", style: "width: 100", class: 'd-block', style: 'width:50px; height:50px') %>
+            <p>Restaurant 1</p>
+            <p>Close to hotel</p>
+          </div>
+          <div class="saved-fave-card mx-1">
+            <%= image_tag("restaurant 1.jpg", style: "width: 100", class: 'd-block', style: 'width:50px; height:50px') %>
+            <p>Restaurant 1</p>
+            <p>Close to hotel</p>
+          </div>
+          <div class="saved-fave-card mx-1">
+            <%= image_tag("restaurant 1.jpg", style: "width: 100", class: 'd-block', style: 'width:50px; height:50px') %>
+            <p>Restaurant 1</p>
+            <p>Close to hotel</p>
+          </div>
+          <div class="saved-fave-card mx-1">
+            <%= image_tag("restaurant 1.jpg", style: "width: 100", class: 'd-block', style: 'width:50px; height:50px') %>
+            <p>Restaurant 1</p>
+            <p>Close to hotel</p>
+          </div>
+      </div>
+        </div>
+
+      </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="..." class="d-block" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="..." class="d-block" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+<br>
+<br>
+<h2 class="mx-2" id="find-activity-title">Find a restaurant</h2>
+<input class="form-control" id="search-activity-form" type="text" placeholder="Search restaurants in your area">
+<br>
+<br>
+<%# <h4 class="mx-2"></h4> %>
+<div class="wrapper center-block">
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading active" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Browse all Restaurants
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+
+
+<div class="browse-container">
+  <div class="browse-activities-card">
+    <p class="book-now">Book Now</p>
+    <i class="fa-regular fa-star" id="activity-star"></i>
+    <%= image_tag("restaurant 2.jpg", style: "width: 100; border-radius: 10px") %>
+    <p>Restaurant</p>
+    <p><strong>Location:</strong> London</p>
+  </div>
+  <div class="browse-activities-card">
+    <p class="book-now">Book Now</p>
+    <i class="fa-regular fa-star" id="activity-star"></i>
+    <%= image_tag("restaurant 2.jpg", style: "width: 100") %>
+    <p>Restaurant</p>
+    <p><strong>Location:</strong> London</p>
+  </div>
+  <div class="browse-activities-card">
+    <p class="book-now">Book Now</p>
+    <i class="fa-regular fa-star" id="activity-star"></i>
+    <%= image_tag("restaurant 2.jpg", style: "width: 100") %>
+    <p>Restaurant</p>
+    <p><strong>Location:</strong> London</p>
+  </div>
+  <div class="browse-activities-card">
+    <%= image_tag("restaurant 3.jpg", style: "width: 100") %>
+    <p>Restaurant</p>
+    <p><strong>Location:</strong> London</p>
+  </div>
+  <div class="browse-activities-card">
+    <%= image_tag("restaurant 2.jpg", style: "width: 100") %>
+    <p>Restaurant</p>
+    <p><strong>Location:</strong> London</p>
+  </div>
+  <div class="browse-activities-card">
+    <%= image_tag("restaurant 2.jpg", style: "width: 100") %>
+    <p>Restaurant</p>
+    <p><strong>Location:</strong> London</p>
+  </div>
+  <div class="browse-activities-card">
+    <%= image_tag("restaurant 2.jpg", style: "width: 100") %>
+    <p>Restaurant</p>
+    <p><strong>Location:</strong> London</p>
+  </div>
+  <div class="browse-activities-card">
+    <%= image_tag("restaurant 3.jpg", style: "width: 100") %>
+    <p>Restaurant</p>
+    <p><strong>Location:</strong> London</p>
+  </div>
+  <div class="browse-activities-card">
+    <%= image_tag("restaurant 2.jpg", style: "width: 100") %>
+    <p>Restaurant</p>
+    <p><strong>Location:</strong> London</p>
+  </div>
+  <div class="browse-activities-card">
+    <%= image_tag("restaurant 2.jpg", style: "width: 100") %>
+    <p>Restaurant</p>
+    <p><strong>Location:</strong> London</p>
+  </div>
+  <div class="browse-activities-card">
+    <%= image_tag("restaurant 2.jpg", style: "width: 100") %>
+    <p>Restaurant</p>
+    <p><strong>Location:</strong> London</p>
+  </div>
+  <div class="browse-activities-card">
+    <%= image_tag("restaurant 3.jpg", style: "width: 100") %>
+    <p>Restaurant</p>
+    <p><strong>Location:</strong> London</p>
+  </div>
+</div>
