@@ -4,6 +4,7 @@
   <br>
   <br>
   <p class="text-center">No Guests</p>
+  <br>
   <div class="container text-center">
     <%= link_to "Add Guest", new_event_guest_path(current_user.event_id), class: "btn btn-dark" %>
   </div>
@@ -25,7 +26,9 @@
         <th scope="row">
           <div class="d-flex">
             <div class="rounded-circle border d-flex justify-content-center align-items-center mt-1" style="width:40px;height:40px" alt="Avatar">
-              <i class="fas fa-user-alt fa-2x text-info"></i>
+              <%# <i class="fas fa-user-alt fa-2x text-info"></i> %>
+              <%= image_tag "emily.png", :class=>'avatar' %>
+              <%# <img src="/app/assets/images/max.jpg" alt="maxie"> %>
             </div>
             <div class="p-3">
               <%= guest.name %>
