@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    stored_location_for(resource) || event_path(current_user.event)
+    stored_location_for(resource) || event_path(current_user.event_id)
   end
 
 end
