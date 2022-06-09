@@ -1,26 +1,36 @@
 <div class="footer pt-2">
   <div class="d-flex flex-row justify-content-center footer-links" style="
     border-top: solid 1px grey;">
+  <%= link_to eat_event_activities_path(@event) do %>
   <div class="p-3" id="footer-icon">
-    <a href="#"><i class="fa-solid fa-utensils"style="color: black;font-size: 30px"></i></a>
-    <p>EAT</p>
+    <i class="fa-solid fa-utensils"style="color: black;font-size: 30px"></i>
+    <p style="color: black">EAT</p>
   </div>
+  <% end %>
+  <%= link_to stay_event_activities_path(@event) do %>
   <div class="p-3" id="footer-icon">
-    <a href="#"><i class="fa-solid fa-bed"style="color: black;font-size: 30px"></i></a>
-    <p>STAY</p>
+    <i class="fa-solid fa-bed"style="color: black;font-size: 30px"></i>
+    <p style="color: black">STAY</p>
   </div>
+  <% end %>
+  <%= link_to event_guests_path(@event.id) do %>
   <div class="p-3" id="footer-icon">
-    <a href="#"><i class="fa-solid fa-people-group"style="color: black; font-size: 30px"></i></a>
-    <p>WHO</p>
+    <i class="fa-solid fa-people-group"style="color: black; font-size: 30px"></i>
+    <p style="color: black">WHO</p>
   </div>
+  <% end %>
+  <%= link_to go_event_activities_path(@event) do %>
   <div class="p-3" id="footer-icon">
-    <a href="#"><i class="fa-solid fa-car"style="color: black;font-size: 30px;"></i></a>
-    <p style="padding-left: 4px">GO</p>
+    <i class="fa-solid fa-car"style="color: black;font-size: 30px;"></i>
+    <p style="padding-left: 4px; color: black">GO</p>
   </div>
+  <% end %>
+  <%= link_to play_event_activities_path(@event) do %>
   <div class="p-3" id="footer-icon">
-    <a href="#"><i class="fa-solid fa-champagne-glasses"style="color: black;font-size: 30px"></i></a>
-    <p>PLAY</p>
+   <i class="fa-solid fa-champagne-glasses"style="color: black;font-size: 30px"></i>
+    <p style="color: black">PLAY</p>
   </div>
+  <% end %>
   <div class="p-3" id="footer-icon">
     <a href="#"><i class="fa-solid fa-calendar-days"style="color: black;font-size: 30px; padding-left: 7px"></i></a>
   <p>PLAN</p>
