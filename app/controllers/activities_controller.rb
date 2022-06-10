@@ -25,21 +25,19 @@ class ActivitiesController < ApplicationController
 
   def eat
     @event = Event.find(params[:event_id])
-    @activities = Activity.where(type: "eat")
+    @activities = Activity.where(category: "eat")
   end
 
   def play
-    @event = Event.find(params[:event_id])
-    @activities = Activity.where(type: "play")
+    @activities = Activity.where(category: "play")
   end
 
   def stay
-    @event = Event.find(params[:event_id])
-    @activities = Activity.where(type: "stay")
+    @activities = Activity.where(category: "stay")
   end
 
   def go
-    @activities = Activity.where(type: "go")
+    @activities = Activity.where(category: "go")
   end
 
   def plan
