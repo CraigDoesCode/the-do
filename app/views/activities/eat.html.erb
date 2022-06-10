@@ -1,7 +1,7 @@
 
 <h1 class="d-flex justify-content-center"><strong>Eat</strong> </h1>
 <br>
-<h3 class="recommended-activity-title">Top 5 Restaurants in <strong><%= "#{@event.location}"%></strong></h3></div>
+<h3 class="recommended-activity-title">Top 5 Restaurants in <span style='color: #E5B705'><strong><%= "#{@event.location}"%></strong></span></h3></div>
 
 
 <div class="recommended-activities">
@@ -67,7 +67,7 @@
       <div class="carousel-item active">
         <div class="saved-favourites-items">
           <div class="saved-fave-card mx-1">
-            <%= image_tag("restaurant 3.jpg", style: "width: 100", class: 'd-block', style: 'width:100%; height:50px') %>
+            <%= image_tag("restaurant 3.jpg", style: "width: 100", class: 'd-block', style: 'width:100%; height:50px; border-radius: 4px') %>
             <p id="saved-fave-name">Restaurant</p>
             <ul class="saved-fave-notes">
               <li>Close</li>
@@ -75,7 +75,7 @@
             </ul>
           </div>
           <div class="saved-fave-card mx-1">
-            <%= image_tag("restaurant 2.jpg", style: "width: 100", class: 'd-block', style: 'width:100%; height:50px') %>
+            <%= image_tag("restaurant 2.jpg", style: "width: 100", class: 'd-block', style: 'width:100%; height:50px; border-radius: 4px') %>
             <p id="saved-fave-name">Restaurant</p>
             <ul class="saved-fave-notes">
               <li>Close</li>
@@ -83,7 +83,7 @@
             </ul>
           </div>
           <div class="saved-fave-card mx-1">
-            <%= image_tag("restaurant 1.jpg", style: "width: 100", class: 'd-block', style: 'width:100%; height:50px') %>
+            <%= image_tag("restaurant 1.jpg", style: "width: 100", class: 'd-block', style: 'width:100%; height:50px; border-radius: 4px') %>
             <p id="saved-fave-name">Restaurant</p>
             <ul class="saved-fave-notes">
               <li>Close</li>
