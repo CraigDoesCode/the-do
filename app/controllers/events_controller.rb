@@ -22,11 +22,6 @@ class EventsController < ApplicationController
     redirect_to event_path(@event)
   end
 
-  def plan
-    @activities = Activity.where(booked: true, event_id: current_user.event_id)
-    @activities.order(time: :asc)
-  end
-
   private
 
   def set_event

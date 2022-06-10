@@ -1,5 +1,5 @@
-
- <h1><span style="color: #C8A323"><%=@event.name%>'s</span> DO</h1>
+<div class="container text-center">
+<h1><span style="color: #C8A323"><%=@event.name%>'s</span> DO</h1>
 <ul>
 <% @activities.each do |activity| %>
 <li><%= activity.capitalize %></li>
@@ -7,3 +7,4 @@
 </ul>
 
 <%= render "shared/footer" %>
+</div>
