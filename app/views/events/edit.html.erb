@@ -6,5 +6,5 @@
     <%= link_to "Back", event_path(current_user.event_id), class: "btn-flat-gold" %>
   </div>
   <div class="content-container"><%= yield %></div>
-  <div class="image-container"><img height="300" width="380" style="padding-top: 60px" src="/assets/party3.jpg"></div>
+  <div class="image-container"><img height="300" width="380" style="padding-top: 60px, url(<%= asset_path 'party3.jpg'%>)></div>
 </div>
