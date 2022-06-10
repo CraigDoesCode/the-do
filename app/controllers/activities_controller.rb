@@ -20,21 +20,21 @@ class ActivitiesController < ApplicationController
   end
 
   def update
-    @activity.update(activity_params)
+    @activity.update(current_user.event_id)
   end
 
   def eat
-    @event = Event.find(params[:event_id])
+    @event = Event.find(current_user.event_id)
     @activities = Activity.where(type: "eat")
   end
 
   def play
-    @event = Event.find(params[:event_id])
+    @event = Event.find(current_user.event_id)
     @activities = Activity.where(type: "play")
   end
 
   def stay
-    @event = Event.find(params[:event_id])
+    @event = Event.find(current_user.event_id)
     @activities = Activity.where(type: "stay")
   end
 
