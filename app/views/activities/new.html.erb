@@ -1,0 +1,16 @@
+<div class="container text-center">
+  <%= simple_form_for [@event, @activity] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :date, as: :date, html5: true %>
+    <div class="d-flex justify-content-between">
+      <%= f.input :start_time, as: :time, html5: true, label: "Start Time "  %>
+      <%= f.input :end_time, as: :time, html5: true, label: "End Time"  %>
+    </div>
+    <%= f.input :details %>
+    <%= f.input :booked, as: :hidden, input_html: {value: true}  %>
+    <%= f.input :category, as: :hidden, input_html: {value: "eat"}  %>
+    <%= f.submit class: "btn-flat"%>
+
+  <% end %>
+</div>
