@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resources :events, only: %i[new create edit update show plan] do
+    collection do
+      get 'plan'
+    end
     resources :activities, only: %i[create edit update] do
       collection do
         get 'eat'
