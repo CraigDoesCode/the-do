@@ -31,6 +31,12 @@ class ActivitiesController < ApplicationController
     @activities = Activity.where(type: "go")
   end
 
+  def plan
+    @event = Event.find(params[:event_id])
+    @activities = Activity.where(booked: true, event_id: current_user.event_id)
+    @activities.order(time: :asc)
+  end
+
   def destroy
     @activity.destroy
   end

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
         get 'play'
         get 'stay'
         get 'go'
+        get 'plan'
       end
     end
     resources :guests, only: %i[index new create edit update]
