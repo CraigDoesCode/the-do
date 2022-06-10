@@ -20,20 +20,22 @@ class ActivitiesController < ApplicationController
   end
 
   def update
-    @activity.update(activity_params)
+    @activity.update(current_user.event_id)
   end
 
   def eat
-    @event = Event.find(params[:event_id])
-    @activities = Activity.where(category: "eat")
+    @event = Event.find(current_user.event_id)
+    @activities = Activity.where(type: "eat")
   end
 
   def play
-    @activities = Activity.where(category: "play")
+    @event = Event.find(current_user.event_id)
+    @activities = Activity.where(type: "play")
   end
 
   def stay
-    @activities = Activity.where(category: "stay")
+    @event = Event.find(current_user.event_id)
+    @activities = Activity.where(type: "stay")
   end
 
   def go
@@ -42,7 +44,7 @@ class ActivitiesController < ApplicationController
 
   def plan
     @event = Event.find(params[:event_id])
-    @activities = Activity.where(booked: true, event_id: current_user.event_id)
+    @activities = Activity.where(booked: true)
     @activities.order(time: :asc)
   end
 
