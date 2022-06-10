@@ -18,12 +18,10 @@ class ActivitiesController < ApplicationController
   end
 
   def play
-    @event = Event.find(params[:event_id])
     @activities = Activity.where(type: "play")
   end
 
   def stay
-    @event = Event.find(params[:event_id])
     @activities = Activity.where(type: "stay")
   end
 
