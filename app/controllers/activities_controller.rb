@@ -14,19 +14,19 @@ class ActivitiesController < ApplicationController
 
   def eat
     @event = Event.find(params[:event_id])
-    @activities = Activity.where(type: "eat")
+    @activities = Activity.where(category: "eat")
   end
 
   def play
-    @activities = Activity.where(type: "play")
+    @activities = Activity.where(category: "play")
   end
 
   def stay
-    @activities = Activity.where(type: "stay")
+    @activities = Activity.where(category: "stay")
   end
 
   def go
-    @activities = Activity.where(type: "go")
+    @activities = Activity.where(category: "go")
   end
 
   def destroy
@@ -36,7 +36,7 @@ class ActivitiesController < ApplicationController
   private
 
   def activity_params
-    params.require(:activity).permit(:date, :start_time, :end_time, :type, :address, :name, :booked, :saved, :details, :event_id)
+    params.require(:activity).permit(:date, :start_time, :end_time, :category, :address, :name, :booked, :saved, :details, :event_id)
   end
 
   def set_activity
