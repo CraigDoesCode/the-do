@@ -24,6 +24,7 @@ class ActivitiesController < ApplicationController
   end
 
   def eat
+<<<<<<< HEAD
     @event = Event.find(current_user.event_id)
     @activities = Activity.where(type: "eat")
   end
@@ -36,10 +37,28 @@ class ActivitiesController < ApplicationController
   def stay
     @event = Event.find(current_user.event_id)
     @activities = Activity.where(type: "stay")
+=======
+    @event = Event.find(params[:event_id])
+    @activities = Activity.where(category: "eat")
+  end
+
+  def play
+    @activities = Activity.where(category: "play")
+  end
+
+  def stay
+    @activities = Activity.where(category: "stay")
+>>>>>>> 1616dbc2de3eae9e0d3db4ee4f1a8117a1c6fd58
   end
 
   def go
-    @activities = Activity.where(type: "go")
+    @activities = Activity.where(category: "go")
+  end
+
+  def plan
+    @event = Event.find(params[:event_id])
+    @activities = Activity.where(booked: true, event_id: current_user.event_id)
+    @activities.order(time: :asc)
   end
 
   def destroy

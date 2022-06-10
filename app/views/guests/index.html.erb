@@ -1,4 +1,4 @@
-<body style="font-family: 'K2D', sans-serif;">
+<body class="d-flex flex-column min-vh-100" style="font-family: 'K2D', sans-serif;">
 <h1 class="text-center">Who</h1>
 <% if @guests.empty? == true %>
   <table class="table table-borderless my-3 mx-5" style="font-size: 12px">
@@ -92,14 +92,14 @@
           <% end %>
         </td>
         <td>
-          <div style="color: #FFD602; font-size: 18px;">
+          <div style="color: #E5B705; font-size: 18px;">
             <% if guest.attending == true %>
             <i class="fa-solid fa-check"></i>
           <% end %>
           </div>
         </td>
          <td>
-          <div style="color: #FFD602; font-size: 18px;">
+          <div style="color: #E5B705; font-size: 18px;">
             <% if guest.paid == true %>
               <i class="fa-solid fa-check"></i>
             <% end %>
@@ -120,10 +120,6 @@
   </div>
 </body>
 <br>
-<div class="container text-center">
-  <%= link_to "Back", event_path(current_user.event_id), class: "btn btn-dark" %>
-</div>
-<br>
 <div class="container d-flex p-2">
   <div class="container">
     <%= link_to "RSVP Reminder", event_guests_path(@guests.first.event_id), class: "btn btn-danger" %>
@@ -134,5 +130,4 @@
 </div>
 <% end %>
 <br>
-<%# <div class="image-container"><img height="300" src="/assets/party.jpg"></div> %>
 <%= render "shared/footer" %>

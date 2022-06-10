@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
 
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy, :plan]
 
   def new
     @event = Event.find(params[:format])
@@ -32,7 +32,4 @@ class EventsController < ApplicationController
     params.require(:event).permit(:name,:start_date, :end_date, :location)
   end
 
-  def event_params2
-    params.require(:event).permit(:start_date, :end_date, :location)
-  end
 end
