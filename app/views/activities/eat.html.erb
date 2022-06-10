@@ -1,8 +1,7 @@
-<br>
 
 <h1 class="d-flex justify-content-center"><strong>Eat</strong> </h1>
 <br>
-<h3 class="recommended-activity-title">Top 5 Recommended Restaurants in <strong><%= "#{@event.location}"%></strong></h3></div>
+<h3 class="recommended-activity-title">Top 5 Restaurants in <span style='color: #E5B705'><strong><%= "#{@event.location}"%></strong></span></h3></div>
 
 
 <div class="recommended-activities">
@@ -18,7 +17,7 @@
         <%= link_to "Book Now", new_event_activity_path, class: "book-now" %>
             <%# <i class="fa-solid fa-star" id="restaurant-star-saved"></i> - for when item is saved (solid star) %>
           <i class="fa-regular fa-star" id="activity-star"></i>
-            <%= image_tag("restaurant 1.jpg", style: "width: 100", class: 'd-block w-100 h-75') %>
+            <%= image_tag "restaurant 1.jpg" %>
               <div class="carousel-caption d-block" id="activity-name">
                 <h5>Restaurant 1</h5>
               </div>
@@ -29,7 +28,7 @@
           <p class="book-now">Book Now</p>
               <%# <i class="fa-solid fa-star" id="restaurant-star-saved"></i> - for when item is saved (solid star) %>
             <i class="fa-regular fa-star" id="activity-star"></i>
-                <%= image_tag("restaurant 2.jpg", style: "width: 100", class: 'd-block w-100 h-75') %>
+                <%= image_tag "restaurant 2.jpg" %>
                   <div class="carousel-caption d-block" id="activity-name">
                     <h5>Restaurant 2</h5>
                   </div>
@@ -40,7 +39,7 @@
           <p class="book-now">Book Now</p>
               <%# <i class="fa-solid fa-star" id="activity-star-saved"></i> - for when item is saved (solid star) %>
             <i class="fa-regular fa-star" id="activity-star"></i>
-              <%= image_tag("restaurant 3.jpg", style: "width: 100", class: 'd-block w-100 h-75') %>
+              <%= image_tag "restaurant 3.jpg" %>
                 <div class="carousel-caption d-block" id="activity-name">
                   <h5>Restaurant 3</h5>
                 </div>
@@ -60,7 +59,7 @@
 <br>
 <br>
 
-<h2 class="mx-2">Saved Favourites</h2>
+<h2 class="mx-2 d-flex justify-content-center">Saved Favourites</h2>
 
 <div class="saved-favourites mx-2">
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
@@ -68,7 +67,7 @@
       <div class="carousel-item active">
         <div class="saved-favourites-items">
           <div class="saved-fave-card mx-1">
-            <%= image_tag("restaurant 1.jpg", style: "width: 100", class: 'd-block', style: 'width:100%; height:50px') %>
+            <%= image_tag("restaurant 3.jpg", style: "width: 100", class: 'd-block', style: 'width:100%; height:50px; border-radius: 4px') %>
             <p id="saved-fave-name">Restaurant</p>
             <ul class="saved-fave-notes">
               <li>Close</li>
@@ -76,7 +75,7 @@
             </ul>
           </div>
           <div class="saved-fave-card mx-1">
-            <%= image_tag("restaurant 1.jpg", style: "width: 100", class: 'd-block', style: 'width:100%; height:50px') %>
+            <%= image_tag("restaurant 2.jpg", style: "width: 100", class: 'd-block', style: 'width:100%; height:50px; border-radius: 4px') %>
             <p id="saved-fave-name">Restaurant</p>
             <ul class="saved-fave-notes">
               <li>Close</li>
@@ -84,19 +83,15 @@
             </ul>
           </div>
           <div class="saved-fave-card mx-1">
-            <%= image_tag("restaurant 1.jpg", style: "width: 100", class: 'd-block', style: 'width:100%; height:50px') %>
+            <%= image_tag("restaurant 1.jpg", style: "width: 100", class: 'd-block', style: 'width:100%; height:50px; border-radius: 4px') %>
             <p id="saved-fave-name">Restaurant</p>
             <ul class="saved-fave-notes">
               <li>Close</li>
               <li>Expensive</li>
             </ul>
           </div>
-      </div>
         </div>
-
       </div>
-      </div>
-
       <div class="carousel-item">
         <img src="..." class="d-block" alt="...">
       </div>
@@ -114,23 +109,21 @@
     </button>
   </div>
 </div>
+
 <br>
 <br>
 <h2 class="mx-2" id="find-activity-title">Find a restaurant</h2>
 <input class="form-control" id="search-activity-form" type="text" placeholder="Search restaurants in your area">
 <br>
 <br>
-<%# <h4 class="mx-2"></h4> %>
-  <h4>
-    Browse all Restaurants
-  </h4>
+<h4 class="d-flex justify-content-center"> Browse all Restaurants</h4>
 
 
 <div class="browse-container container">
   <div class="browse-activities-card">
     <p class="book-now">Book Now</p>
     <i class="fa-regular fa-star" id="activity-star"></i>
-    <%= image_tag("restaurant 3.jpg", style: "width: 100%; border-radius: 8px") %>
+    <%= image_tag("restaurant 4.jpg", style: "width: 100%; border-radius: 8px") %>
     <div class="browse-activity-card-bottom">
       <div class="browse-activity-card-title-box">
         <div>
@@ -175,7 +168,7 @@
     <div class="browse-activities-card">
     <p class="book-now">Book Now</p>
     <i class="fa-regular fa-star" id="activity-star"></i>
-    <%= image_tag("restaurant 2.jpg", style: "width: 100%; border-radius: 8px") %>
+    <%= image_tag("restaurant 5.jpg", style: "width: 100%; border-radius: 8px") %>
     <div class="browse-activity-card-bottom">
       <div class="browse-activity-card-title-box">
         <div>
@@ -220,7 +213,7 @@
     <div class="browse-activities-card">
     <p class="book-now">Book Now</p>
     <i class="fa-regular fa-star" id="activity-star"></i>
-    <%= image_tag("restaurant 3.jpg", style: "width: 100%; border-radius: 8px") %>
+    <%= image_tag("restaurant 6.jpg", style: "width: 100%; border-radius: 8px") %>
     <div class="browse-activity-card-bottom">
       <div class="browse-activity-card-title-box">
         <div>
@@ -265,7 +258,7 @@
     <div class="browse-activities-card">
     <p class="book-now">Book Now</p>
     <i class="fa-regular fa-star" id="activity-star"></i>
-    <%= image_tag("restaurant 2.jpg", style: "width: 100%; border-radius: 8px") %>
+    <%= image_tag("restaurant 7.jpg", style: "width: 100%; border-radius: 8px") %>
     <div class="browse-activity-card-bottom">
       <div class="browse-activity-card-title-box">
         <div>
@@ -310,7 +303,7 @@
       <div class="browse-activities-card">
     <p class="book-now">Book Now</p>
     <i class="fa-regular fa-star" id="activity-star"></i>
-    <%= image_tag("restaurant 3.jpg", style: "width: 100%; border-radius: 8px") %>
+    <%= image_tag("restaurant 8.jpg", style: "width: 100%; border-radius: 8px") %>
     <div class="browse-activity-card-bottom">
       <div class="browse-activity-card-title-box">
         <div>
@@ -355,7 +348,7 @@
     <div class="browse-activities-card">
     <p class="book-now">Book Now</p>
     <i class="fa-regular fa-star" id="activity-star"></i>
-    <%= image_tag("restaurant 2.jpg", style: "width: 100%; border-radius: 8px") %>
+    <%= image_tag("restaurant 3.jpg", style: "width: 100%; border-radius: 8px") %>
     <div class="browse-activity-card-bottom">
       <div class="browse-activity-card-title-box">
         <div>
