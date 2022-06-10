@@ -1,30 +1,30 @@
 <div class="footer mx-3 pt-3" style="border: solid 1px light grey; border-radius: 50px"%>
   <div class="d-flex flex-row justify-content-center footer-links">
-  <%= link_to eat_event_activities_path(@event) do %>
+  <%= link_to eat_event_activities_path(current_user.event_id) do %>
     <div class="px-3 mx-0" id="footer-icon">
       <i class="fa-solid fa-utensils"style="color: black;font-size: 25px"></i>
       <%# <p>EAT</p> %>
     </div>
   <% end %>
-  <%= link_to stay_event_activities_path(@event) do %>
+  <%= link_to stay_event_activities_path(current_user.event_id) do %>
     <div class="px-2 mx-1" id="footer-icon">
       <a href="#"><i class="fa-solid fa-bed"style="color: black;font-size: 25px"></i></a>
       <%# <x>STAY</p> %>
     </div>
   <% end %>
-  <%= link_to event_guests_path(@event.id) do %>
+  <%= link_to event_guests_path(current_user.event_id) do %>
     <div class="px-2 mx-1" id="footer-icon">
       <a href="#"><i class="fa-solid fa-people-group"style="color: gold; font-size: 25px"></i></a>
       <%# <p>WHO</p> %>
     </div>
   <% end %>
-  <%= link_to go_event_activities_path(@event) do %>
+  <%= link_to go_event_activities_path(current_user.event_id) do %>
     <div class="px-2 mx-1" id="footer-icon">
       <a href="#"><i class="fa-solid fa-car"style="color: black;font-size: 25px;"></i></a>
       <p style="padding-left: 4px"></p>
     </div>
   <% end %>
-  <%= link_to play_event_activities_path(@event) do %>
+  <%= link_to play_event_activities_path(current_user.event_id) do %>
     <div class="px-2 mx-1" id="footer-icon">
       <a href="#"><i class="fa-solid fa-champagne-glasses"style="color: black;font-size: 25px"></i></a>
       <%# <p>PLAY</p> %>
