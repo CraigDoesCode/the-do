@@ -15,7 +15,7 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
       <div class="top-activities">
-        <p class="book-now">Book Now</p>
+        <%= link_to "Book Now", new_event_activity_path, class: "book-now" %>
             <%# <i class="fa-solid fa-star" id="restaurant-star-saved"></i> - for when item is saved (solid star) %>
           <i class="fa-regular fa-star" id="activity-star"></i>
             <%= image_tag("restaurant 1.jpg", style: "width: 100", class: 'd-block w-100 h-75') %>

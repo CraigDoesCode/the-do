@@ -1,8 +1,19 @@
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:edit, :update, :destroy]
+  def new
+    @activity = Activity.new
+    @event = Event.find(current_user.event_id)
+  end
+
   def create
     @activity = Activity.new(activity_params)
-    @activity.save
+    @activity.event = Event.find(current_user.event_id)
+    if @activity.save!
+      redirect_to eat_event_activities_path
+    else
+      render :new, status: :unprocessable_entity
+    end
+
   end
 
   def edit
@@ -38,7 +49,7 @@ class ActivitiesController < ApplicationController
   private
 
   def activity_params
-    params.require(:activity).permit(:date, :start_time, :end_time, :type, :address, :name, :booked, :saved, :details, :event_id)
+    params.require(:activity).permit(:date, :start_time, :end_time, :category, :address, :name, :booked, :saved, :details, :event_id)
   end
 
   def set_activity
