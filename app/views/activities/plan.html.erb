@@ -37,6 +37,9 @@
 <div class="container text-center">
 <h1><span style="color: #E5B705"><%=@event.name%>'s</span> DO</h1>
 <br>
+<div class="container text-center" style="position: relative; bottom: 12px;">
+  <%= link_to "Send Plan", '#', class: "btn btn-dark" %>
+</div>
 <span style="font-weight: bold; font-size: 19px;"><p><%= @event.start_date.strftime('%a, %b %d') %> - <%= @event.end_date.strftime('%a, %b %d %Y') %></p></span>
 <% @event.start_date.upto(@event.end_date) do |date| %>
   <div style="background-color: #D6D6D9; margin-left: 10px; margin-right: 10px; font-size: 16px;" >
