@@ -1,9 +1,36 @@
 <style>
 .vl {
   border-left: 4px solid #E5B705;
-  height: 60px;
+  height: 55px;
   margin-left: 180px;
-  margin-top: 5px;
+}
+
+.top_dot {
+  margin-left: 178px;
+  height: 10px;
+  width: 10px;
+  background-color: #E5B705;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  margin-top: 0px;
+  padding-top: 0px;
+  top: 9px;
+  right: 1px;
+}
+
+.bottom_dot {
+  margin-left: 178px;
+  height: 10px;
+  width: 10px;
+  background-color: #E5B705;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  margin-top: 0px;
+  padding-top: 0px;
+  bottom: 9px;
+  right: 1px;
 }
 </style>
 <body class="d-flex flex-column min-vh-100">
@@ -36,12 +63,14 @@
           <div class="text-center">
             <%= activity.address %>
           </div>
-        </div>
-        <% if activity != asc_time_activities.last %>
+          <% if activity != asc_time_activities.last %>
+        <span class="top_dot"></span>
         <div class="vl"></div>
+        <span class="bottom_dot"></span>
         <% else %>
           <br>
         <% end %>
+        </div>
       <% end %>
     <% end %>
   <% end %>
