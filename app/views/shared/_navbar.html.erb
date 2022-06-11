@@ -4,10 +4,22 @@
       <%= link_to event_path(current_user.event_id), class: "navbar-brand pt-4" do %>
       <%= image_tag ('logo5.png') %>
     <% end %>
-    <div id="nav-menu">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <div id="nav-menu" data-controller="menu">
+      <div class="box">
+        <div class="btn-box not-active" data-action="click->menu#active" data-menu-target="button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+        <div class="menu-overlay">
+        </div>
+      </div>
+    </div>
+
+    <%# <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
-    </button>
+    </button> %>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
           <li class="nav-item active">

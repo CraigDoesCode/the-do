@@ -26,7 +26,7 @@ class GuestsController < ApplicationController
   def update
     if @guest.update(guest_params)
       flash[:notice] = "Guest details updated successfully"
-      redirect_to eat_event_activities_path
+      redirect_to event_guests_path
     else
       flash.now[:alert] = "Guest details update failed"
       render :edit
@@ -42,7 +42,7 @@ class GuestsController < ApplicationController
   private
 
   def guest_params
-    params.require(:guest).permit(:name, :email, :phone_number, :attending, :paid, :photo)
+    params.require(:guest).permit(:name, :email, :phone_number, :attending, :paid)
   end
 
   def set_event
