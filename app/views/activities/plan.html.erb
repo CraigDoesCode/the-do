@@ -1,14 +1,14 @@
 <style>
 .vl {
-  border-left: 4px solid #E5B705;
-  height: 55px;
+  border-left: 3px solid #E5B705;
+  height: 45px;
   margin-left: 180px;
 }
 
 .top_dot {
   margin-left: 178px;
-  height: 10px;
-  width: 10px;
+  height: 9px;
+  width: 9px;
   background-color: #E5B705;
   border-radius: 50%;
   display: inline-block;
@@ -21,8 +21,8 @@
 
 .bottom_dot {
   margin-left: 178px;
-  height: 10px;
-  width: 10px;
+  height: 9px;
+  width: 9px;
   background-color: #E5B705;
   border-radius: 50%;
   display: inline-block;
@@ -37,10 +37,14 @@
 <div class="container text-center">
 <h1><span style="color: #E5B705"><%=@event.name%>'s</span> DO</h1>
 <br>
-<div class="container text-center" style="position: relative; bottom: 12px;">
+<% if @event.start_date == @event.end_date  %>
+  <span style="font-weight: bold; font-size: 19px; position: relative; bottom: 15px;"><p><%= @event.start_date.strftime('%a, %b %d %Y') %></p></span>
+<% else %>
+  <span style="font-weight: bold; font-size: 19px; position: relative; bottom: 15px;"><p><%= @event.start_date.strftime('%a, %b %d') %> - <%= @event.end_date.strftime('%a, %b %d %Y') %></p></span>
+<% end %>
+<div class="container text-center" style="position: relative; bottom: 8px; margin-bottom: 17px;">
   <%= link_to "Send Plan", '#', class: "btn btn-dark" %>
 </div>
-<span style="font-weight: bold; font-size: 19px;"><p><%= @event.start_date.strftime('%a, %b %d') %> - <%= @event.end_date.strftime('%a, %b %d %Y') %></p></span>
 <% @event.start_date.upto(@event.end_date) do |date| %>
   <div style="background-color: #D6D6D9; margin-left: 10px; margin-right: 10px; font-size: 16px;" >
     <span style="font-weight: bold; font-size: 16px;"><%= date.strftime('%A, %B %d %Y') %></span>
