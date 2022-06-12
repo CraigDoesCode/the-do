@@ -14,44 +14,38 @@
       </div>
         <div class="menu-overlay" data-menu-target="overlay">
           <ul class="menu my-5 py-5">
+
           <li class="menu-item">
             <%= link_to "Update DO", edit_event_path(current_user.event_id), class: "nav-link" %>
           </li>
           <li class="menu-item">
-            <%= link_to "Log Out", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link" %>
+            <%= link_to "Account Settings", edit_user_registration_path(current_user), class: "nav-link" %>
+          </li>
+          <li class="menu-item">
+            <%= link_to "Log Out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-flat", id: "menu-logout-btn" %>
           </li>
         </div>
       </div>
     </div>
 
-    <%# <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button> %>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <%# <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button> %>
+      <%# <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
           <li class="nav-item active">
 
             <%= link_to "Edit Event", edit_event_path(current_user.event_id), class: "nav-link" %>
 
-          </li>
+          <%# </li>
           <li class="nav-item">
             <%= link_to "Log Out", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link" %>
-          </li>
+          <%# </li> %>
 
-        <% else %>
-        <div id="nav-menu">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto">
-              <li class="nav-item active">
-              <li class="nav-item">
-              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-              </li>
-            </ul>
-        <% end %>
-          </div>
-        </div>
+  <% else %>
+    <%= link_to "Login", new_user_session_path, class: "btn-flat my-2" %>
+  <% end %>
+      </div>
+    </div>
   </div>
 </div>

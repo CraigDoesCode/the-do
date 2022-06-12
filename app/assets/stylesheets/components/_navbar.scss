@@ -59,6 +59,7 @@ green: #3FAF82
   }
 
   .active span:nth-child(1) {
+    background: white;
     animation: ease 0.7s top forwards;
   }
 
@@ -67,6 +68,7 @@ green: #3FAF82
   }
 
   .active span:nth-child(2) {
+    background: white;
     animation: ease 0.7s scaled forwards;
   }
 
@@ -76,6 +78,7 @@ green: #3FAF82
   }
 
   .active span:nth-child(3) {
+    background: white;
     animation: ease 0.7s bottom forwards;
   }
 
@@ -167,17 +170,19 @@ green: #3FAF82
 
 // Menu Overlay
 .menu-overlay {
+  display: none;
   width: 100vh;
   height: 100vh;
   position: fixed;
   opacity: 0;
   top: 0;
   left: 0;
-  background-color: green;
-  transition: 0.2s;
+  background-color: rgb(52, 52, 52);
+  transition: 0.3s;
   z-index: 98;
 }
 .open {
+  display: block;
   opacity: 1;
 }
 .menu {
@@ -185,10 +190,18 @@ green: #3FAF82
 }
 .menu-item {
   a {
-    color: white;
+    color: $gold;
     text-decoration: none;
     font-size: 2rem;
     font-family: $headers-font;
     list-style-type: none;
   }
+}
+
+#menu-logout-btn {
+  position: fixed;
+  top: 32px;
+  left: 32px;
+  font-size: 1rem;
+  color: white;
 }
