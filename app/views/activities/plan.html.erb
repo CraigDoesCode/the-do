@@ -2,11 +2,13 @@
 .vl {
   border-left: 3px solid #E5B705;
   height: 45px;
-  margin-left: 190px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .top_dot {
-  margin-left: 188px;
+  margin-left: auto;
+  margin-right: auto;
   height: 9px;
   width: 9px;
   background-color: #E5B705;
@@ -16,11 +18,11 @@
   margin-top: 0px;
   padding-top: 0px;
   top: 9px;
-  right: 1px;
 }
 
 .bottom_dot {
-  margin-left: 188px;
+  margin-left: auto;
+  margin-right: auto;
   height: 9px;
   width: 9px;
   background-color: #E5B705;
@@ -30,57 +32,57 @@
   margin-top: 0px;
   padding-top: 0px;
   bottom: 9px;
-  right: 1px;
 }
 </style>
 <body class="d-flex flex-column min-vh-100">
-<div class="container text-center">
-<h1><span style="color: #E5B705"><%=@event.name%>'s</span> DO</h1>
-<br>
-<% if @event.start_date == @event.end_date  %>
-  <span style="font-weight: bold; font-size: 19px; position: relative; bottom: 15px;"><p><%= @event.start_date.strftime('%a, %b %d %Y') %></p></span>
-<% else %>
-  <span style="font-weight: bold; font-size: 19px; position: relative; bottom: 15px;"><p><%= @event.start_date.strftime('%a, %b %d') %> - <%= @event.end_date.strftime('%a, %b %d %Y') %></p></span>
-<% end %>
-<div class="container text-center" style="position: relative; bottom: 8px; margin-bottom: 17px;">
-  <%= link_to "Send Plan", '#', class: "btn btn-dark" %>
-</div>
-<% @event.start_date.upto(@event.end_date) do |date| %>
-  <div style="background-color: #D6D6D9; margin-left: 10px; margin-right: 10px; font-size: 16px;" >
-    <span style="font-weight: bold; font-size: 16px;"><%= date.strftime('%A, %B %d %Y') %></span>
-  </div>
+  <div class="container text-center">
+  <h1><span style="color: #E5B705"><%=@event.name%>'s</span> DO</h1>
   <br>
-  <% if @activities.where(event_id: current_user.event_id, date: date).empty? == true %>
-    <div>
-      <p>No scheduled events</p>
-    </div>
+  <% if @event.start_date == @event.end_date  %>
+    <span style="font-weight: bold; font-size: 19px; position: relative; bottom: 15px;"><p><%= @event.start_date.strftime('%a, %b %d %Y') %></p></span>
   <% else %>
-    <% days_activities =  @activities.where(event_id: current_user.event_id, date: date) %>
-    <% asc_time_activities = days_activities.sort_by { |i| i.start_time} %>
-    <% asc_time_activities.each do |activity| %>
-      <% if activity.event_id == current_user.event_id && activity.date == date %>
-        <div class="d-flex flex-column">
-          <span style="font-size: 18px;">
-            <% if activity.category == "eat" %>
-              <i class="fa-solid fa-utensils"style="color: black;font-size: 18px; position: relative; right: 3px;"></i>
-            <% end %>
-            <%= activity.start_time.to_fs(:time) %>
-          </span>
-          <%= activity.name %>
-          <div class="text-center">
-            <%= activity.address %>
+    <span style="font-weight: bold; font-size: 19px; position: relative; bottom: 15px;"><p><%= @event.start_date.strftime('%a, %b %d') %> - <%= @event.end_date.strftime('%a, %b %d %Y') %></p></span>
+  <% end %>
+  <div class="container text-center" style="position: relative; bottom: 8px; margin-bottom: 17px;">
+    <%= link_to "Send Plan", '#', class: "btn btn-dark" %>
+  </div>
+  <% @event.start_date.upto(@event.end_date) do |date| %>
+    <div style="background-color: #D6D6D9; margin-left: 10px; margin-right: 10px; font-size: 16px;" >
+      <span style="font-weight: bold; font-size: 16px;"><%= date.strftime('%A, %B %d %Y') %></span>
+    </div>
+    <br>
+    <% if @activities.where(event_id: current_user.event_id, date: date).empty? == true %>
+      <div>
+        <p>No scheduled events</p>
+      </div>
+    <% else %>
+      <% days_activities =  @activities.where(event_id: current_user.event_id, date: date) %>
+      <% asc_time_activities = days_activities.sort_by { |i| i.start_time} %>
+      <% asc_time_activities.each do |activity| %>
+        <% if activity.event_id == current_user.event_id && activity.date == date %>
+          <div class="d-flex flex-column">
+            <span style="font-size: 18px;">
+              <% if activity.category == "eat" %>
+                <i class="fa-solid fa-utensils"style="color: black;font-size: 18px; position: relative; right: 3px;"></i>
+              <% end %>
+              <%= activity.start_time.to_fs(:time) %>
+            </span>
+            <%= activity.name %>
+            <div class="text-center">
+              <%= activity.address %>
+            </div>
+            <% if activity != asc_time_activities.last %>
+          <span class="top_dot"></span>
+          <div class="vl"></div>
+          <span class="bottom_dot"></span>
+          <% else %>
+            <br>
+          <% end %>
           </div>
-          <% if activity != asc_time_activities.last %>
-        <span class="top_dot"></span>
-        <div class="vl"></div>
-        <span class="bottom_dot"></span>
-        <% else %>
-          <br>
         <% end %>
-        </div>
       <% end %>
     <% end %>
   <% end %>
-<% end %>
+  </div>
 </body>
 <%= render "shared/footer" %>
