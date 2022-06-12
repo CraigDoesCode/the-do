@@ -46,19 +46,19 @@
 
 .saved-fave-card {
   width: 75px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   font-size: 5px;
 }
 
 .browse-activities-card {
   width: 100%;
-  box-shadow: 2px 2px 2px 2px lightgray;
+  // box-shadow: 2px 2px 2px 2px lightgray;
   align-content: center;
   position: relative;
   border: black 2px;
   border-radius: 8px;
   margin-top: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 20px;
 }
 
 .checked {
@@ -89,7 +89,11 @@
 
 .browse {
   img {
-    width: 100%;
+    margin-bottom: 0px;
+    width: 350px;
+    position: relative;
+    left: 8px;
+
   }
 }
 .browse-activity-card-bottom {
@@ -110,8 +114,8 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 8px;
-  padding-right: 8px;
-  padding-left: 8px;
+  padding-right: 10px;
+  padding-left: 15px;
   h4 {
     color: white;
   }
@@ -129,8 +133,15 @@
 }
 
 .browse-activity-review-box {
-  padding-right: 8px;
-  padding-left: 8px;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-top: 0px;
+  margin-bottom: 25px;
+  background-color: #343434;
+  color: #E5B707;
+  margin-left: 8px;
+  margin-right: 8px;
+  font-size: 18px;
 }
 // -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 

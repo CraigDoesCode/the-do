@@ -1,4 +1,4 @@
-<div class="d-flex flex-column" style="font-family: 'K2D', sans-serif;">
+<body class="d-flex flex-column min-vh-100" style="font-family: 'K2D', sans-serif;">
 <h1 class="text-center">Who</h1>
 <% if @guests.empty? == true %>
   <table class="table table-borderless my-3 mx-5" style="font-size: 12px">
@@ -33,7 +33,7 @@
   <div class="container text-center">
     <%= link_to "Add Guest", new_event_guest_path(current_user.event_id), class: "btn btn-dark" %>
   </div>
-</div>
+</body>
 <% else %>
   <table class="table-sm table-borderless m-4" style="font-size: 12px">
   <thead>
@@ -46,30 +46,6 @@
     </tr>
   </thead>
   <tbody >
-    <tr class="border-bottom" style="text-align: center; vertical-align: center;">
-      <th scope="row">
-        <div class="d-flex">
-          <div class="rounded-circle d-flex justify-content-center align-items-center mt-1" style="width:40px;height:40px" alt="Avatar">
-            <% if current_user.photo.attached? %>
-                <%= cl_image_tag current_user.photo.key, class: "avatar", style:"object-fit: cover" %>
-              <% else %>
-                <i class="fas fa-user-alt fa-2x text-info"></i>
-              <% end %>
-          </div>
-          <div class="p-3">
-            <%= current_user.first_name %> <%= current_user.last_name %>
-          </div>
-        </div>
-      </th>
-      <td>
-      </td>
-      <td>
-      </td>
-      <td>
-      </td>
-      <td>
-      </td>
-    </tr>
     <% @guests.each do |guest| %>
       <tr class="border-bottom" style="text-align: center; vertical-align: center;">
         <th scope="row">
@@ -112,6 +88,36 @@
         </td>
       </tr>
     <% end %>
+    <tr class="border-bottom" style="text-align: center; vertical-align: center;">
+      <th scope="row">
+        <div class="d-flex">
+          <div class="rounded-circle d-flex justify-content-center align-items-center mt-1" style="width:40px;height:40px" alt="Avatar">
+            <% if current_user.photo.attached? %>
+                <%= cl_image_tag current_user.photo.key, class: "avatar", style:"object-fit: cover" %>
+              <% else %>
+                <i class="fas fa-user-alt fa-2x text-info"></i>
+              <% end %>
+          </div>
+          <div class="p-3">
+            <%= current_user.first_name %> <%= current_user.last_name %>
+          </div>
+        </div>
+      </th>
+      <td>
+      </td>
+      <td>
+        <div style="color: #E5B705; font-size: 18px;">
+          <i class="fa-solid fa-check"></i>
+        </div>
+      </td>
+        <td>
+        <div style="color: #E5B705; font-size: 18px;">
+            <i class="fa-solid fa-check"></i>
+        </div>
+      </td>
+      <td>
+      </td>
+    </tr>
   </tbody>
 </table>
 <br>
@@ -122,11 +128,12 @@
 <br>
 <div class="container d-flex p-2">
   <div class="container">
-    <%= link_to "RSVP Reminder", event_guests_path(@guests.first.event_id), class: "btn btn-danger" %>
+    <%= link_to "RSVP Reminder", event_guests_path(@guests.first.event_id), class: "btn", style: "background-color: #E5B707;" %>
   </div>
   <div class="container">
-    <%= link_to "Payment Reminder", event_guests_path(@guests.first.event_id), class: "btn btn-danger" %>
+    <%= link_to "Payment Reminder", event_guests_path(@guests.first.event_id), class: "btn", style: "background-color: #E5B707;" %>
   </div>
 </div>
 <% end %>
+<br>
 <%= render "shared/footer" %>
