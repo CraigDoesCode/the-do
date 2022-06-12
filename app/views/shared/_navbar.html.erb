@@ -4,35 +4,68 @@
       <%= link_to event_path(current_user.event_id), class: "navbar-brand pt-4" do %>
       <%= image_tag ('logo5.png') %>
     <% end %>
-    <div id="nav-menu">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div id="nav-menu" data-controller="menu">
+      <div class="box">
+        <div class="btn-box not-active" data-action="click->menu#active" data-menu-target="button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+        <div class="menu-overlay" data-menu-target="overlay">
+          <ul class="menu my-5 py-5">
+
+          <li class="menu-item">
+            <%= link_to "Update DO", edit_event_path(current_user.event_id) %>
+          </li>
+          <li class="menu-item">
+            <%= link_to "Account Settings", edit_user_registration_path(current_user) %>
+          </li>
+          <li class="menu-item">
+            <%= link_to "Log Out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-flat", id: "menu-logout-btn" %>
+          </li>
+          <li class="divider my-3">
+          </li>
+          <li>
+            <%= link_to "Who", event_guests_path(current_user.event_id), class: "sub-item" %>
+          </li>
+          <li>
+            <%= link_to "Play", play_event_activities_path(current_user.event_id), class: "sub-item" %>
+          </li>
+          <li>
+            <%= link_to "Eat", eat_event_activities_path(current_user.event_id), class: "sub-item" %>
+          </li>
+          <li>
+            <%= link_to "Stay", stay_event_activities_path(current_user.event_id), class: "sub-item" %>
+          </li>
+          <li>
+            <%= link_to "Go", go_event_activities_path(current_user.event_id), class: "sub-item" %>
+          </li>
+          <li>
+            <%= link_to "Plan", plan_event_activities_path(current_user.event_id), class: "sub-item" %>
+          </li>
+        </div>
+      </div>
+    </div>
+
+      <%# <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button> %>
+      <%# <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
           <li class="nav-item active">
 
             <%= link_to "Edit Event", edit_event_path(current_user.event_id), class: "nav-link" %>
 
-          </li>
+          <%# </li>
           <li class="nav-item">
             <%= link_to "Log Out", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link" %>
-          </li>
+          <%# </li> %>
 
-        <% else %>
-        <div id="nav-menu">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto">
-              <li class="nav-item active">
-              <li class="nav-item">
-              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-              </li>
-            </ul>
-        <% end %>
-          </div>
-        </div>
+  <% else %>
+    <%= link_to "Login", new_user_session_path, class: "btn-flat my-2" %>
+  <% end %>
+      </div>
+    </div>
   </div>
 </div>
