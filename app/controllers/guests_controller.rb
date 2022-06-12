@@ -42,7 +42,7 @@ class GuestsController < ApplicationController
   private
 
   def guest_params
-    params.require(:guest).permit(:name, :email, :phone_number, :attending, :paid)
+    params.require(:guest).permit(:name, :email, :phone_number, :attending, :paid, :photo)
   end
 
   def set_event
