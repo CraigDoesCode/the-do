@@ -25,17 +25,17 @@ class ActivitiesController < ApplicationController
 
   def eat
     @event = Event.find(current_user.event_id)
-    @activities = Activity.where(type: "eat")
+    @activities = Activity.where(category: "eat")
   end
 
   def play
     @event = Event.find(current_user.event_id)
-    @activities = Activity.where(type: "play")
+    @activities = Activity.where(category: "play")
   end
 
   def stay
     @event = Event.find(current_user.event_id)
-    @activities = Activity.where(type: "stay")
+    @activities = Activity.where(category: "stay")
   end
 
   def go
