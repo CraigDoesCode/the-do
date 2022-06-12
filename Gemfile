@@ -2,6 +2,9 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.0.3"
+# Geocoder for google maps
+gem 'geocoder'
+
 # Cloudinary for image upload
 gem "cloudinary"
 
