@@ -1,5 +1,5 @@
 
-<p>Go Page</p>
+<h1 class="d-flex justify-content-center py-3"><strong>GO</strong> </h1>
 <div data-controller="map">
   <div
     id="map"
@@ -9,3 +9,58 @@
     data-map-target="map"
   ></div>
 </div>
+<div class="container text-center">
+  <h1><span style="color: #E5B705"><%=@event.name%>'s</span> DO</h1>
+  <br>
+  <% if @event.start_date == @event.end_date  %>
+    <span style="font-weight: bold; font-size: 19px; position: relative; bottom: 15px;"><p><%= @event.start_date.strftime('%a, %b %d %Y') %></p></span>
+  <% else %>
+    <span style="font-weight: bold; font-size: 19px; position: relative; bottom: 15px;"><p><%= @event.start_date.strftime('%a, %b %d') %> - <%= @event.end_date.strftime('%a, %b %d %Y') %></p></span>
+  <% end %>
+  <% @event.start_date.upto(@event.end_date) do |date| %>
+    <div style="background-color: #D6D6D9; margin-left: 10px; margin-right: 10px; font-size: 16px;" >
+      <span style="font-weight: bold; font-size: 16px;"><%= date.strftime('%A, %B %d %Y') %></span>
+    </div>
+    <br>
+    <% if @activities.where(event_id: current_user.event_id, date: date).empty? == true %>
+      <div>
+        <p>No scheduled events</p>
+      </div>
+    <% else %>
+      <% days_activities =  @activities.where(event_id: current_user.event_id, date: date) %>
+      <% asc_time_activities = days_activities.sort_by { |i| i.start_time} %>
+      <% asc_time_activities.each do |activity| %>
+        <% if activity.event_id == current_user.event_id && activity.date == date %>
+          <div class="d-flex py-3 mx-2">
+            <span style="font-size: 18px;" >
+              <% case activity.category %>
+              <% when "eat" %>
+                <i class="fa-solid fa-utensils"style="color: black;font-size: 18px; position: relative; right: 3px;"></i>
+              <% when "stay" %>
+                <i class="fa-solid fa-bed"style="color: black;font-size: 18px; position: relative; right: 3px;"></i>
+              <% when "go" %>
+                <i class="fa-solid fa-car"style="color: black;font-size: 18px; position: relative; right: 3px;"></i>
+              <% when "play" %>
+                <i class="fa-solid fa-champagne-glasses"style="color: black;font-size: 18px; position: relative; right: 3px;"></i>
+              <% end %>
+              <%= activity.start_time.to_fs(:time) %>
+            </span>
+            <%= activity.name %>
+            <div class="text-center">
+              <%= activity.address %>
+            </div>
+
+            <% if activity != asc_time_activities.last %>
+          <span class="top_dot"></span>
+          <div class="vl"></div>
+          <span class="bottom_dot"></span>
+          <% else %>
+            <br>
+          <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+  </div>
+</body>

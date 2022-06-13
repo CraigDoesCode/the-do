@@ -40,6 +40,7 @@ class ActivitiesController < ApplicationController
 
   def go
     @activities = Activity.where.not(latitude: nil, longitude: nil)
+    @event = Event.find(params[:event_id])
 
     @markers = @activities.map do |activity|
       {
