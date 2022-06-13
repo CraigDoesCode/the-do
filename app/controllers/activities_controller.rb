@@ -13,7 +13,6 @@ class ActivitiesController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-
   end
 
   def edit
@@ -39,10 +38,11 @@ class ActivitiesController < ApplicationController
   end
 
   def go
-    @activities = Activity.where.not(latitude: nil, longitude: nil)
+    @activities = Activity.all
+    @planned_activities = Activity.where(planned:true)
     @event = Event.find(params[:event_id])
-
-    @markers = @activities.map do |activity|
+    @new_go = Activity.new
+    @markers = @activities.geocoded.map do |activity|
       {
         lat: activity.latitude,
         lng: activity.longitude#,
