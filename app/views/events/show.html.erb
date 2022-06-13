@@ -1,7 +1,7 @@
 <div class="container text-center">
   <h1><span style="color: #E5B705"><%=@event.name%>'s</span> DO</h1>
   <div class="d-flex flex-row justify-content-center">
-    <div class="p-2"><p><i class="fa-solid fa-calendar"></i> <%= @event.start_date %></p></div>
+    <div class="p-2"><p><i class="fa-solid fa-calendar"></i> <%= @event.start_date.strftime('%a, %b %d %Y')  %></p></div>
     <div class="p-2"><p><i class="fa-solid fa-location-pin"></i> <%= @event.location %></p></div>
   </div>
 </div>
