@@ -40,8 +40,8 @@
                 <% when "play" %>
                   <i class="fa-solid fa-champagne-glasses"style="color: black;font-size: 18px; position: relative; right: 3px;"></i>
                 <% end %>
-                <%= activity.start_time.to_fs(:time) %>
               </span>
+              <p class="px-2"><%= activity.start_time.to_fs(:time) %></p>
               <%= activity.name %>
               <div class="text-center">
                 <%= activity.address %>
@@ -68,7 +68,7 @@
                           <%= f.input :name, collection: ["Walk", "Drive", "Public Transport"] %>
                           <%= f.input :date, as: :hidden, input_html: {value: date}  %>
                           <div class="d-flex justify-content-between">
-                            <%= f.input :start_time, as: :hidden, html5: true, input_html: {value: asc_time_activities[index - 1].end_time} %>
+                            <%= f.input :start_time, as: :hidden, html5: true, input_html: {value: activity.end_time} %>
                             <%= f.input :end_time, as: :hidden, html5: true, input_html: {value: asc_time_activities[index + 1].start_time} %>
                           </div>
                           <%= f.input :planned, as: :hidden, input_html: {value: true}%>
@@ -99,4 +99,6 @@
     <% end %>
   <% end %>
   </div>
+  <div class="footer-spacer"></div>
+  <%= render "shared/footer" %>
 </body>
