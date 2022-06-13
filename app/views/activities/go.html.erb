@@ -1,7 +1,11 @@
+
 <p>Go Page</p>
-<div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-></div>
+<div data-controller="map">
+  <div
+    id="map"
+    style="width: 100%; height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-action="load@window->map#show"
+    data-map-target="map"
+  ></div>
+</div>
