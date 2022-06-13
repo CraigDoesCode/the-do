@@ -3,21 +3,20 @@ import { Controller } from "@hotwired/stimulus";
 
 // Connects to data-controller="map"
 export default class extends Controller {
-  static values = {
-    apiKey: String,
-    markers: Array,
-  };
-
-  connect() {
-    mapboxgl.accessToken =
-      "pk.eyJ1IjoiY25vcmZvcmQyIiwiYSI6ImNsNGN4a241czAzMGkzY25hanBmZW14dDgifQ.WA3sDm_NPaIDMBdRWuJSOA";
-    console.log(this.apiKeyValue);
-    console.log(this.element);
-    this.map = new mapboxgl.Map({
-      container: this.element,
-      style: "mapbox://styles/mapbox/streets-v10",
-    });
-  }
+  // static values = {
+  //   apiKey: String,
+  //   markers: Array,
+  // };
+  // connect() {
+  //   mapboxgl.accessToken =
+  //     "pk.eyJ1IjoiY25vcmZvcmQyIiwiYSI6ImNsNGN4a241czAzMGkzY25hanBmZW14dDgifQ.WA3sDm_NPaIDMBdRWuJSOA";
+  //   console.log(this.apiKeyValue);
+  //   console.log(this.element);
+  //   this.map = new mapboxgl.Map({
+  //     container: this.element,
+  //     style: "mapbox://styles/mapbox/streets-v10",
+  //   });
+  // }
 }
 
 // connect() {
