@@ -13,7 +13,7 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
       <div class="top-activities">
-        <%= link_to "Book Now", new_event_activity_path, class: "book-now" %>
+        <%= link_to "Book Now", new_event_activity_path, class: "book-now", style:"background-color: #EC383F" %>
             <%# <i class="fa-solid fa-star" id="restaurant-star-saved"></i> - for when item is saved (solid star) %>
           <i class="fa-regular fa-star" id="activity-star"></i>
             <%= image_tag "cocktail.jpg" %>
@@ -24,7 +24,7 @@
     </div>
     <div class="carousel-item">
         <div class="top-activities">
-          <p class="book-now">Book Now</p>
+          <p class="book-now" style="background-color: #EC383F">Book Now</p>
               <%# <i class="fa-solid fa-star" id="restaurant-star-saved"></i> - for when item is saved (solid star) %>
             <i class="fa-regular fa-star" id="activity-star"></i>
                 <%= image_tag "pottery.jpg" %>
@@ -35,7 +35,7 @@
     </div>
     <div class="carousel-item">
         <div class="top-activities">
-          <p class="book-now">Book Now</p>
+          <p class="book-now" style="background-color: #EC383F">Book Now</p>
               <%# <i class="fa-solid fa-star" id="activity-star-saved"></i> - for when item is saved (solid star) %>
             <i class="fa-regular fa-star" id="activity-star"></i>
               <%= image_tag "bowling.jpg" %>
@@ -122,14 +122,14 @@
 <input class="form-control" id="search-activity-form" type="text" placeholder="Search activities in <%= "#{@event.location}"%>">
 <br>
 <br>
-<h2 class="d-flex justify-content-center" style="margin-bottom: 20px;"> Browse all Activities</h2>
+<h2 class="d-flex justify-content-center" style="margin-bottom: 27px;"> Browse all Activities</h2>
 
 <div class="browse container">
   <% @activities.each do |activity| %>
     <div class="browse-activities-card">
-      <p class="book-now">Book Now</p>
+       <%= image_tag activity.image_url || "karaoke" %>
+       <p class="book-now" style="background-color: #EC383F">Book Now</p>
       <i class="fa-regular fa-star" id="activity-star"></i>
-       <%= image_tag activity.image_url || "bowling" %>
       <div class="browse-activity-card-bottom">
         <div class="browse-activity-card-title-box">
           <div>
@@ -144,8 +144,8 @@
         </div> %>
         <div class="browse-activity-review-box">
           <div>
-           <p style="padding-top: 10px;">Hit the lanes!</p>
-           <p style="padding-bottom: 25px;">9489 Queens Road, London, SW92 3NI</p>
+            <p style="padding-top: 8px; font-size: 18px; ;"><%= activity.details %></p>
+            <p style="position: relative; bottom: 15px; padding-bottom: 1px; font-size: 16px;"><%= activity.address %></p>
           </div>
           <%# <p><strong>Reviews:</strong></p> %>
           <%# <div class="review-each">
@@ -176,6 +176,8 @@
       </div>
     <% end %>
   </div>
+  <br>
+  <br>
    <%= render "shared/footer" %>
 
 <%# ATTEMPTED IMAGE TAG -  <% @activities.each do |restaurant| %>
