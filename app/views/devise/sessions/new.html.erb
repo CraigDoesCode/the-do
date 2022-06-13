@@ -1,39 +1,40 @@
 <div class="sign-in">
-<br>
-<br>
-<br>
-<br>
-<%= image_tag("logo.png")%>
-<br>
-<br>
-<br>
-<br>
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
-  <div class="form-inputs" id="form">
-    <%= f.input :email,
-                label: false,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" },
-                placeholder: "Email address",
-                class: 'bg-white' %>
-    <%= f.input :password,
-                label: false,
-                required: false,
-                input_html: { autocomplete: "current-password" },
-                placeholder: "Password" %>
-  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <%= image_tag("logo.png")%>
+  <br>
+  <br>
+  <br>
+  <br>
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
+    <div class="form-inputs" id="form">
+      <%= f.input :email,
+                  label: false,
+                  required: false,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" },
+                  placeholder: "Email address",
+                  class: 'bg-white' %>
+      <%= f.input :password,
+                  label: false,
+                  required: false,
+                  input_html: { autocomplete: "current-password" },
+                  placeholder: "Password" %>
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in", class: "btn-flat-gold-blk" %>
+    <div class="form-actions pt-4">
+      <%= f.button :submit, "Log in", class: "btn-flat-gold" %>
+    </div>
+  <% end %>
+  <br>
+
+  <div>
+    <%= render "devise/shared/links" %>
   </div>
-<% end %>
-<br>
-<div>
-<%= render "devise/shared/links" %>
-</div>
 </div>
 
 <div class="d-flex justify-content-center">
-<%= image_tag("couple.jpg", height: '300', style: 'margin-top: 70px') %>
+<%= image_tag("couple.jpg", height: '300', style: 'margin-top: 32px') %>
 </div>
