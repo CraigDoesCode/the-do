@@ -1,0 +1,109 @@
+
+<h1 class="d-flex justify-content-center py-3"><strong>GO</strong> </h1>
+<%# <div data-controller="map">
+  <div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>
+  <%# data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %></div>
+<%# </div> %>
+<div class="container text-center" data-controller="go">
+
+  <% if @event.start_date == @event.end_date  %>
+
+  <% else %>
+    <span style="font-weight: bold; font-size: 19px; position: relative; bottom: 15px; margin-top: 2rem;"><p><%= @event.start_date.strftime('%a, %b %d') %> - <%= @event.end_date.strftime('%a, %b %d %Y') %></p></span>
+  <% end %>
+  <% @event.start_date.upto(@event.end_date) do |date| %>
+    <div style="background-color: #D6D6D9; margin-left: 10px; margin-right: 10px; font-size: 16px;" >
+      <span style="font-weight: bold; font-size: 16px;"><%= date.strftime('%A, %B %d %Y') %></span>
+    </div>
+    <br>
+    <% if @activities.where(event_id: current_user.event_id, date: date).empty? == true %>
+      <div>
+        <p>No scheduled events</p>
+      </div>
+    <% else %>
+      <% days_activities =  @activities.where(event_id: current_user.event_id, date: date) %>
+      <% asc_time_activities = days_activities.sort_by { |i| i.start_time} %>
+      <% asc_time_activities.each_with_index do |activity, index| %>
+        <% if activity.event_id == current_user.event_id && activity.date == date %>
+          <div class="py-3 mx-2">
+            <div class="d-flex">
+              <span style="font-size: 18px;" >
+                <% case activity.category %>
+                <% when "eat" %>
+                  <i class="fa-solid fa-utensils"style="color: black;font-size: 18px; position: relative; right: 3px;"></i>
+                <% when "stay" %>
+                  <i class="fa-solid fa-bed"style="color: black;font-size: 18px; position: relative; right: 3px;"></i>
+                <% when "go" %>
+                  <i class="fa-solid fa-car"style="color: black;font-size: 18px; position: relative; right: 3px;"></i>
+                <% when "play" %>
+                  <i class="fa-solid fa-champagne-glasses"style="color: black;font-size: 18px; position: relative; right: 3px;"></i>
+                <% end %>
+              </span>
+              <p class="px-2"><%= activity.start_time.to_fs(:time) %></p>
+              <%= activity.name %>
+              <div class="text-center">
+                <%= activity.address %>
+              </div>
+              <% if activity.category == "go" %>
+                <%= link_to activity_path(activity), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :style=>'color: black; font-size: 17px' do %>
+                  <i class="fa-solid fa-trash-can"></i>
+                <% end %>
+              <% end %>
+            </div>
+            <% unless activity == asc_time_activities.last %>
+              <% unless activity.category == "go" ||  asc_time_activities[index + 1].category == "go" %>
+                <div class="d-flex mt-3" data-action="click->go#open">
+                  <i class="fa-solid fa-circle-plus" style="font-size: 1.5rem"></i>
+                  <p class="text-center mx-2">Add travel plans</p>
+                </div>
+                <div class="modal" tabindex="-1" role="dialog" data-go-target="modal">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-action="click->go#close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <%# FORM to create go activity %>
+                          <%= simple_form_for [@event, @new_go] do |f| %>
+                          <%= f.input :name, collection: ["Walk", "Drive", "Public Transport"] %>
+                          <%= f.input :date, as: :hidden, input_html: {value: date}  %>
+                          <div class="d-flex justify-content-between">
+                            <%= f.input :start_time, as: :hidden, html5: true, input_html: {value: activity.end_time} %>
+                            <%= f.input :end_time, as: :hidden, html5: true, input_html: {value: asc_time_activities[index + 1].start_time} %>
+                          </div>
+                          <%= f.input :planned, as: :hidden, input_html: {value: true}%>
+                          <%= f.input :booked, as: :hidden, input_html: {value: true}  %>
+                          <%= f.input :category, as: :hidden, input_html: {value: "go"} %>
+                          <%= f.submit class: "btn-flat"%>
+                        <% end %>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" data-action="click->go#close">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+            <% if activity != asc_time_activities.last %>
+          <span class="top_dot"></span>
+          <div class="vl"></div>
+          <span class="bottom_dot"></span>
+          <% else %>
+            <br>
+          <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+  </div>
+  <div class="footer-spacer"></div>
+  <%= render "shared/footer" %>
+</body>

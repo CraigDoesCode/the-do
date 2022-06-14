@@ -35,7 +35,7 @@
 }
 </style>
 <body class="d-flex flex-column min-vh-100">
-  <div class="container text-center">
+  <div class="container text-center" style="padding-bottom: 50px">
   <h1><span style="color: #E5B705"><%=@event.name%>'s</span> DO</h1>
   <br>
   <% if @event.start_date == @event.end_date  %>
@@ -62,8 +62,15 @@
         <% if activity.event_id == current_user.event_id && activity.date == date %>
           <div class="d-flex flex-column">
             <span style="font-size: 18px;">
-              <% if activity.category == "eat" %>
+              <% case activity.category %>
+              <% when "eat" %>
                 <i class="fa-solid fa-utensils"style="color: black;font-size: 18px; position: relative; right: 3px;"></i>
+              <% when "stay" %>
+                <i class="fa-solid fa-bed"style="color: black;font-size: 18px; position: relative; right: 3px;"></i>
+              <% when "go" %>
+                <i class="fa-solid fa-car"style="color: black;font-size: 18px; position: relative; right: 3px;"></i>
+              <% when "play" %>
+                <i class="fa-solid fa-champagne-glasses"style="color: black;font-size: 18px; position: relative; right: 3px;"></i>
               <% end %>
               <%= activity.start_time.to_fs(:time) %>
             </span>
@@ -85,4 +92,7 @@
   <% end %>
   </div>
 </body>
+<div class="footer-spacer"></div>
+
 <%= render "shared/footer" %>
+</body>

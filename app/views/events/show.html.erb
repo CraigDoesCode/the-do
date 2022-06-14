@@ -1,14 +1,14 @@
 <div class="container text-center">
   <h1><span style="color: #E5B705"><%=@event.name%>'s</span> DO</h1>
   <div class="d-flex flex-row justify-content-center">
-    <div class="p-2"><p><i class="fa-solid fa-calendar"></i> <%= @event.start_date %></p></div>
+    <div class="p-2"><p><i class="fa-solid fa-calendar"></i> <%= @event.start_date.strftime('%a, %b %d %Y')  %></p></div>
     <div class="p-2"><p><i class="fa-solid fa-location-pin"></i> <%= @event.location %></p></div>
   </div>
 </div>
 <div>
   <%= image_tag 'progress-bar.png', :style => "height: 60px; display: block; margin-left: auto; margin-right: auto; width: 50%;" %>
 </div>
-<div class ="cards m-3">
+<div class ="cards m-3" style="padding-bottom: 30px">
   <%= link_to event_guests_path(current_user.event_id) do %>
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= asset_path 'who.jpg'%>)">
     Who
