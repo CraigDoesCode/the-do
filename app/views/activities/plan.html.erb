@@ -51,18 +51,19 @@
       <span style="font-weight: bold; font-size: 16px;"><%= date.strftime('%A, %B %d %Y') %></span>
     </div>
     <br>
-    <% if @activities.where(event_id: current_user.event_id, date: date).empty? == true %>
+    <% if @plans.where(event_id: current_user.event_id, date: date).empty? == true %>
       <div>
         <p>No scheduled events</p>
       </div>
     <% else %>
-      <% days_activities =  @activities.where(event_id: current_user.event_id, date: date) %>
-      <% asc_time_activities = days_activities.sort_by { |i| i.start_time} %>
-      <% asc_time_activities.each do |activity| %>
-        <% if activity.event_id == current_user.event_id && activity.date == date %>
+      <% days_plans =  @plans.where(event_id: current_user.event_id, date: date) %>
+      <% asc_time_plans = days_plans.sort_by { |i| i.start_time} %>
+      <% asc_time_plans.each do |plan| %>
+        <% if plan.event_id == current_user.event_id && plan.date == date %>
+          <% @activity = Activity.find(plan.activity_id) %>
           <div class="d-flex flex-column">
             <span style="font-size: 18px;">
-              <% case activity.category %>
+              <% case @activity.category %>
               <% when "eat" %>
                 <i class="fa-solid fa-utensils"style="color: black;font-size: 18px; position: relative; right: 3px;"></i>
               <% when "stay" %>
@@ -72,13 +73,13 @@
               <% when "play" %>
                 <i class="fa-solid fa-champagne-glasses"style="color: black;font-size: 18px; position: relative; right: 3px;"></i>
               <% end %>
-              <%= activity.start_time.to_fs(:time) %>
+              <%= plan.start_time.to_fs(:time) %>
             </span>
-            <%= activity.name %>
+            <%= @activity.name %>
             <div class="text-center">
-              <%= activity.address %>
+              <%= @activity.address %>
             </div>
-            <% if activity != asc_time_activities.last %>
+            <% if plan != asc_time_plans.last %>
           <span class="top_dot"></span>
           <div class="vl"></div>
           <span class="bottom_dot"></span>
