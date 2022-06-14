@@ -1,4 +1,5 @@
 <% if resource.errors.any? %>
+<h1>The Do</h1>
   <div id="error_explanation">
     <h2>
       <%= I18n.t("errors.messages.not_saved",
@@ -8,7 +9,7 @@
     </h2>
     <ul>
       <% resource.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <li><%= message%></li>
       <% end %>
     </ul>
   </div>
