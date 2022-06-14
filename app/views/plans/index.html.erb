@@ -1,7 +1,7 @@
 <style>
 .vl {
   border-left: 3px solid #E5B705;
-  height: 45px;
+  height: 38px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -73,12 +73,12 @@
               <% when "play" %>
                 <i class="fa-solid fa-champagne-glasses"style="color: black;font-size: 18px; position: relative; right: 3px;"></i>
               <% end %>
-              <%= plan.start_time.to_fs(:time) %>
-            </span>
+            <%= plan.start_time.to_fs(:time) %>
             <%= @activity.name %>
-            <div class="text-center">
+            </span>
+            <%# <div class="text-center">
               <%= @activity.address %>
-            </div>
+            <%# </div> %>
             <% if plan != asc_time_plans.last %>
           <span class="top_dot"></span>
           <div class="vl"></div>

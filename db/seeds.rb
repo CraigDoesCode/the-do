@@ -16,7 +16,7 @@ Activity.destroy_all
 puts "All users and activities destroyed!!"
 puts "Creating new users, 1 event and some activities!"
 
-Event.create!(start_date: Date.today, end_date: Date.today, location: "London", name: "Tilly")
+Event.create!(start_date: Date.new(2022,8,12), end_date: Date.new(2022,8,12), location: "London", name: "Tilly")
 
 User.create!(first_name: "Tilly", last_name: "Bishop", event_id: Event.last.id, email: "tilly@tilly.com", password: "123456")
 User.create!(first_name: "Olivia", last_name: "McSweeney", event_id: Event.last.id, email: "olivia@olivia.com", password: "123456")
@@ -39,5 +39,9 @@ Activity.create!(category: "stay", address: "1 London", name: "The Ritz", booked
 Activity.create!(category: "stay", address: "London", name: "The W", booked: false, details: "Stay the night at The Ritz babyy", image_url: "eat/restaurant 2.jpg" )
 
 Plan.create!(date: Date.new(2022,8,12), start_time: Time.new(2022,8,12, 10, 00), end_time: Time.new(2022,8,12, 11, 00), event: Event.last, activity: Activity.first )
+Plan.create!(date: Date.new(2022,8,12), start_time: Time.new(2022,8,12, 10, 00), end_time: Time.new(2022,8,12, 11, 00), event: Event.last, activity: Activity.last )
+Plan.create!(date: Date.new(2022,8,12), start_time: Time.new(2022,8,12, 10, 00), end_time: Time.new(2022,8,12, 11, 00), event: Event.last, activity: Activity.last )
+Plan.create!(date: Date.new(2022,8,13), start_time: Time.new(2022,8,12, 10, 00), end_time: Time.new(2022,8,12, 11, 00), event: Event.last, activity: Activity.first )
+Plan.create!(date: Date.new(2022,8,13), start_time: Time.new(2022,8,12, 10, 00), end_time: Time.new(2022,8,12, 11, 00), event: Event.last, activity: Activity.first )
 
 puts "Finished seeding"
