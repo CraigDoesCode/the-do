@@ -118,8 +118,16 @@
 
 <br>
 <br>
-<h2 class="mx-2" id="find-activity-title" style="margin-bottom: 20px;">Find an activity</h2>
-<input class="form-control" id="search-activity-form" type="text" placeholder="Search activities in <%= "#{@event.location}"%>">
+<h2 class="mx-2" id="find-activity-title" style="margin-bottom: 20px;">Find an Activity</h2>
+    <div style="padding-left: 30px; padding-right: 30px;">
+      <%= form_tag play_event_activities_path(current_user.event_id), method: :get, class: "d-flex", id: "search-bar" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Search activities in #{@event.location}" %>
+        <%= submit_tag "Search", class: "btn btn-dark" %>
+      <% end %>
+    </div>
 <br>
 <br>
 <h2 class="d-flex justify-content-center" style="margin-bottom: 27px;"> Browse all Activities</h2>

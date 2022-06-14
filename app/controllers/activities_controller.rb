@@ -1,5 +1,6 @@
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:edit, :update, :destroy]
+
   def new
     @activity = Activity.new
     @event = Event.find(current_user.event_id)
@@ -26,16 +27,46 @@ class ActivitiesController < ApplicationController
   def eat
     @event = Event.find(current_user.event_id)
     @activities = Activity.where(category: "eat")
+    if params[:query].present?
+      sql_query = <<~SQL
+        activities.name @@ :query
+        OR activities.address @@ :query
+        OR activities.details @@ :query
+      SQL
+      @activities = @activities.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @activities = Activity.where(category: "eat")
+    end
   end
 
   def play
     @event = Event.find(current_user.event_id)
     @activities = Activity.where(category: "play")
+    if params[:query].present?
+      sql_query = <<~SQL
+        activities.name @@ :query
+        OR activities.address @@ :query
+        OR activities.details @@ :query
+      SQL
+      @activities = @activities.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @activities = Activity.where(category: "play")
+    end
   end
 
   def stay
     @event = Event.find(current_user.event_id)
     @activities = Activity.where(category: "stay")
+    if params[:query].present?
+      sql_query = <<~SQL
+        activities.name @@ :query
+        OR activities.address @@ :query
+        OR activities.details @@ :query
+      SQL
+      @activities = @activities.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @activities = Activity.where(category: "stay")
+    end
   end
 
   def go
