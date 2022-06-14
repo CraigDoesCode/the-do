@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :events, only: %i[new create edit update show plan] do
     resources :guests, only: %i[index new create edit update]
-    resources :plans, only: %i[index create update]
+    resources :plans, only: %i[index create update] do
+      collection do
+        get 'go'
+      end
+    end
   end
 
   resources :activities, only: %i[new create edit update destroy] do
@@ -15,7 +19,6 @@ Rails.application.routes.draw do
       get 'eat'
       get 'play'
       get 'stay'
-      get 'go'
     end
   end
   resources :guests, only: %i[destroy]
