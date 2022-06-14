@@ -27,6 +27,7 @@ class ActivitiesController < ApplicationController
   def eat
     @event = Event.find(current_user.event_id)
     @activities = Activity.where(category: "eat")
+    @new_plan = Plan.new
     if params[:query].present?
       sql_query = <<~SQL
         activities.name @@ :query
