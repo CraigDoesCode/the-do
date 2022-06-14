@@ -15,31 +15,31 @@
   </div>
   <% end %>
 
-  <%= link_to play_event_activities_path(current_user.event_id) do %>
+  <%= link_to play_activities_path do %>
   <div class="card-category image-text" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= asset_path 'play.jpg'%>)">
     Play
   </div>
   <% end %>
 
-  <%= link_to eat_event_activities_path(current_user.event_id) do %>
+  <%= link_to eat_activities_path do %>
   <div class="card-category image-text" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= asset_path 'dinner.jpg' %>)">
     Eat
   </div>
   <% end %>
 
-  <%= link_to stay_event_activities_path(current_user.event_id) do %>
+  <%= link_to stay_activities_path do %>
   <div class="card-category image-text" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= asset_path 'stay.jpg'%>)">
     Stay
   </div>
   <% end %>
 
-  <%= link_to go_event_activities_path(current_user.event_id) do %>
+  <%= link_to go_activities_path do %>
   <div class="card-category image-text" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= asset_path 'TAXI.jpg'%>)">
     Go
   </div>
   <% end %>
 
-  <%= link_to plan_event_activities_path(current_user.event_id) do %>
+  <%= link_to event_plans_path(current_user.event_id) do %>
   <div class="card-category image-text" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= asset_path 'plan.jpg'%>)">
     Plan
   </div>
