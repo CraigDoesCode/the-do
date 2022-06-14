@@ -30,18 +30,20 @@ Activity.create(category: "go", name: "Public Transport", booked: true, details:
 # ATTEMPTED IMAGE > Activity.create(date: Date.today, start_time: '12:00', end_time: '14:00', category: "eat", address: "1 Hoxton", name: "Dishoom", booked: true, details: "Round table booked outside.", image: '/images/restaurant 1.jpg')
 
 # All other activities
-Activity.create!(category: "eat", address: "1 Hoxton", name: "Dishoom", booked: false, details: "Round table booked outside.", image_url: "eat/restaurant 1.jpg")
-Activity.create!(category: "play", address: "1 Shoreditch", name: "Bowling", booked: false, details: "3 Lanes at Bowling alley booked, with drinks included." )
-Activity.create!(category: "eat", address: "1 Haggerston", name: "Glorias", booked: false, details: "Private room for dinner.", image_url: "eat/restaurant 2.jpg" )
-Activity.create!(category: "play", address: "1 Islington", name: "Karaoke", booked: false, details: "Private karaoke room.", image_url: "eat/restaurant 2.jpg" )
-Activity.create!(category: "play", address: "2 Islington", name: "Simmons Bar", booked: false, details: "Go next door to Simmons bar!", image_url: "eat/restaurant 2.jpg" )
-Activity.create!(category: "stay", address: "1 London", name: "The Ritz", booked: false, details: "Stay the night at The Ritz babyy", image_url: "eat/restaurant 2.jpg" )
-Activity.create!(category: "stay", address: "London", name: "The W", booked: false, details: "Stay the night at The Ritz babyy", image_url: "eat/restaurant 2.jpg" )
+activities = [
+  Activity.create!(category: "eat", address: "1 Hoxton", name: "Dishoom", booked: false, details: "Round table booked outside.", image_url: "eat/restaurant 1.jpg"),
+  Activity.create!(category: "play", address: "1 Shoreditch", name: "Bowling", booked: false, details: "3 Lanes at Bowling alley booked, with drinks included." ),
+  Activity.create!(category: "eat", address: "1 Haggerston", name: "Glorias", booked: false, details: "Private room for dinner.", image_url: "eat/restaurant 2.jpg" ),
+  Activity.create!(category: "play", address: "1 Islington", name: "Karaoke", booked: false, details: "Private karaoke room.", image_url: "eat/restaurant 2.jpg" ),
+  Activity.create!(category: "play", address: "2 Islington", name: "Simmons Bar", booked: false, details: "Go next door to Simmons bar!", image_url: "eat/restaurant 2.jpg" ),
+  Activity.create!(category: "stay", address: "1 London", name: "The Ritz", booked: false, details: "Stay the night at The Ritz babyy", image_url: "eat/restaurant 2.jpg" ),
+  Activity.create!(category: "stay", address: "London", name: "The W", booked: false, details: "Stay the night at The Ritz babyy", image_url: "eat/restaurant 2.jpg" )
+]
 
-Plan.create!(date: Date.new(2022,8,12), start_time: Time.new(2022,8,12, 10, 00), end_time: Time.new(2022,8,12, 11, 00), event: Event.last, activity: Activity.first )
-Plan.create!(date: Date.new(2022,8,12), start_time: Time.new(2022,8,12, 10, 00), end_time: Time.new(2022,8,12, 11, 00), event: Event.last, activity: Activity.last )
-Plan.create!(date: Date.new(2022,8,12), start_time: Time.new(2022,8,12, 10, 00), end_time: Time.new(2022,8,12, 11, 00), event: Event.last, activity: Activity.last )
-Plan.create!(date: Date.new(2022,8,13), start_time: Time.new(2022,8,12, 10, 00), end_time: Time.new(2022,8,12, 11, 00), event: Event.last, activity: Activity.first )
-Plan.create!(date: Date.new(2022,8,13), start_time: Time.new(2022,8,12, 10, 00), end_time: Time.new(2022,8,12, 11, 00), event: Event.last, activity: Activity.first )
+Plan.create!(date: Date.new(2022,8,12), start_time: Time.new(2022,8,12, 10, 00), end_time: Time.new(2022,8,12, 11, 00), event: Event.last, activity: activities.sample )
+Plan.create!(date: Date.new(2022,8,12), start_time: Time.new(2022,8,12, 12, 00), end_time: Time.new(2022,8,12, 13, 00), event: Event.last, activity: activities.sample )
+Plan.create!(date: Date.new(2022,8,12), start_time: Time.new(2022,8,12, 14, 00), end_time: Time.new(2022,8,12, 15, 00), event: Event.last, activity: activities.sample )
+Plan.create!(date: Date.new(2022,8,13), start_time: Time.new(2022,8,12, 16, 00), end_time: Time.new(2022,8,12, 17, 00), event: Event.last, activity: activities.sample )
+Plan.create!(date: Date.new(2022,8,13), start_time: Time.new(2022,8,12, 18, 00), end_time: Time.new(2022,8,12, 19, 00), event: Event.last, activity: activities.sample )
 
 puts "Finished seeding"
