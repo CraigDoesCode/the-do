@@ -4,8 +4,17 @@
 
 import { application } from "./application";
 
+import GoController from "./go_controller.js";
+application.register("go", GoController);
+
 import HelloController from "./hello_controller.js";
 application.register("hello", HelloController);
 
+import MapController from "./map_controller.js";
+application.register("map", MapController);
+
 import MenuController from "./menu_controller.js";
 application.register("menu", MenuController);
+
+import { Modal } from "tailwindcss-stimulus-components";
+application.register("modal", Modal);

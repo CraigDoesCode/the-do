@@ -1,4 +1,4 @@
-<body class="d-flex flex-column min-vh-100" style="font-family: 'K2D', sans-serif;">
+<div class="d-flex flex-column min-vh-100" style="font-family: 'K2D', sans-serif;">
 <h1 class="text-center">Who</h1>
 <% if @guests.empty? == true %>
   <table class="table-borderless my-3 mx-5" style="font-size: 12px">
@@ -50,6 +50,7 @@
   <div class="container text-center">
     <%= link_to "Add Guest", new_event_guest_path(current_user.event_id), class: "btn btn-dark" %>
   </div>
+</div>
 <% else %>
   <table class="table-sm table-borderless m-4" style="font-size: 12px">
   <thead>

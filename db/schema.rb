@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_12_093717) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_14_011301) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -58,6 +58,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_12_093717) do
     t.string "image"
     t.boolean "planned"
     t.string "image_url"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["event_id"], name: "index_activities_on_event_id"
   end
 
@@ -68,6 +70,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_12_093717) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
   end
 
   create_table "guests", force: :cascade do |t|
@@ -80,6 +84,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_12_093717) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_guests_on_event_id"
+  end
+
+  create_table "plans", force: :cascade do |t|
+    t.date "date"
+    t.time "start_time"
+    t.time "endtime"
+    t.bigint "event_id", null: false
+    t.bigint "activity_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["activity_id"], name: "index_plans_on_activity_id"
+    t.index ["event_id"], name: "index_plans_on_event_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -102,5 +118,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_12_093717) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "activities", "events"
   add_foreign_key "guests", "events"
+  add_foreign_key "plans", "activities"
+  add_foreign_key "plans", "events"
   add_foreign_key "users", "events"
 end

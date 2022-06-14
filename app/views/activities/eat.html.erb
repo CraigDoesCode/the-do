@@ -14,10 +14,10 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
       <div class="top-activities">
-        <%= link_to "Book Now", new_event_activity_path, class: "book-now" %>
+        <%= link_to "Book Now", new_event_activity_path, class: "book-now", style: "background-color: #EC383F" %>
             <%# <i class="fa-solid fa-star" id="restaurant-star-saved"></i> - for when item is saved (solid star) %>
           <i class="fa-regular fa-star" id="activity-star"></i>
-            <%= image_tag "eat/restaurant 1.jpg" %>
+            <%= image_tag "aquashard.jpg" %>
               <div class="carousel-caption d-block" id="activity-name">
                 <h5>Restaurant 1</h5>
               </div>
@@ -25,10 +25,10 @@
     </div>
     <div class="carousel-item">
         <div class="top-activities">
-          <p class="book-now">Book Now</p>
+          <p class="book-now" style="background-color: #EC383F">Book Now</p>
               <%# <i class="fa-solid fa-star" id="restaurant-star-saved"></i> - for when item is saved (solid star) %>
             <i class="fa-regular fa-star" id="activity-star"></i>
-                <%= image_tag "eat/restaurant 2.jpg" %>
+                <%= image_tag "river_restaurant.jpg" %>
                   <div class="carousel-caption d-block" id="activity-name">
                     <h5>Restaurant 2</h5>
                   </div>
@@ -36,10 +36,10 @@
     </div>
     <div class="carousel-item">
         <div class="top-activities">
-          <p class="book-now">Book Now</p>
+          <p class="book-now" style="background-color: #EC383F">Book Now</p>
               <%# <i class="fa-solid fa-star" id="activity-star-saved"></i> - for when item is saved (solid star) %>
             <i class="fa-regular fa-star" id="activity-star"></i>
-              <%= image_tag "eat/restaurant 3.jpg" %>
+              <%= image_tag "nandos.jpg" %>
                 <div class="carousel-caption d-block" id="activity-name">
                   <h5>Restaurant 3</h5>
                 </div>
@@ -90,7 +90,7 @@
             </ul> %>
           </div>
           <div class="saved-fave-card mx-1">
-            <%= image_tag("eat/restaurant 1.jpg", style: "width: 100", class: 'd-block', style: 'width:100%; height:50px; border-radius: 4px') %>
+            <%= image_tag("aquashard.jpg", style: "width: 100", class: 'd-block', style: 'width:100%; height:50px; border-radius: 4px') %>
             <p id="saved-fave-name">Bagels</p>
             <%# <ul class="saved-fave-notes">
               <li>Close</li>
@@ -123,14 +123,13 @@
 <input class="form-control" id="search-activity-form" type="text" placeholder="Search restaurants in <%= "#{@event.location}"%>">
 <br>
 <br>
-<h2 class="d-flex justify-content-center" style="margin-bottom: 20px;"> Browse all Restaurants</h2>
-
+<h2 class="d-flex justify-content-center" style="margin-bottom: 27px;"> Browse all Restaurants</h2>
 <div class="browse container">
   <% @activities.each do |activity| %>
     <div class="browse-activities-card">
-      <p class="book-now">Book Now</p>
+      <%= image_tag activity.image_url || "eat/restaurant 1"%>
+      <p class="book-now" style="background-color: #EC383F">Book Now</p>
       <i class="fa-regular fa-star" id="activity-star"></i>
-      <%= image_tag activity.image_url %>
       <div class="browse-activity-card-bottom">
         <div class="browse-activity-card-title-box">
           <div>
@@ -145,8 +144,9 @@
         </div> %>
         <div class="browse-activity-review-box">
           <div>
-           <p style="padding-top: 10px;">Authentic Indian Cuisine</p>
-           <p style="padding-bottom: 25px;">9489 Queens Road, London, SW92 3NI</p>
+            <p style="padding-top: 8px; font-size: 18px; ;"><%= activity.details %></p>
+            <p style="position: relative; bottom: 15px; padding-bottom: 1px; font-size: 16px;"><%= activity.address %></p>
+
           </div>
           <%# <p><strong>Reviews:</strong></p> %>
           <%# <div class="review-each">
@@ -177,7 +177,10 @@
       </div>
     <% end %>
   </div>
-   <%= render "shared/footer" %>
+  <br>
+  <br>
+  <div class="footer-spacer"></div>
+  <%= render "shared/footer" %>
 
 <%# ATTEMPTED IMAGE TAG -  <% @activities.each do |restaurant| %>
 <%# <%= restaurant.name %>

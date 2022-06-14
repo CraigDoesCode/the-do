@@ -1,0 +1,3 @@
+<%= simple_form_for [@event, activity] do |f| %>
+  <%= f.input :name, collection: ['walk', 'public transport', 'drive'] %>
+<% end %>
