@@ -72,7 +72,7 @@ class ActivitiesController < ApplicationController
   def go
     @activities = Activity.all
     @planned_activities = Activity.where(planned:true)
-    @event = Event.find(params[:event_id])
+    @event = Event.find(current_user.event_id)
     @new_go = Activity.new
     @markers = @activities.geocoded.map do |activity|
       {
