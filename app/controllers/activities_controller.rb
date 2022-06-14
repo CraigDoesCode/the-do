@@ -27,6 +27,7 @@ class ActivitiesController < ApplicationController
   def eat
     @event = Event.find(current_user.event_id)
     @activities = Activity.where(category: "eat")
+    @new_plan = Plan.new
     if params[:query].present?
       sql_query = <<~SQL
         activities.name @@ :query
@@ -72,7 +73,7 @@ class ActivitiesController < ApplicationController
   def go
     @activities = Activity.all
     @planned_activities = Activity.where(planned:true)
-    @event = Event.find(params[:event_id])
+    @event = Event.find(current_user.event_id)
     @new_go = Activity.new
     @markers = @activities.geocoded.map do |activity|
       {

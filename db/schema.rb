@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_14_011301) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_14_102156) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -43,24 +43,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_14_011301) do
   end
 
   create_table "activities", force: :cascade do |t|
-    t.date "date"
-    t.time "start_time"
-    t.time "end_time"
     t.string "category"
     t.string "address"
     t.string "name"
     t.boolean "booked", default: false
-    t.boolean "saved", default: false
     t.text "details"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "event_id", null: false
-    t.string "image"
-    t.boolean "planned"
     t.string "image_url"
     t.float "latitude"
     t.float "longitude"
-    t.index ["event_id"], name: "index_activities_on_event_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -89,7 +81,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_14_011301) do
   create_table "plans", force: :cascade do |t|
     t.date "date"
     t.time "start_time"
-    t.time "endtime"
+    t.time "end_time"
     t.bigint "event_id", null: false
     t.bigint "activity_id", null: false
     t.datetime "created_at", null: false
@@ -116,7 +108,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_14_011301) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "activities", "events"
   add_foreign_key "guests", "events"
   add_foreign_key "plans", "activities"
   add_foreign_key "plans", "events"
