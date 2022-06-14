@@ -37,4 +37,7 @@ Activity.create!(category: "play", address: "1 Islington", name: "Karaoke", book
 Activity.create!(category: "play", address: "2 Islington", name: "Simmons Bar", booked: false, details: "Go next door to Simmons bar!", image_url: "eat/restaurant 2.jpg" )
 Activity.create!(category: "stay", address: "1 London", name: "The Ritz", booked: false, details: "Stay the night at The Ritz babyy", image_url: "eat/restaurant 2.jpg" )
 Activity.create!(category: "stay", address: "London", name: "The W", booked: false, details: "Stay the night at The Ritz babyy", image_url: "eat/restaurant 2.jpg" )
+
+Plan.create!(date: Date.new(2022,8,12), start_time: Time.new(2022,8,12, 10, 00), end_time: Time.new(2022,8,12, 11, 00), event: Event.last, activity: Activity.first )
+
 puts "Finished seeding"
