@@ -25,7 +25,7 @@
       <% asc_time_plans.each do |plan| %>
         <% if plan.event_id == current_user.event_id && plan.date == date %>
           <% @activity = Activity.find(plan.activity_id) %>
-          <div class="d-flex flex-column">
+          <div class="flex-column">
             <span style="font-size: 18px;">
               <% case @activity.category %>
               <% when "eat" %>

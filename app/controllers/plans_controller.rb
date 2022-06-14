@@ -42,8 +42,8 @@ class PlansController < ApplicationController
   end
 
   def go
+    @event = Event.find(params[:event_id])
     @plans = @event.plans.order(start_time: :asc)
-
   end
 
   private
