@@ -1,6 +1,7 @@
 class PlansController < ApplicationController
 
   def go
-    @plans = Event.find(current_user.event_id).plans
+    @event = Event.find(current_user.event_id)
+    @plans = @event.plans
   end
 end
