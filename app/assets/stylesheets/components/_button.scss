@@ -7,30 +7,49 @@
   transition: background 0.3s ease;
 
 }
-.btn-flat:hover {
-  background: $fadedred;
-  color: $red;
+
+
+.btn-flat-black {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: $black;
+  text-decoration: none;
+  transition: background 0.3s ease;
+
 }
 
 .btn-flat-gold {
   color: white !important;
   padding: 8px 24px;
   border-radius: 4px;
-  background-color: #EC383F !important;
+  background-color: $gold;
   text-decoration: none;
   transition: background 0.3s ease;
 }
 
+
 .btn-flat-gold-blk {
   color: black;
-  padding: 8px 24px;
+  padding: 6px 18px;
   border-radius: 4px;
   background: $gold;
   text-decoration: none;
   transition: background 0.3s ease;
+  border-style: none !important;
 }
 
 .forgot {
   color: $gold;
   margin-top: 10px;
+}
+
+.book-now {
+  color: black !important;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: $gold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  font-weight: bold;
 }
