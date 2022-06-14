@@ -19,7 +19,7 @@
       <%# <p>WHO</p> %>
     </div>
   <% end %>
-  <%= link_to go_activities_path do %>
+  <%= link_to go_event_plans_path(current_user.event_id) do %>
     <div class="px-2 mx-1" id="footer-icon">
       <i class="fa-solid fa-car"></i>
     </div>
