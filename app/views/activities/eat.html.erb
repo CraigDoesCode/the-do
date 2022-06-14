@@ -1,60 +1,89 @@
 <body>
-<h1 class="d-flex justify-content-center"><strong>Eat</strong> </h1>
+<h1 class="d-flex justify-content-center" ><strong>Eat</strong> </h1>
 <br>
 <h2 class="recommended-activity-title">Top 5 Restaurants in <span style='color: #E5B705;'><strong><%= "#{@event.location}"%></strong></span></h2></div>
 
 
-<div class="recommended-activities" style="padding-top: 18px;">
-<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <div class="top-activities">
-        <%= link_to "Book Now", new_activity_path, class: "book-now", style: "background-color: #EC383F" %>
-            <%# <i class="fa-solid fa-star" id="restaurant-star-saved"></i> - for when item is saved (solid star) %>
-          <i class="fa-regular fa-star" id="activity-star"></i>
-            <%= image_tag "aquashard.jpg" %>
-              <div class="carousel-caption d-block" id="activity-name">
-                <h5>The Shard</h5>
-              </div>
-      </div>
+<div class="recommended-activities" data-controller="mod" style="padding-top: 18px;">
+<%# Start of carousel %>
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
-    <div class="carousel-item">
+    <div class="carousel-inner" data-controller="go">
+      <div class="carousel-item active">
         <div class="top-activities">
-          <p class="book-now" style="background-color: #EC383F">Book Now</p>
+                  </div>
+            <div class="book-now" data-action="click->mod#open">
+              Book Now
+            </div>
+            <div class="modal" tabindex="-1" role="dialog" data-mod-target="modal">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-action="click->mod#close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <%# FORM to create go activity %>
+                          <%= simple_form_for [@event, @new_plan] do |f| %>
+                          <%= f.input :date %>
+                          <%= f.input :start_time %>
+                          <%= f.input :end_time %>
+                          <%= f.submit class: "btn-flat"%>
+                        <% end %>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" data-action="click->mod#close">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               <%# <i class="fa-solid fa-star" id="restaurant-star-saved"></i> - for when item is saved (solid star) %>
             <i class="fa-regular fa-star" id="activity-star"></i>
-                <%= image_tag "river_restaurant.jpg" %>
-                  <div class="carousel-caption d-block" id="activity-name">
-                    <h5>Gloria's</h5>
-                  </div>
-        </div>
-    </div>
-    <div class="carousel-item">
-        <div class="top-activities">
-          <p class="book-now" style="background-color: #EC383F">Book Now</p>
-              <%# <i class="fa-solid fa-star" id="activity-star-saved"></i> - for when item is saved (solid star) %>
-            <i class="fa-regular fa-star" id="activity-star"></i>
-              <%= image_tag "nandos.jpg" %>
+              <%= image_tag "aquashard.jpg" %>
                 <div class="carousel-caption d-block" id="activity-name">
-                  <h5>Oceania</h5>
+                  <h5>The Shard</h5>
                 </div>
         </div>
+      </div>
+      <div class="carousel-item">
+          <div class="top-activities">
+            <p class="book-now" style="background-color: #EC383F">Book Now</p>
+                <%# <i class="fa-solid fa-star" id="restaurant-star-saved"></i> - for when item is saved (solid star) %>
+              <i class="fa-regular fa-star" id="activity-star"></i>
+              <%= image_tag "river_restaurant.jpg" %>
+              <div class="carousel-caption d-block" id="activity-name">
+                <h5>Gloria's</h5>
+              </div>
+          </div>
+      </div>
+      <div class="carousel-item">
+          <div class="top-activities">
+            <p class="book-now" style="background-color: #EC383F">Book Now</p>
+                <%# <i class="fa-solid fa-star" id="activity-star-saved"></i> - for when item is saved (solid star) %>
+              <i class="fa-regular fa-star" id="activity-star"></i>
+                <%= image_tag "nandos.jpg" %>
+                  <div class="carousel-caption d-block" id="activity-name">
+                    <h5>Oceania</h5>
+                  </div>
+          </div>
+      </div>
     </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
 </div>
 <br>
 

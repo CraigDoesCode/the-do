@@ -4,8 +4,8 @@
 
 import { application } from "./application";
 
-import GoController from "./go_controller.js";
-application.register("go", GoController);
+import ModController from "./mod_controller.js";
+application.register("mod", ModController);
 
 import HelloController from "./hello_controller.js";
 application.register("hello", HelloController);
