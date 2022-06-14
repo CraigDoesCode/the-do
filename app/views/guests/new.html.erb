@@ -14,7 +14,7 @@
         <%= f.input :attending %>
         <%= f.input :paid %>
         <div class = "pt-2" style="text-align:center">
-          <%= f.button :submit, class: "btn btn-dark btn-lg"%>
+          <%= f.button :submit, class: "btn-flat-gold-blk", style: "font-size: 22px"%>
         </div>
       <% end %>
     </div>
@@ -22,5 +22,9 @@
 </div>
 <br>
 <div class="text-center">
-<%= link_to "Back to Guests", event_guests_path(current_user.event_id), class: "btn btn-dark" %>
+<%= link_to event_guests_path(current_user.event_id) do %>
+<i class="fa-solid fa-left-long" style= "font-size:20px; color:black"></i>
+<% end %>
 </div>
+
+<%= render "shared/footer" %>

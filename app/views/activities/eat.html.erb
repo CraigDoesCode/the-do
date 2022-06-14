@@ -4,6 +4,7 @@
 <h2 class="recommended-activity-title">Top 5 Restaurants in <span style='color: #E5B705;'><strong><%= "#{@event.location}"%></strong></span></h2></div>
 
 
+
 <div class="recommended-activities" data-controller="mod" style="padding-top: 18px;">
 <%# Start of carousel %>
   <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -15,9 +16,10 @@
     <div class="carousel-inner" data-controller="go">
       <div class="carousel-item active">
         <div class="top-activities">
+
                   </div>
             <div class="book-now" data-action="click->mod#open">
-              Book Now
+              BOOK NOW
             </div>
             <div class="modal" tabindex="-1" role="dialog" data-mod-target="modal">
                   <div class="modal-dialog" role="document">
@@ -34,17 +36,18 @@
                           <%= f.input :date %>
                           <%= f.input :start_time %>
                           <%= f.input :end_time %>
-                          <%= f.submit class: "btn-flat"%>
+                          <%= f.submit class: "btn-flat-gold-blk"%>
                         <% end %>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal" data-action="click->mod#close">Close</button>
+                        <button type="button" class="btn-flat-gold">Save changes</button>
+                        <button type="button" class="btn-flat-gold" data-dismiss="modal" data-action="click->mod#close">Close</button>
                       </div>
                     </div>
                   </div>
                 </div>
               <%# <i class="fa-solid fa-star" id="restaurant-star-saved"></i> - for when item is saved (solid star) %>
+
             <i class="fa-regular fa-star" id="activity-star"></i>
               <%= image_tag "aquashard.jpg" %>
                 <div class="carousel-caption d-block" id="activity-name">
@@ -54,7 +57,7 @@
       </div>
       <div class="carousel-item">
           <div class="top-activities">
-            <p class="book-now" style="background-color: #EC383F">Book Now</p>
+            <p class="book-now">BOOK NOW</p>
                 <%# <i class="fa-solid fa-star" id="restaurant-star-saved"></i> - for when item is saved (solid star) %>
               <i class="fa-regular fa-star" id="activity-star"></i>
               <%= image_tag "river_restaurant.jpg" %>
@@ -65,7 +68,7 @@
       </div>
       <div class="carousel-item">
           <div class="top-activities">
-            <p class="book-now" style="background-color: #EC383F">Book Now</p>
+            <p class="book-now">BOOK NOW</p>
                 <%# <i class="fa-solid fa-star" id="activity-star-saved"></i> - for when item is saved (solid star) %>
               <i class="fa-regular fa-star" id="activity-star"></i>
                 <%= image_tag "nandos.jpg" %>
@@ -166,7 +169,7 @@
   <% @activities.each do |activity| %>
     <div class="browse-activities-card">
       <%= image_tag activity.image_url || "eat/restaurant 1"%>
-      <p class="book-now" style="background-color: #EC383F">Book Now</p>
+      <p class="book-now">BOOK NOW</p>
       <i class="fa-regular fa-star" id="activity-star"></i>
       <div class="browse-activity-card-bottom">
         <div class="browse-activity-card-title-box">

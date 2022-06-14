@@ -39,7 +39,7 @@
             <% end %>
           </div>
           <div class="pt-3">
-            <%= Guest.new(name: @event.name, event_id: current_user.event_id).save %>
+            <%= @event.name %>
           </div>
         </div>
       </th>
@@ -141,15 +141,15 @@
 </table>
 <br>
 <div class="container text-center">
-    <%= link_to "Add Guest", new_event_guest_path(@guests.first.event_id), class: "btn btn-dark" %>
+    <%= link_to "Add Guest", new_event_guest_path(@guests.first.event_id), class: "btn-flat-black" %>
   </div>
 <br>
 <div class="container d-flex p-2">
   <div class="container">
-    <%= link_to "RSVP Reminder", event_guests_path(@guests.first.event_id), class: "btn", style: "background-color: #E5B707;" %>
+    <%= link_to "RSVP Reminder", event_guests_path(@guests.first.event_id), class: "btn-flat-gold-blk", style: "font-size: 15px"%>
   </div>
   <div class="container">
-    <%= link_to "Payment Reminder", event_guests_path(@guests.first.event_id), class: "btn", style: "background-color: #E5B707;" %>
+    <%= link_to "Payment Reminder", event_guests_path(@guests.first.event_id), class: "btn-flat-gold-blk", style: "font-size: 15px" %>
   </div>
 </div>
 <% end %>

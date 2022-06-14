@@ -1,7 +1,7 @@
-<div class="container text-center">
+<div class="container text-center pt-5">
   <%= simple_form_for [@event, @activity] do |f| %>
-    <%= f.input :name %>
-    <%= f.input :address %>
+    <%= f.input :name, label: "Venue Name "%>
+    <%= f.input :address,  label: "Venue Address " %>
     <%= f.input :date, as: :date, html5: true %>
     <div class="d-flex justify-content-between">
       <%= f.input :start_time, as: :time, html5: true, label: "Start Time "  %>
@@ -10,7 +10,14 @@
     <%= f.input :details %>
     <%= f.input :booked, as: :hidden, input_html: {value: true}  %>
     <%= f.input :category, as: :hidden, input_html: {value: "eat"}  %>
-    <%= f.submit class: "btn-flat"%>
+    <%= f.submit class: "btn-flat-gold-blk", style:"font-size: 20px;margin-top: 32px;", value: "Confirm Booking"%>
 
   <% end %>
+  <div class="text-center">
+  <%= link_to :back do %>
+  <i class="fa-solid fa-left-long" style= "font-size:20px; color:grey; padding-top:10px"></i>
+  <% end %>
 </div>
+</div>
+
+<%= render "shared/footer" %>
