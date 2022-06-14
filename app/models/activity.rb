@@ -4,5 +4,8 @@ class Activity < ApplicationRecord
   validates :end_time, presence: true
   validates :category, presence: true, acceptance: { accept: ['eat', 'play', 'stay', 'go'] }
   validates :name, presence: true
-  belongs_to :event
+  has_many :plans
+  has_many :events, through: :plan
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end

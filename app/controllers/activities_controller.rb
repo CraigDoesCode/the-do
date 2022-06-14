@@ -6,14 +6,14 @@ class ActivitiesController < ApplicationController
   end
 
   def create
+    par = activity_params
     @activity = Activity.new(activity_params)
     @activity.event = Event.find(current_user.event_id)
     if @activity.save!
-      redirect_to eat_event_activities_path
+      redirect_back
     else
       render :new, status: :unprocessable_entity
     end
-
   end
 
   def edit
@@ -39,7 +39,19 @@ class ActivitiesController < ApplicationController
   end
 
   def go
-    @activities = Activity.where(category: "go")
+    @activities = Activity.all
+    @planned_activities = Activity.where(planned:true)
+    @event = Event.find(params[:event_id])
+    @new_go = Activity.new
+    @markers = @activities.geocoded.map do |activity|
+      {
+        lat: activity.latitude,
+        lng: activity.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+        # Uncomment the above line if you want each of your markers to display a info window when clicked
+        # (you will also need to create the partial "/flats/map_box")
+      }
+    end
   end
 
   def plan
@@ -50,12 +62,14 @@ class ActivitiesController < ApplicationController
 
   def destroy
     @activity.destroy
+    redirect_to url_from(params[:redirect_url]) || root_url
+
   end
 
   private
 
   def activity_params
-    params.require(:activity).permit(:date, :start_time, :end_time, :category, :address, :name, :booked, :saved, :details, :event_id)
+    params.require(:activity).permit(:date, :start_time, :end_time, :category, :address, :name, :booked, :saved, :details, :event_id, :redirect_url)
   end
 
   def set_activity
