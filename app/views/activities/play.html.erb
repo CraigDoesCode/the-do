@@ -13,7 +13,7 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
       <div class="top-activities">
-        <%= link_to "Book Now", new_event_activity_path, class: "book-now", style:"background-color: #EC383F" %>
+        <%= link_to "Book Now", new_activity_path, class: "book-now", style:"background-color: #EC383F" %>
             <%# <i class="fa-solid fa-star" id="restaurant-star-saved"></i> - for when item is saved (solid star) %>
           <i class="fa-regular fa-star" id="activity-star"></i>
             <%= image_tag "cocktail.jpg" %>
@@ -120,7 +120,7 @@
 <br>
 <h2 class="mx-2" id="find-activity-title" style="margin-bottom: 20px;">Find an Activity</h2>
     <div style="padding-left: 30px; padding-right: 30px;">
-      <%= form_tag play_event_activities_path(current_user.event_id), method: :get, class: "d-flex", id: "search-bar" do %>
+      <%= form_tag play_activities_path(current_user.event_id), method: :get, class: "d-flex", id: "search-bar" do %>
         <%= text_field_tag :query,
           params[:query],
           class: "form-control",
