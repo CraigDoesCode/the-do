@@ -30,19 +30,19 @@
             <%= link_to "Who", event_guests_path(current_user.event_id), class: "sub-item" %>
           </li>
           <li>
-            <%= link_to "Play", play_event_activities_path(current_user.event_id), class: "sub-item" %>
+            <%= link_to "Play", play_activities_path, class: "sub-item" %>
           </li>
           <li>
-            <%= link_to "Eat", eat_event_activities_path(current_user.event_id), class: "sub-item" %>
+            <%= link_to "Eat", eat_activities_path, class: "sub-item" %>
           </li>
           <li>
-            <%= link_to "Stay", stay_event_activities_path(current_user.event_id), class: "sub-item" %>
+            <%= link_to "Stay", stay_activities_path, class: "sub-item" %>
           </li>
           <li>
-            <%= link_to "Go", go_event_activities_path(current_user.event_id), class: "sub-item" %>
+            <%= link_to "Go", go_activities_path, class: "sub-item" %>
           </li>
           <li>
-            <%= link_to "Plan", plan_event_activities_path(current_user.event_id), class: "sub-item" %>
+            <%= link_to "Plan", plan_path(current_user.event_id), class: "sub-item" %>
           </li>
         </div>
       </div>
