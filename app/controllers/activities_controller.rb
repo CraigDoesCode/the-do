@@ -6,10 +6,11 @@ class ActivitiesController < ApplicationController
   end
 
   def create
+    par = activity_params
     @activity = Activity.new(activity_params)
     @activity.event = Event.find(current_user.event_id)
     if @activity.save!
-      redirect_to eat_event_activities_path
+      redirect_back
     else
       render :new, status: :unprocessable_entity
     end
@@ -61,12 +62,14 @@ class ActivitiesController < ApplicationController
 
   def destroy
     @activity.destroy
+    redirect_to url_from(params[:redirect_url]) || root_url
+
   end
 
   private
 
   def activity_params
-    params.require(:activity).permit(:date, :start_time, :end_time, :category, :address, :name, :booked, :saved, :details, :event_id)
+    params.require(:activity).permit(:date, :start_time, :end_time, :category, :address, :name, :booked, :saved, :details, :event_id, :redirect_url)
   end
 
   def set_activity
