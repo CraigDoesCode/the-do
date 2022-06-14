@@ -8,30 +8,32 @@
   <% end %>
   <%= link_to stay_event_activities_path(current_user.event_id) do %>
     <div class="px-2 mx-1" id="footer-icon">
-      <a href="#"><i class="fa-solid fa-bed"></i></a>
+      <i class="fa-solid fa-bed"></i>
       <%# <x>STAY</p> %>
     </div>
   <% end %>
   <%= link_to event_guests_path(current_user.event_id) do %>
     <div class="px-2 mx-1" id="footer-icon">
-      <a href="#"><i class="fa-solid fa-people-group"></i></a>
+      <i class="fa-solid fa-people-group"></i>
       <%# <p>WHO</p> %>
     </div>
   <% end %>
   <%= link_to go_event_activities_path(current_user.event_id) do %>
     <div class="px-2 mx-1" id="footer-icon">
-      <a href="#"><i class="fa-solid fa-car"></i></a>
+      <i class="fa-solid fa-car"></i>
     </div>
   <% end %>
   <%= link_to play_event_activities_path(current_user.event_id) do %>
     <div class="px-2 mx-1" id="footer-icon">
-      <a href="#"><i class="fa-solid fa-champagne-glasses"></i></a>
+      <i class="fa-solid fa-champagne-glasses"></i>
       <%# <p>PLAY</p> %>
     </div>
   <% end %>
+  <%= link_to plan_event_activities_path(current_user.event_id) do %>
   <div class="px-2 mx-0" id="footer-icon">
-    <a href="#"><i class="fa-solid fa-calendar-days"></i></a>
+    <i class="fa-solid fa-calendar-days"></i></a>
   <%# <p>PLAN</p> %>
   </div>
+  <% end %>
   </div>
 </div>

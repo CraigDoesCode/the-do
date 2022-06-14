@@ -1,7 +1,7 @@
 <div class="d-flex flex-column min-vh-100" style="font-family: 'K2D', sans-serif;">
 <h1 class="text-center">Who</h1>
 <% if @guests.empty? == true %>
-  <table class="table table-borderless my-3 mx-5" style="font-size: 12px">
+  <table class="table-borderless my-3 mx-5" style="font-size: 12px">
     <thead>
       <tr class="text-center">
         <th scope="col"></th>
@@ -21,8 +21,25 @@
               <i class="fas fa-user-alt fa-2x text-info"></i>
             <% end %>
           </div>
-          <div class="p-3">
+          <div class="pt-3">
             <%= current_user.first_name %> <%= current_user.last_name %>
+          </div>
+        </div>
+      </th>
+    </tr>
+
+     <tr style="text-align: center; vertical-align: center;">
+      <th scope="row">
+        <div class="d-flex">
+          <div class="rounded-circle border d-flex justify-content-center align-items-center mt-1" style="width:40px;height:40px" alt="Avatar">
+            <% if current_user.photo.attached? %>
+              <%= cl_image_tag current_user.photo.key, class: "avatar", style:"object-fit: cover" %>
+            <% else %>
+              <i class="fas fa-user-alt fa-2x text-info"></i>
+            <% end %>
+          </div>
+          <div class="pt-3">
+            <%= Guest.new(name: @event.name, event_id: current_user.event_id).save %>
           </div>
         </div>
       </th>
@@ -57,7 +74,7 @@
                 <i class="fas fa-user-alt fa-2x text-info"></i>
               <% end %>
             </div>
-            <div class="p-3">
+            <div class="pt-3">
               <%= guest.name %>
             </div>
           </div>
@@ -82,8 +99,10 @@
           </div>
         </td>
          <td class="text-center p-3">
+           <% if guest.name != @event.name %>
           <%= link_to guest_path(guest), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :style=>'color: black; font-size: 17px' do %>
             <i class="fa-solid fa-trash-can"></i>
+          <% end %>
           <% end %>
         </td>
       </tr>
@@ -98,7 +117,7 @@
                 <i class="fas fa-user-alt fa-2x text-info"></i>
               <% end %>
           </div>
-          <div class="p-3">
+          <div class="pt-3">
             <%= current_user.first_name %> <%= current_user.last_name %>
           </div>
         </div>
@@ -122,8 +141,8 @@
 </table>
 <br>
 <div class="container text-center">
-  <%= link_to "Add Guest", new_event_guest_path(@guests.first.event_id), class: "btn btn-dark" %>
-</div>
+    <%= link_to "Add Guest", new_event_guest_path(@guests.first.event_id), class: "btn btn-dark" %>
+  </div>
 <br>
 <div class="container d-flex p-2">
   <div class="container">
@@ -134,5 +153,5 @@
   </div>
 </div>
 <% end %>
-<br>
 <%= render "shared/footer" %>
+</body>

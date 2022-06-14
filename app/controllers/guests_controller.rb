@@ -1,5 +1,5 @@
 class GuestsController < ApplicationController
-  before_action :set_event, only: [:new, :create, :edit]
+  before_action :set_event, only: [:index, :new, :create, :edit]
   before_action :set_guest, only: [:edit, :update, :destroy]
 
   def index
