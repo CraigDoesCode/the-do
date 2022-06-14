@@ -1,4 +1,4 @@
-
+<body>
 <h1 class="d-flex justify-content-center"><strong>Eat</strong> </h1>
 <br>
 <h2 class="recommended-activity-title">Top 5 Restaurants in <span style='color: #E5B705;'><strong><%= "#{@event.location}"%></strong></span></h2></div>
@@ -19,7 +19,7 @@
           <i class="fa-regular fa-star" id="activity-star"></i>
             <%= image_tag "aquashard.jpg" %>
               <div class="carousel-caption d-block" id="activity-name">
-                <h5>Restaurant 1</h5>
+                <h5>The Shard</h5>
               </div>
       </div>
     </div>
@@ -30,7 +30,7 @@
             <i class="fa-regular fa-star" id="activity-star"></i>
                 <%= image_tag "river_restaurant.jpg" %>
                   <div class="carousel-caption d-block" id="activity-name">
-                    <h5>Restaurant 2</h5>
+                    <h5>Gloria's</h5>
                   </div>
         </div>
     </div>
@@ -41,7 +41,7 @@
             <i class="fa-regular fa-star" id="activity-star"></i>
               <%= image_tag "nandos.jpg" %>
                 <div class="carousel-caption d-block" id="activity-name">
-                  <h5>Restaurant 3</h5>
+                  <h5>Oceania</h5>
                 </div>
         </div>
     </div>
@@ -91,7 +91,7 @@
           </div>
           <div class="saved-fave-card mx-1">
             <%= image_tag("aquashard.jpg", style: "width: 100", class: 'd-block', style: 'width:100%; height:50px; border-radius: 4px') %>
-            <p id="saved-fave-name">Bagels</p>
+            <p id="saved-fave-name">Paul's</p>
             <%# <ul class="saved-fave-notes">
               <li>Close</li>
               <li>Expensive</li>
@@ -120,7 +120,16 @@
 <br>
 <br>
 <h2 class="mx-2" id="find-activity-title" style="margin-bottom: 20px;">Find a restaurant</h2>
-<input class="form-control" id="search-activity-form" type="text" placeholder="Search restaurants in <%= "#{@event.location}"%>">
+    <div style="padding-left: 30px; padding-right: 30px;">
+      <%= form_tag eat_event_activities_path(current_user.event_id), method: :get, class: "d-flex", id: "search-bar" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Search restaurants in #{@event.location}" %>
+        <%= submit_tag "Search", class: "btn btn-dark" %>
+      <% end %>
+    </div>
+<%# <input class="form-control" id="search-activity-form" type="text" placeholder="Search restaurants in <%= "#{@event.location}"%>
 <br>
 <br>
 <h2 class="d-flex justify-content-center" style="margin-bottom: 27px;"> Browse all Restaurants</h2>
@@ -186,3 +195,4 @@
 <%# <%= restaurant.name %>
 <%# <%= image_tag("#{restaurant.image}") %>
 <%# <% end %>
+</body>
