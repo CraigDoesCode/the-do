@@ -1,13 +1,13 @@
 
 <div class="footer-do px-2">
   <div class="d-flex flex-row justify-content-between footer-links">
-  <%= link_to eat_event_activities_path(current_user.event_id) do %>
+  <%= link_to eat_activities_path do %>
     <div class="px-2 mx-1" id="footer-icon">
       <i class="fa-solid fa-utensils"></i>
       <%# <p>EAT</p> %>
     </div>
   <% end %>
-  <%= link_to stay_event_activities_path(current_user.event_id) do %>
+  <%= link_to stay_activities_path do %>
     <div class="px-2 mx-1" id="footer-icon">
       <i class="fa-solid fa-bed"></i>
       <%# <x>STAY</p> %>
@@ -19,18 +19,18 @@
       <%# <p>WHO</p> %>
     </div>
   <% end %>
-  <%= link_to go_event_activities_path(current_user.event_id) do %>
+  <%= link_to go_activities_path do %>
     <div class="px-2 mx-1" id="footer-icon">
       <i class="fa-solid fa-car"></i>
     </div>
   <% end %>
-  <%= link_to play_event_activities_path(current_user.event_id) do %>
+  <%= link_to play_activities_path do %>
     <div class="px-2 mx-1" id="footer-icon">
       <i class="fa-solid fa-champagne-glasses"></i>
       <%# <p>PLAY</p> %>
     </div>
   <% end %>
-  <%= link_to plan_event_activities_path(current_user.event_id) do %>
+  <%= link_to plan_path(current_user.event_id) do %>
   <div class="px-2 mx-0" id="footer-icon">
     <i class="fa-solid fa-calendar-days"></i></a>
   <%# <p>PLAN</p> %>
