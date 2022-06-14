@@ -4,7 +4,7 @@
     <%= f.input :address,  label: "Venue Address " %>
     <%= f.input :date, as: :date, html5: true %>
     <div class="d-flex justify-content-between">
-      <%= f.input :start_time, as: :time, html5: true, label: "Start Time "  %>
+      <%= f.input :start_time, as: :time,default: Time.parse('8:00'), input_html: { step: '900' }, html5: true, label: "Start Time "  %>
       <%= f.input :end_time, as: :time, html5: true, label: "End Time"  %>
     </div>
     <%= f.input :details %>

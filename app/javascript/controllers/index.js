@@ -2,19 +2,19 @@
 // Run that command whenever you add a new controller or create them with
 // ./bin/rails generate stimulus controllerName
 
-import { application } from "./application";
+import { application } from "./application"
 
-import ModController from "./mod_controller.js";
-application.register("mod", ModController);
+import FlatpickrController from "./flatpickr_controller.js"
+application.register("flatpickr", FlatpickrController)
 
-import HelloController from "./hello_controller.js";
-application.register("hello", HelloController);
+import HelloController from "./hello_controller.js"
+application.register("hello", HelloController)
 
-import MapController from "./map_controller.js";
-application.register("map", MapController);
+import MapController from "./map_controller.js"
+application.register("map", MapController)
 
-import MenuController from "./menu_controller.js";
-application.register("menu", MenuController);
+import MenuController from "./menu_controller.js"
+application.register("menu", MenuController)
 
-import { Modal } from "tailwindcss-stimulus-components";
-application.register("modal", Modal);
+import ModController from "./mod_controller.js"
+application.register("mod", ModController)
