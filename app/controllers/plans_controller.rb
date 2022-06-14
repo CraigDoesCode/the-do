@@ -1,5 +1,5 @@
 class PlansController < ApplicationController
-  before_action :set_event, only: [:index, :new, :create, :edit]
+  before_action :set_event, only: [:go, :index, :new, :create, :edit]
   before_action :set_plan, only: [:edit, :update, :destroy]
 
   def index
@@ -41,6 +41,11 @@ class PlansController < ApplicationController
     redirect_to event_guests_path(@event_id), status: :see_other
   end
 
+  def go
+    @plans = @event.plans.order(start_time: :asc)
+
+  end
+
   private
 
   def plan_params
@@ -49,6 +54,5 @@ class PlansController < ApplicationController
 
   def set_event
     @event = Event.find(params[:event_id])
->>>>>>> 818b96b208d81293e393e2624589210ed699a24b
   end
 end
