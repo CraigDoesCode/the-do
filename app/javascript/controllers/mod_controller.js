@@ -4,10 +4,12 @@ import { Controller } from "@hotwired/stimulus";
 export default class extends Controller {
   static targets = ["modal"];
   connect() {
-    console.log("modal controller connected");
+    console.log("helllloooo its me the modal controller");
   }
 
   open() {
+    console.log("im open, where are you");
+
     document.body.classList.add("modal-open");
     this.modalTarget.setAttribute("style", "display: block;");
     this.modalTarget.classList.add("show");

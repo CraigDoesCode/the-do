@@ -64,7 +64,7 @@
           <div class="d-flex flex-column">
             <span style="font-size: 18px;">
               <% case @activity.category %>
-              <% when "eat" %>
+              <% when "et" %>
                 <i class="fa-solid fa-utensils"style="color: black;font-size: 18px; position: relative; right: 3px;"></i>
               <% when "stay" %>
                 <i class="fa-solid fa-bed"style="color: black;font-size: 18px; position: relative; right: 3px;"></i>
@@ -73,8 +73,8 @@
               <% when "play" %>
                 <i class="fa-solid fa-champagne-glasses"style="color: black;font-size: 18px; position: relative; right: 3px;"></i>
               <% end %>
-              <%= plan.start_time.to_fs(:time) %>
             </span>
+            <%= plan.start_time.to_fs(:time) %>
             <%= @activity.name %>
             <div class="text-center">
               <%= @activity.address %>
