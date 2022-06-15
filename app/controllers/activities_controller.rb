@@ -43,6 +43,7 @@ class ActivitiesController < ApplicationController
   def play
     @event = Event.find(current_user.event_id)
     @activities = Activity.where(category: "play")
+    @top_activities = @activities.first(3)
     if params[:query].present?
       sql_query = <<~SQL
         activities.name @@ :query
