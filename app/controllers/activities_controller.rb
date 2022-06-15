@@ -41,6 +41,7 @@ class ActivitiesController < ApplicationController
   end
 
   def play
+    @new_plan = Plan.new
     @event = Event.find(current_user.event_id)
     @activities = Activity.where(category: "play")
     @top_activities = @activities.first(3)
