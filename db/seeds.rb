@@ -16,7 +16,7 @@ Activity.destroy_all
 puts "All users and activities destroyed!!"
 puts "Creating new users, 1 event and some activities!"
 
-Event.create!(start_date: Date.new(2022,8,12), end_date: Date.new(2022,8,12), location: "London", name: "Tilly")
+Event.create!(start_date: Date.new(2022,8,12), end_date: Date.new(2022,8,14), location: "London", name: "Tilly")
 
 User.create!(first_name: "Tilly", last_name: "Bishop", event_id: Event.last.id, email: "tilly@tilly.com", password: "123456")
 User.create!(first_name: "Olivia", last_name: "McSweeney", event_id: Event.last.id, email: "olivia@olivia.com", password: "123456")

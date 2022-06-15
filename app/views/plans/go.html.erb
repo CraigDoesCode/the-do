@@ -11,6 +11,7 @@
     <%= link_to "Send Plan", '#', class: "btn btn-dark" %>
   </div>
   <% @event.start_date.upto(@event.end_date) do |date| %>
+    <% raise %>
     <div style="background-color: #D6D6D9; margin-left: 10px; margin-right: 10px; font-size: 16px;" >
       <span style="font-weight: bold; font-size: 16px;"><%= date.strftime('%A, %B %d %Y') %></span>
     </div>
