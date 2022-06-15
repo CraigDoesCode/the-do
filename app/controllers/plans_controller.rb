@@ -15,8 +15,13 @@ class PlansController < ApplicationController
     @plan = Plan.new(plan_params)
     @plan.event_id = @event.id
     @plan.activity_id = @activity.id if @plan.activity_id == nil
+
     if @plan.save
-      redirect_to event_plans_path
+      if @plan.activity.category == "go"
+        redirect_to go_event_plans_path
+      else
+        redirect_to event_plans_path
+      end
     else
       render :new, status: :unprocessable_entity
     end
