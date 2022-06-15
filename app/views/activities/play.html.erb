@@ -17,7 +17,7 @@
           <%= link_to "BOOK NOW", '#', class: "book-now"%>
           <%# <i class="fa-solid fa-star" id="restaurant-star-saved"></i> - for when item is saved (solid star) %>
           <i class="fa-regular fa-star" id="activity-star"></i>
-          <%= image_tag activity.image_url %>
+          <%= image_tag activity.image_url || "karaoke.jpg" %>
           <div class="carousel-caption d-block" id="activity-name">
             <h5><%= activity.name %></h5>
           </div>
@@ -114,9 +114,36 @@
 
 <div class="browse container">
   <% @activities.each do |activity| %>
-    <div class="browse-activities-card">
-       <%= image_tag activity.image_url || "karaoke" %>
-       <p class="book-now" style="background-color: #EC383F">Book Now</p>
+    <div class="browse-activities-card" data-controller="mod">
+      <%= image_tag activity.image_url || "karaoke" %>
+      <div class="book-now" data-action="click->mod#open">
+        BOOK NOW
+      </div>
+      <div class="modal" tabindex="-1" role="dialog" data-mod-target="modal">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Book <%= activity.name %></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-action="click->mod#close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <%# FORM to create go activity %>
+                          <%= simple_form_for [@event, @new_plan] do |f| %>
+                          <%= f.input :date, as: :date, html5: true %>
+                          <%= f.input :start_time, default: Time.parse('8:00')%>
+                          <%= f.input :end_time, default: Time.parse('22:00')  %>
+                          <%= f.submit class: "btn-flat-gold-blk", style: "font-size: 20px"%>
+                        <% end %>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn-flat-gold">Save changes</button>
+                        <button type="button" class="btn-flat-gold" data-dismiss="modal" data-action="click->mod#close">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
       <i class="fa-regular fa-star" id="activity-star"></i>
       <div class="browse-activity-card-bottom">
         <div class="browse-activity-card-title-box">

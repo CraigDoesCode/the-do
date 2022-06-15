@@ -3,13 +3,11 @@
 <br>
 <h2 class="recommended-activity-title">Top 5 Restaurants in <span style='color: #E5B705;'><strong><%= "#{@event.location}"%></strong></span></h2></div>
 
-
-
 <div class="recommended-activities" data-controller="mod" style="padding-top: 18px;">
 <%# Start of carousel %>
 <%# I AM THE MODAL %>
 
-            <div class="modal" tabindex="-1" role="dialog" data-mod-target="modal">
+                <div class="modal" tabindex="-1" role="dialog" data-mod-target="modal">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -173,7 +171,9 @@
   <% @activities.each do |activity| %>
     <div class="browse-activities-card">
       <%= image_tag activity.image_url || "eat/restaurant 1"%>
-      <p class="book-now">BOOK NOW</p>
+      <div class="book-now" data-action="click->mod#open">
+        BOOK NOW
+      </div>
       <i class="fa-regular fa-star" id="activity-star"></i>
       <div class="browse-activity-card-bottom">
         <div class="browse-activity-card-title-box">
