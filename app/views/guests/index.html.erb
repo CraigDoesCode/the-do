@@ -28,22 +28,22 @@
       </th>
     </tr>
 
-     <tr style="text-align: center; vertical-align: center;">
+     <%# <tr style="text-align: center; vertical-align: center;">
       <th scope="row">
         <div class="d-flex">
           <div class="rounded-circle border d-flex justify-content-center align-items-center mt-1" style="width:40px;height:40px" alt="Avatar">
-            <% if guests.photo.attached? %>
-              <%= cl_image_tag guests.photo.key, class: "avatar", style:"object-fit: cover" %>
-            <% else %>
-              <i class="fas fa-user-alt fa-2x text-info"></i>
-            <% end %>
-          </div>
-          <div class="pt-3">
-            <%= guests.name %>
-          </div>
+            <%# if @bestie.photo.attached? %>
+              <%# <%= cl_image_tag @guests.photo.key, class: "avatar", style:"object-fit: cover" %>
+            <%# <% else %>
+              <%# <i class="fas fa-user-alt fa-2x text-info"></i> %>
+            <%# <% end %>
+          <%# </div> %>
+          <%# <div class="pt-3">
+            <%= @bestie.name %>
+          <%# </div>
         </div>
       </th>
-    </tr>
+    </tr>  %>
   </tbody>
 </table>
   <br>
@@ -99,11 +99,11 @@
           </div>
         </td>
          <td class="text-center p-3">
-           <% if guest.name != @event.name %>
+           <%# <% if guest.name != "#{@event.name}[Bestie]" %>
           <%= link_to guest_path(guest), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :style=>'color: black; font-size: 17px' do %>
             <i class="fa-solid fa-trash-can"></i>
           <% end %>
-          <% end %>
+          <%# <% end %>
         </td>
       </tr>
     <% end %>
