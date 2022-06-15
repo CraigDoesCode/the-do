@@ -20,6 +20,8 @@ class EventsController < ApplicationController
 
   def update
     @event.update(event_params)
+    hen = Guest.new(name: @event.name, event_id: current_user.event_id)
+    hen.save!
     redirect_to event_path(@event)
   end
 
@@ -30,7 +32,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:name,:start_date, :end_date, :location)
+    params.require(:event).permit(:name, :start_date, :end_date, :location)
   end
 
 end
