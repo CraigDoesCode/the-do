@@ -32,14 +32,14 @@
       <th scope="row">
         <div class="d-flex">
           <div class="rounded-circle border d-flex justify-content-center align-items-center mt-1" style="width:40px;height:40px" alt="Avatar">
-            <% if @bestie.photo.attached? %>
-              <%= cl_image_tag @bestie.photo.key, class: "avatar", style:"object-fit: cover" %>
+            <% if @guests.photo.attached? %>
+              <%= cl_image_tag @guests.photo.key, class: "avatar", style:"object-fit: cover" %>
             <% else %>
               <i class="fas fa-user-alt fa-2x text-info"></i>
             <% end %>
           </div>
           <div class="pt-3">
-            <%= @bestie.name %>
+            <%= @guests.name %>
           </div>
         </div>
       </th>
@@ -138,39 +138,7 @@
       </td>
 
         <tr style="text-align: center; vertical-align: center;">
-      <th scope="row">
-        <div class="d-flex">
-          <div class="rounded-circle border d-flex justify-content-center align-items-center mt-1" style="width:40px;height:40px" alt="Avatar">
-            <% if @bestie.photo.attached? %>
-              <%= cl_image_tag @bestie.photo.key, class: "avatar", style:"object-fit: cover" %>
-            <% else %>
-              <i class="fas fa-user-alt fa-2x text-info"></i>
-            <% end %>
-          </div>
-          <div class="pt-3">
-            <%= @bestie.name %>
-          </div>
-        </div>
-        <td class="text-center p-2">
-          <%= link_to edit_event_guest_path(@bestie.event_id, @bestie.id), :style=>'color: black; font-size: 17px' do %>
-            <i class="fa-solid fa-pen-to-square"></i>
-          <% end %>
-        </td>
-        <td>
-          <div style="color: #E5B705; font-size: 18px;">
-            <% if @bestie.attending == true %>
-            <i class="fa-solid fa-check"></i>
-          <% end %>
-          </div>
-        </td>
-         <td>
-          <div style="color: #E5B705; font-size: 18px;">
-            <% if @bestie.paid == true %>
-              <i class="fa-solid fa-check"></i>
-            <% end %>
-          </div>
-        </td>
-      </th>
+
     </tr>
     </tr>
   </tbody>

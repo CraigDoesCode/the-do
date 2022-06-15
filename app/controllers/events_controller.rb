@@ -11,7 +11,6 @@ class EventsController < ApplicationController
 
   def create
     @event.update(event_params)
-
     redirect_to event_path(@event)
   end
 
@@ -20,8 +19,8 @@ class EventsController < ApplicationController
 
   def update
     @event.update(event_params)
-    hen = Guest.new(name: @event.name, event_id: current_user.event_id)
-    hen.save!
+    # @bestie = Guest.new(name: @event.name, event_id: current_user.event_id)
+    # @bestie.save!
     redirect_to event_path(@event)
   end
 
