@@ -35,6 +35,16 @@ Activity.create!(category: "eat", address: "1 Haggerston", name: "Glorias", book
 Activity.create!(category: "eat", name: "Mnky Hse", address: "10 Dover Street, Mayfair", booked: false, details: "Latin American late night restaurant with DJ.", image_url:"eat/mnkyhse.jpg" )
 Activity.create!(category: "eat", name: "Seabird", address: "40 Blackfriars Road, Southbank", booked: false, details: "Rooftop seafood restaurant with London's longest Oyster list", image_url:"eat/seabird.jpg")
 Activity.create!(category: "eat", name: "Chiltern Firehouse", address: "1 Chiltern Street, Marylebone", booked: false, details: "Contemporary ingredient focused cooking in collaboration with renowned Chef Nuno Mendes", image_url: "eat/chiltern.jpg" )
+Activity.create!(category: "eat", name: "Dozo", address: "32 Old Compton Street, Soho", booked: false, details: "Private dining area, contemporary Japanese restaurant", image_url: "eat/dozo.jpg")
+Activity.create!(category: "eat", name: "Sushi Samba", address: "35 The Market Building, Covent Garden", booked: false, details: "A unique blend of Japanese, Brazilian and Peruvian culture and cuisine.", image_url: "eat/sushisamba.jpg")
+Activity.create!(category: "eat", name: "Pizza East", address: "56 SHoreditch High Street, Shoreditch", booked: false, details: "In a former tea warehouse on the corner of Shoreditch High Street and Bethnal Green Road, Pizza East Shoreditch serves seasonal smalls, wood-oven dishes, pizzas and some of the best cured meats & cheese in London.", image_url: "eat/pizza east.jpg")
+
+
+
+
+
+
+
 
 
 Activity.create!(category: "play", address: "1 Shoreditch", name: "Bowling", booked: false, details: "3 Lanes at Bowling alley booked, with drinks included." )
