@@ -58,6 +58,7 @@ class ActivitiesController < ApplicationController
   def stay
     @event = Event.find(current_user.event_id)
     @activities = Activity.where(category: "stay")
+    @new_plan = Plan.new
     if params[:query].present?
       sql_query = <<~SQL
         activities.name @@ :query
