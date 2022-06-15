@@ -48,7 +48,7 @@ Activity.create!(category: "eat", name: "Pizza East", address: "56 SHoreditch Hi
 
 
 
-Activity.create!(category: "play", address: "1 Shoreditch", name: "Bowling", booked: false, details: "3 Lanes at Bowling alley booked, with drinks included." )
+Activity.create!(category: "play", address: "1 Shoreditch", name: "Bowling", booked: false, details: "3 Lanes at Bowling alley booked, with drinks included.", image_url: "eat/restaurant 2.jpg" )
 Activity.create!(category: "play", address: "1 Islington", name: "Karaoke", booked: false, details: "Private karaoke room.", image_url: "eat/restaurant 2.jpg" )
 Activity.create!(category: "play", address: "2 Islington", name: "Simmons Bar", booked: false, details: "Go next door to Simmons bar!", image_url: "eat/restaurant 2.jpg" )
 Activity.create!(category: "stay", address: "1 London", name: "The Ritz", booked: false, details: "Stay the night at The Ritz babyy", image_url: "eat/restaurant 2.jpg" )
