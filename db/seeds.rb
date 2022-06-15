@@ -56,6 +56,8 @@ activities = [
 
   # Stay
   Activity.create!(category: "stay", address: "1 London", name: "The Ritz", booked: false, details: "Legendary Hotel is a must exerience at least onece in your lifetime", image_url: "ritz.jpg" ),
+  Activity.create!(category: "stay", address: "100 Shoreditch High Street, London", name: "One Hundred Shoreditch", booked: false, details: "Located on Shoreditch High Street, One Hundred Shoreditch is home to 258 hotel bedrooms and suites, six restaurants and bars, plus five meeting and event spaces.", image_url: "100shoreditch.jpg" ),
+  Activity.create!(category: "stay", address: "1 London", name: "The Ritz", booked: false, details: "Legendary Hotel is a must exerience at least onece in your lifetime", image_url: "ritz.jpg" ),
   Activity.create!(category: "stay", address: "10 Berners Street, London", name: "The London Edition", booked: false, details: "Located in Fitzrovia on the edge of Soho, the boutique hotel blends thoughtful design and intuitive service with excellent dining and nightlife in a space that boldly brings together the past with the present.", image_url: "edition.jpg" ),
   Activity.create!(category: "stay", address: "28 Bow Street, London", name: "The NoMad", booked: false, details: "NoMad London takes residence inside the historic, grade II-listed building famously known as The Bow Street Magistrates’ Court and Police Station.", image_url: "nomad.jpg" ),
   Activity.create!(category: "stay", address: "London", name: "The W", booked: false, details: "Amazing stays blending comfort and culture at The W", image_url: "W_hotel.jpg" ).
