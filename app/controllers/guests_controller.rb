@@ -7,7 +7,6 @@ class GuestsController < ApplicationController
     if @bestie.nil?
       @bestie = Guest.create!(name: "#{@event.name}[Bestie]", event_id: params[:event_id])
     end
-
     @guests = Guest.where(event_id: params[:event_id])
     # @guests = @all_guests.reject { |guest| guest == @bestie }
   end
