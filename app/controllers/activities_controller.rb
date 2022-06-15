@@ -28,6 +28,7 @@ class ActivitiesController < ApplicationController
     @event = Event.find(current_user.event_id)
     @activities = Activity.where(category: "eat")
     @top_activities = @activities.first(3)
+    @planned_food = Plan.joins(:activity).where(activity: { category: "eat" })
     @new_plan = Plan.new
     if params[:query].present?
       sql_query = <<~SQL
@@ -46,6 +47,7 @@ class ActivitiesController < ApplicationController
     @event = Event.find(current_user.event_id)
     @activities = Activity.where(category: "play")
     @top_activities = @activities.first(3)
+    @planned_activities = Plan.joins(:activity).where(activity: { category: "play" })
     @new_plan = Plan.new
     if params[:query].present?
       sql_query = <<~SQL
@@ -64,6 +66,7 @@ class ActivitiesController < ApplicationController
     @event = Event.find(current_user.event_id)
     @activities = Activity.where(category: "stay")
     @top_activities = @activities.first(3)
+    @planned_stays = Plan.joins(:activity).where(activity: { category: "stay" })
     if params[:query].present?
       sql_query = <<~SQL
         activities.name @@ :query
