@@ -4,7 +4,7 @@ class GuestsController < ApplicationController
 
   def index
     @guests = Guest.where(event_id: params[:event_id])
-    unless Guest.find_by(name: @event.name)
+    unless @bestie = Guest.find_by(name: @event.name)
       @bestie = Guest.new(name: @event.name, event_id: current_user.event_id)
       @bestie.save!
     end

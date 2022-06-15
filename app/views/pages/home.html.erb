@@ -1,21 +1,25 @@
+
 <h1 class='text-center bg-white title mb-0 p-0'>The D<span style="color: #C8A323;">O</span></h1>
 <p class='text-center bg-white sub-h mt-0 p-0' style="color: rgba(0,0,0,0.4)">Do it right.</p>
 <div class="banner d-flex justify-content-center align-items-center" id="top-banner">
   <div class="text-center">
-    <h2 class="mx-auto mb-4">Dont let your bestie down</h2>
-    <%= link_to 'Plan your DO', new_user_registration_path, class: "btn-flat mb-2"%>
+    <h2 class="mx-auto mb-4">Don't let your bestie down</h2>
+    <div class="d-flex flex-column">
+    <%= link_to 'LOG IN', new_user_session_path, class: "btn-flat-gold mb-2", style: "font-size:32px"%>
+    <%= link_to 'Plan your DO', new_user_registration_path, class: "btn-flat-gold mb-2", style: "font-size:16px"%>
+    </div>
     <p class="mt-3">The ultimate DO planning app</p>
   </div>
 </div>
 <div class="container info">
   <h2 class="text-center mt-3">What does the D<span style="color: #C8A323">O</span> do?</h2>
-  <p class="text-center">The D<span style="color: #C8A323;">O</span> is here to support you the to journey of organizing your besties D<span style="color: #C8A323;">O</span></p>
+  <p class="text-center">The D<span style="color: #C8A323;">O</span> is here to support you on the to journey of organising your bestie's D<span style="color: #C8A323;">O</span></p>
   <div class="info-card mt-3">
     <%= image_tag 'message.jpg'%>
     <div class="info-card-infos">
       <div>
         <h2>Track and message your guests</h2>
-        <p>send reminder with a click and keep track of who's attending and paid with the touch of a button</p>
+        <p>send reminders with one click and keep track of who's attending and paid with the touch of a button</p>
       </div>
     </div>
   </div>
@@ -23,8 +27,8 @@
     <%= image_tag('progress.jpg') %>
     <div class="info-card-infos">
       <div>
-        <h2>See you progress</h2>
-        <p>Progress bars to help you knpw how meet you goals and do th ebest for your bestie </p>
+        <h2>See your progress</h2>
+        <p>Progress bars to help you meet your goals and do the best for your bestie </p>
       </div>
     </div>
   </div>
@@ -43,8 +47,8 @@
   <div class="text-center ">
       <div class="w-75 mx-auto">
         <h3>The DO Promise</h3>
-        <p class="mb-4">We can't promise this is the only DO your bestie will ever have but with the DO, it will be the best</p>
-        <%= link_to 'START NOW', new_user_registration_path, class: "btn-flat mb-2"%>
+        <p class="mb-4">We can't promise this is the only DO your bestie will ever have, but with the DO it will be the best</p>
+        <%= link_to 'START NOW', new_user_registration_path, class: "btn-flat-gold mb-2"%>
       </div>
   </div>
 </div>

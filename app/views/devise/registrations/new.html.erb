@@ -1,6 +1,7 @@
 <div class="sign-in">
 <%= image_tag("logo.png") %>
 
+<div class="pt-5">
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
   <%= f.error_notification %>
 
@@ -26,8 +27,13 @@
                 <% @event = Event.create() %>
     <%=f.hidden_field :event_id, value: "#{@event.id}" %>
   </div>
-  <%= f.button :submit, "Sign up", class: "btn-flat mb-3" %>
+  <%= f.button :submit, "Sign up", class: "btn-flat-gold my-3", style: "font-size: 24px; padding: 6px 32px" %>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<div class="text-center">
+  <%= link_to :back do %>
+  <i class="fa-solid fa-left-long" style= "font-size:20px; color:grey; padding-top:10px"></i>
+  <% end %>
+</div>
+</div>
 </div>

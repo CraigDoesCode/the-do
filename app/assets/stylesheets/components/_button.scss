@@ -10,11 +10,11 @@
 
 
 .btn-flat-black {
-  color: white;
-  padding: 8px 24px;
-  border-radius: 4px;
-  background: $black;
-  text-decoration: none;
+  color: white !important;
+  padding: 8px 24px !important;
+  border-radius: 4px !important;
+  background: $black !important;
+  text-decoration: none !important;
   transition: background 0.3s ease;
 
 }
@@ -26,6 +26,7 @@
   background-color: $gold;
   text-decoration: none;
   transition: background 0.3s ease;
+  border-style: none !important;
 }
 
 
