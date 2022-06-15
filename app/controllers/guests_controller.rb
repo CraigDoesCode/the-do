@@ -3,10 +3,10 @@ class GuestsController < ApplicationController
   before_action :set_guest, only: [:edit, :update, :destroy]
 
   def index
-    @bestie = Guest.find_by(name: "#{@event.name}[Bestie]")
-    if @bestie.nil?
-      @bestie = Guest.create!(name: "#{@event.name}[Bestie]", event_id: params[:event_id])
-    end
+    # @bestie = Guest.find_by(name: "#{@event.name}[Bestie]")
+    # if @bestie.nil?
+    #   @bestie = Guest.create!(name: "#{@event.name}[Bestie]", event_id: params[:event_id])
+    # end
     @guests = Guest.where(event_id: params[:event_id])
     # @guests = @all_guests.reject { |guest| guest == @bestie }
   end
