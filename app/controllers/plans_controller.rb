@@ -1,5 +1,5 @@
 class PlansController < ApplicationController
-  before_action :set_event, only: [:index, :new, :create, :edit]
+  before_action :set_event, only: [:go, :index, :new, :create, :edit]
   before_action :set_plan, only: [:edit, :update, :destroy]
 
   def index
@@ -14,9 +14,9 @@ class PlansController < ApplicationController
   def create
     @plan = Plan.new(plan_params)
     @plan.event_id = @event.id
-    @plan.activity_id = @activity.id
+    @plan.activity_id = @activity.id if @plan.activity_id == nil
     if @plan.save
-      redirect_to event_plan_path
+      redirect_to event_plans_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -38,16 +38,25 @@ class PlansController < ApplicationController
   def destroy
     @event_id = @plan.event_id
     @plan.destroy
-    redirect_to event_guests_path(@event_id), status: :see_other
+    redirect_to url_from(params[:redirect_url]) || root_url
+  end
+
+  def go
+    @event = Event.find(params[:event_id])
+    @plans = @event.plans.order(start_time: :asc)
+    @new_plan = Plan.new
   end
 
   private
 
   def plan_params
-    params.require(:plan).permit(:date, :start_time, :end_time)
+    params.require(:plan).permit(:date, :start_time, :end_time, :activity_id)
   end
 
   def set_event
     @event = Event.find(params[:event_id])
+  end
+  def set_plan
+    @plan = Plan.find(params[:id])
   end
 end
