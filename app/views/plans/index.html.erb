@@ -80,9 +80,10 @@
               <%= @activity.address %>
             <%# </div> %>
             <% if plan != asc_time_plans.last %>
-          <span class="top_dot"></span>
+          <%# <span class="top_dot"></span>
           <div class="vl"></div>
-          <span class="bottom_dot"></span>
+          <span class="bottom_dot"></span> %>
+          <i class="fa-solid fa-angles-down text-center" style="color: #E5B705; font-size: 25px; font-weight: bold; margin-top: 5px; margin-bottom: 5px;"></i>
           <% else %>
             <br>
           <% end %>
