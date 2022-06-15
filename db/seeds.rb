@@ -20,7 +20,7 @@ Event.create!(start_date: Date.new(2022,8,12), end_date: Date.new(2022,8,14), lo
 
 User.create!(first_name: "Tilly", last_name: "Bishop", event_id: Event.last.id, email: "tilly@tilly.com", password: "123456")
 User.create!(first_name: "Olivia", last_name: "McSweeney", event_id: Event.last.id, email: "olivia@olivia.com", password: "123456")
-User.create!(first_name: "Craig", last_name: "Norford", event_id: Event.last.id, email: "craig@craig.com", password: "123456")
+User.create!(first_name: "Craig", last_name: "Norford", event_id: Event.last.id, email: "craig.norford@gmail.com", password: "123456")
 User.create!(first_name: "Emily", last_name: "Tregelles", event_id: Event.last.id, email: "emily@emily.com", password: "123456")
 
 # go activities
@@ -41,12 +41,12 @@ activities = [
   Activity.create!(category: "eat", name: "Sushi Samba", address: "35 The Market Building, Covent Garden", booked: false, details: "A unique blend of Japanese, Brazilian and Peruvian culture and cuisine.", image_url: "eat/sushisamba.jpg"),
   Activity.create!(category: "eat", name: "Pizza East", address: "56 SHoreditch High Street, Shoreditch", booked: false, details: "In a former tea warehouse on the corner of Shoreditch High Street and Bethnal Green Road, Pizza East Shoreditch serves seasonal smalls, wood-oven dishes, pizzas and some of the best cured meats & cheese in London.", image_url: "eat/pizza east.jpg"),
   # Play
-  Activity.create!(category: "play", address: "1 Shoreditch", name: "Bowling", booked: false, details: "3 Lanes at Bowling alley booked, with drinks included.", image_url: "eat/restaurant 2.jpg" ),
-  Activity.create!(category: "play", address: "1 Islington", name: "Karaoke", booked: false, details: "Private karaoke room.", image_url: "eat/restaurant 2.jpg" ),
+  Activity.create!(category: "play", address: "1 Shoreditch", name: "Bowling", booked: false, details: "3 Lanes at Bowling alley booked, with drinks included.", image_url: "bowling.jpg" ),
+  Activity.create!(category: "play", address: "1 Islington", name: "Karaoke", booked: false, details: "Private karaoke room.", image_url: "karaoke.jpg" ),
   Activity.create!(category: "play", address: "2 Islington", name: "Simmons Bar", booked: false, details: "Go next door to Simmons bar!", image_url: "eat/restaurant 2.jpg" ),
   # Stay
-  Activity.create!(category: "stay", address: "1 London", name: "The Ritz", booked: false, details: "Stay the night at The Ritz babyy", image_url: "eat/restaurant 2.jpg" ),
-  Activity.create!(category: "stay", address: "London", name: "The W", booked: false, details: "Stay the night at The Ritz babyy", image_url: "eat/restaurant 2.jpg" )
+  Activity.create!(category: "stay", address: "1 London", name: "The Ritz", booked: false, details: "Legendary Hotel is a must exerience at least onece in your lifetime", image_url: "ritz.jpg" ),
+  Activity.create!(category: "stay", address: "London", name: "The W", booked: false, details: "Amazing stays blending comfort and culture at The W", image_url: "W_hotel.jpg" )
 ]
 
 Plan.create!(date: Date.new(2022,8,12), start_time: Time.new(2022,8,12, 10, 00), end_time: Time.new(2022,8,12, 11, 00), event: Event.last, activity: activities.sample )
