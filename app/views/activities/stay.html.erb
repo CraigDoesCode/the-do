@@ -40,14 +40,9 @@
                     <%= f.input :date, as: :date, html5: true %>
                     <%= f.input :start_time, default: Time.parse('8:00')%>
                     <%= f.input :end_time, default: Time.parse('22:00')  %>
-                    <%# <%= f.input :end_time, as: :hidden, html5: true, input_html: {value: asc_time_plans[index + 1].start_time} %> %>
                     <%= f.input :activity_id, as: :hidden, html5: true, input_html: {value: activity.id} %>
                     <%= f.submit class: "btn-flat-gold-blk", style: "font-size: 20px"%>
                   <% end %>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn-flat-gold">Save changes</button>
-                  <button type="button" class="btn-flat-gold" data-dismiss="modal" data-action="click->mod#close">Close</button>
                 </div>
               </div>
             </div>
