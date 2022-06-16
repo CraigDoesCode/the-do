@@ -8,7 +8,7 @@ class EventsController < ApplicationController
 
   def show
     @days = (@event.start_date - Date.today).to_i
-    @days_created = (@event.start_date - @event.created_at.to_date).to_i
+    @days_created = (@event.start_date - Date.new(2022,5,1)).to_i
     @percent = 100 - (@days.fdiv(@days_created) * 100).round
   end
 
