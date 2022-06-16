@@ -15,11 +15,13 @@ a {
   background-color: rgb(52, 52, 52);
 }
 .progress {
+  height: 1.5rem;
+  border-radius: 25px;
   p {
     position: absolute;
     width: 100;
     left: 50%;
-    transform: translate(-50%, 0);
+    transform: translate(-50%, 10%);
     color: white;
   }
 }
