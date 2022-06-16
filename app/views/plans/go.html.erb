@@ -34,7 +34,14 @@
                 <% when "stay" %>
                   <i class="fa-solid fa-bed"style="color: black;font-size: 18px; position: relative; right: 3px;"></i>
                 <% when "go" %>
-                  <i class="fa-solid fa-car"style="color: green;font-size: 18px; position: relative; right: 3px;"></i>
+                  <% case @activity.name %>
+                  <% when "Walk"%>
+                    <i class="fa-solid fa-person-walking"style="color: #E5B707;font-size: 18px; position: relative; right: 3px;"></i>
+                  <% when "Taxi"%>
+                    <i class="fa-solid fa-car"style="color: #E5B707;font-size: 18px; position: relative; right: 3px;"></i>
+                  <% when "Public Transport"%>
+                    <i class="fa-solid fa-train"style="color: #E5B707;font-size: 18px; position: relative; right: 3px;"></i>
+                  <% end %>
                 <% when "play" %>
                   <i class="fa-solid fa-champagne-glasses"style="color: black;font-size: 18px; position: relative; right: 3px;"></i>
                 <% end %>
@@ -79,7 +86,7 @@
                             <%= f.input :end_time, as: :hidden, html5: true, input_html: {value: asc_time_plans[index + 1].start_time} %>
                           </div>
                           <%= f.input :category, as: :hidden, input_html: {value: "go"} %>
-                          <%= f.submit class: "btn-flat-gold"%>
+                          <%= f.submit class: "btn-flat-gold", value: "Add Travel"%>
                         <% end %>
                       </div>
                     </div>

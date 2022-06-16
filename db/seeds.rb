@@ -25,7 +25,7 @@ User.create!(first_name: "Emily", last_name: "Tregelles", event_id: Event.last.i
 
 # go activities
 Activity.create(category: "go", name: "Walk", booked: true, details: "Take tube to dinner.")
-Activity.create(category: "go", name: "Drive", booked: true, details: "Taxis to take us from Dishoom to bowling.")
+Activity.create(category: "go", name: "Taxi", booked: true, details: "Taxis to take us from Dishoom to bowling.")
 Activity.create(category: "go", name: "Public Transport", booked: true, details: "Take tube one stop to karaoke.")
 # ATTEMPTED IMAGE > Activity.create(date: Date.today, start_time: '12:00', end_time: '14:00', category: "eat", address: "1 Hoxton", name: "Dishoom", booked: true, details: "Round table booked outside.", image: '/images/restaurant 1.jpg')
 
