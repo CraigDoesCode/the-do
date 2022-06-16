@@ -6,7 +6,13 @@
   </div>
 </div>
 <div>
-  <%= image_tag 'progress-bar.png', :style => "height: 60px; display: block; margin-left: auto; margin-right: auto; width: 50%;" %>
+
+</div>
+<div class="container px-5">
+  <div class="progress bg-gray">
+    <div class="progress-bar bg-gold" role="progressbar" style="width: <%= @percent %>%" aria-valuenow="<%= @percent %>" aria-valuemin="0" aria-valuemax="100"></div>
+    <p><%= (@days) %> DAYS TILL DO</p>
+  </div>
 </div>
 <div class ="cards m-3" style="padding-bottom: 30px">
   <%= link_to event_guests_path(current_user.event_id) do %>
