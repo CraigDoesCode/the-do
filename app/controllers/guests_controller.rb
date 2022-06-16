@@ -9,6 +9,10 @@ class GuestsController < ApplicationController
     # end
     @guests = Guest.where(event_id: params[:event_id])
     # @guests = @all_guests.reject { |guest| guest == @bestie }
+    if @guests.count > 0
+      booked_guests = @guests.where(attending: true, paid: true).to_a
+      @percent = (booked_guests.length.fdiv(@guests.length) * 100).round
+    end
   end
 
   def new
