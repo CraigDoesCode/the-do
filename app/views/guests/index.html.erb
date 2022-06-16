@@ -107,11 +107,11 @@
           </div>
         </td>
          <td class="text-center p-3">
-           <%# <% if guest.name != "#{@event.name}[Bestie]" %>
+           <% unless guest.name.include?("Bestie") %>
           <%= link_to guest_path(guest), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :style=>'color: black; font-size: 17px' do %>
             <i class="fa-solid fa-trash-can"></i>
           <% end %>
-          <%# <% end %>
+          <% end %>
         </td>
       </tr>
     <% end %>
