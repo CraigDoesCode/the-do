@@ -1,5 +1,13 @@
 <div class="d-flex flex-column min-vh-100" style="font-family: 'K2D', sans-serif;">
 <h1 class="text-center">Who</h1>
+<% if @guests.count > 0 %>
+  <div class="container px-5">
+    <div class="progress bg-gray">
+      <div class="progress-bar bg-gold" role="progressbar" style="width: <%= @percent %>%" aria-valuenow="<%= @percent %>" aria-valuemin="0" aria-valuemax="100"></div>
+      <p><%= @percent %>%% COMPLETED</p>
+    </div>
+  </div>
+<% end %>
 <% if @guests.empty? == true %>
   <table class="table-borderless my-3 mx-5" style="font-size: 12px">
     <thead>

@@ -49,9 +49,9 @@
               <%# add button and modal here %>
                 <% if plan.activity.category == "go" %>
                   <%= link_to plan_path(plan), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :style=>'color: black; font-size: 17px' do %>
-                  <i class="fa-solid fa-trash-can"></i>
+                    <i class="fa-solid fa-trash-can"></i>
+                  <% end %>
                 <% end %>
-              <% end %>
               </div>
 
               <% unless plan.activity.category == "go" ||  asc_time_plans[index + 1].activity.category == "go" %>

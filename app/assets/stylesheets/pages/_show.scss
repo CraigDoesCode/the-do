@@ -7,3 +7,19 @@
 a {
   text-decoration: none;
 }
+.bg-gold {
+  background-color: $gold;
+}
+
+.bg-gray {
+  background-color: rgb(52, 52, 52);
+}
+.progress {
+  p {
+    position: absolute;
+    width: 100;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: white;
+  }
+}

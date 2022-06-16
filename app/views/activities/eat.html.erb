@@ -1,6 +1,37 @@
 <body>
 <h1 class="d-flex justify-content-center" ><strong>Eat</strong> </h1>
 <br>
+<% if @planned_food.length > 0 %>
+  <div class="container mx-1 mb-3 ">
+    <h2 class="text-center">Planned Food</h2>
+    <table class="table table-borderless" style="font-size: 12px">
+      <thead></thead>
+      <tbody>
+        <% @planned_food.each do |plan| %>
+          <tr class="border-bottom" style="text-align: center; vertical-align: center;">
+            <th>
+              <i class="fa-solid fa-utensils"style="color: black;font-size: 18px; position: relative; right: 3px;"></i>
+            </th>
+            <th>
+              <p><%= plan.activity.name %></p>
+            </th>
+            <th>
+              <p><%= plan.date.strftime('%a, %b %d') %></p>
+            </th>
+            <th>
+              <p><%= plan.start_time.to_fs(:time) %></p>
+            </th>
+            <th>
+              <%= link_to plan_path(plan), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :style=>'color: black; font-size: 17px' do %>
+                <i class="fa-solid fa-trash-can"></i>
+              <% end %>
+            </th>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>
 <h2 class="recommended-activity-title">Top 5 Restaurants in <span style='color: #E5B705;'><strong><%= "#{@event.location}"%></strong></span></h2></div>
 
 <div class="recommended-activities" style="padding-top: 18px;" >
@@ -37,7 +68,7 @@
                 <div class="modal-body">
                   <%# FORM to create go activity %>
                     <%= simple_form_for [@event, @new_plan] do |f| %>
-                    <%= f.input :date, as: :date, html5: true %>
+                    <%= f.input :date, as: :date, min: @event.start_date, max: @event.end_date, default:@event.start_date , html5: true%>
                     <%= f.input :start_time, default: Time.parse('8:00')%>
                     <%= f.input :end_time, default: Time.parse('9:00')  %>
                     <%= f.input :activity_id, as: :hidden, html5: true, input_html: {value: activity.id} %>
