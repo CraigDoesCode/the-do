@@ -9,7 +9,7 @@
         <% @planned_stays.each do |plan| %>
           <tr class="border-bottom" style="text-align: center; vertical-align: center;">
             <th>
-              <i class="fa-solid fa-utensils"style="color: black;font-size: 18px; position: relative; right: 3px;"></i>
+              <i class="fa-solid fa-bed"style="color: black;font-size: 18px; position: relative; right: 3px;"></i>
             </th>
             <th>
               <p><%= plan.activity.name %></p>
@@ -31,6 +31,7 @@
     </table>
   </div>
 <% end %>
+<br>
 <h2 class="recommended-activity-title mx-3">Top 5 Places To Stay in <span style='color: #E5B705;'><strong><%= "#{@event.location}"%></strong></span></h2></div>
 <div class="recommended-activities" style="padding-top: 18px;" >
   <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
