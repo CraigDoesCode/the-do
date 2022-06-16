@@ -64,7 +64,7 @@
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title">Modal title</h5>
+                        <h5 class="modal-title">Add Travel Plans</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-action="click->mod#close">
                           <span aria-hidden="true">&times;</span>
                         </button>
@@ -79,7 +79,7 @@
                             <%= f.input :end_time, as: :hidden, html5: true, input_html: {value: asc_time_plans[index + 1].start_time} %>
                           </div>
                           <%= f.input :category, as: :hidden, input_html: {value: "go"} %>
-                          <%= f.submit class: "btn-flat"%>
+                          <%= f.submit class: "btn-flat-gold"%>
                         <% end %>
                       </div>
                     </div>
