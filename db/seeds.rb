@@ -65,6 +65,7 @@ activities = [
   Activity.create!(category: "stay", address: "Covent Garden", name: "The NoMad", booked: false, details: "NoMad London takes residence inside the historic, grade II-listed building famously known as The Bow Street Magistrates’ Court and Police Station.", image_url: "nomad.jpg" ),
   Activity.create!(category: "stay", address: "Leicester Square", name: "The W", booked: false, details: "Amazing stays blending comfort and culture at The W", image_url: "W_hotel.jpg" ),
   Activity.create!(category: "stay", address: "Ham Yard", name: "The Ham Yard Hotel", booked: false, details: "In the midst of Soho and moments from Mayfair, Ham Yard has an urban village feel.", image_url: "hamyard.jpg" )
+
 ]
 
 Plan.create!(date: Date.new(2022,8,12), start_time: Time.new(2022,8,12, 10, 00), end_time: Time.new(2022,8,12, 12, 00), event: Event.last, activity: Activity.where(name: "Quad Biking")[0] )
