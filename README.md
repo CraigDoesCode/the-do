@@ -30,7 +30,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/craigdoescode/the-do">
-    <img src="app/assets/images/logo.png" alt="Logo" width="80" height="80">
+    <img src="app/assets/images/logo.png" alt="Logo">
   </a>
 
 <h3 align="center">The Do: Oraganise Your Stag / Hen DO</h3>
