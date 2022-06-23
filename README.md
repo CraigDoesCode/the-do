@@ -36,12 +36,12 @@
 <h3 align="center">The Do: Oraganise Your Stag / Hen DO</h3>
 
   <p align="center">
-    project_description
+    An app to take the pain out of organizing events even when they don’t have experience organizing. Using automation to help avoid simple mistakes, centralizing the organizing in to one place and tracking the progress of organizing process to reduce anxiety and make sure people have great DO’s
     <br />
     <a href="https://github.com/craigdoescode/the-do"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/craigdoescode/the-do">View Demo</a>
+    <a href="https://github.com/craigdoescode/the-do">[View Demo](http://the-do.herokuapp.com/)</a>
     ·
     <a href="https://github.com/craigdoescode/the-do/issues">Report Bug</a>
     ·
