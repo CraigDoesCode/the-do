@@ -17,11 +17,13 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
-![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/craigdoescode/the-do/main?style=for-the-badge)
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
+<div align="center">
+  
+  ![GitHub contributors](https://img.shields.io/github/contributors/craigdoescode/the-do?style=for-the-badge)
+  ![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/craigdoescode/the-do/main?style=for-the-badge)
+  ![GitHub issues](https://img.shields.io/github/issues/craigdoescode/the-do?style=for-the-badge)
+  
+</div>
 
 
 
